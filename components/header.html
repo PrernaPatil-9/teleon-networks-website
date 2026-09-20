@@ -1,0 +1,151 @@
+<!--
+  Teleon Networks — shared site header.
+  {{base}} is replaced at runtime by js/components.js with the correct
+  relative path prefix for the page that is loading this file.
+-->
+<header class="site-header" id="siteHeader">
+  <div class="header-bar">
+
+    <a class="brand" href="{{base}}index.html" aria-label="Teleon Networks Pvt Ltd — home">
+      <img src="{{base}}assets/images/teleon-logo.jpeg"
+           alt="Teleon Networks Pvt Ltd logo"
+           width="190" height="44">
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <a class="nav-link" href="{{base}}index.html" data-nav="home">Home</a>
+      <a class="nav-link" href="{{base}}pages/about.html" data-nav="about">About Us</a>
+
+      <div class="nav-item" data-dropdown>
+        <button type="button"
+                class="nav-link"
+                id="servicesTrigger"
+                data-dropdown-trigger
+                aria-expanded="false"
+                aria-controls="servicesDropdown"
+                data-nav="services">
+          Services
+          <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+
+        <div class="dropdown" id="servicesDropdown" role="menu" aria-labelledby="servicesTrigger">
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/cloud-services.html">
+            <span class="dropdown__num">01</span>
+            <span>
+              <span class="dropdown__title">Cloud Services</span>
+              <span class="dropdown__desc">Backup, storage, cloud server, email and migration</span>
+            </span>
+          </a>
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/it-infrastructure-management.html">
+            <span class="dropdown__num">02</span>
+            <span>
+              <span class="dropdown__title">IT Infrastructure Management</span>
+              <span class="dropdown__desc">Monitoring, maintenance, security and support</span>
+            </span>
+          </a>
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/network-solutions.html">
+            <span class="dropdown__num">03</span>
+            <span>
+              <span class="dropdown__title">Network Solutions</span>
+              <span class="dropdown__desc">LAN/WAN, Wi-Fi, router, switch and firewall</span>
+            </span>
+          </a>
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/cyber-security.html">
+            <span class="dropdown__num">04</span>
+            <span>
+              <span class="dropdown__title">Cyber Security Services</span>
+              <span class="dropdown__desc">Endpoint, network, identity and email security</span>
+            </span>
+          </a>
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/internet-management.html">
+            <span class="dropdown__num">05</span>
+            <span>
+              <span class="dropdown__title">Internet Management &amp; Monitoring</span>
+              <span class="dropdown__desc">Leased line, WAN and bandwidth monitoring</span>
+            </span>
+          </a>
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/it-procurement.html">
+            <span class="dropdown__num">06</span>
+            <span>
+              <span class="dropdown__title">IT Procurement &amp; Hardware Supply</span>
+              <span class="dropdown__desc">Requirement analysis, BOQ, supply and delivery</span>
+            </span>
+          </a>
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/it-support-amc.html">
+            <span class="dropdown__num">07</span>
+            <span>
+              <span class="dropdown__title">IT Support &amp; AMC Services</span>
+              <span class="dropdown__desc">Remote and on-site support with AMC</span>
+            </span>
+          </a>
+          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/project-implementation.html">
+            <span class="dropdown__num">08</span>
+            <span>
+              <span class="dropdown__title">Project Implementation Services</span>
+              <span class="dropdown__desc">Survey, installation, testing and handover</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <a class="nav-link" href="{{base}}pages/services.html" data-nav="services-all">All Services</a>
+      <a class="nav-link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn--primary" href="{{base}}pages/contact.html">Get in touch</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button type="button"
+            class="nav-toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+            aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile navigation panel -->
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
+    <a class="nav-mobile__link" href="{{base}}index.html" data-nav="home">Home</a>
+    <a class="nav-mobile__link" href="{{base}}pages/about.html" data-nav="about">About Us</a>
+
+    <button type="button"
+            class="nav-mobile__toggle"
+            id="mobileServicesToggle"
+            aria-expanded="false"
+            aria-controls="mobileServicesPanel">
+      Services
+      <svg class="nav-caret" width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 9l6 6 6-6"></path>
+      </svg>
+    </button>
+
+    <div class="nav-mobile__panel" id="mobileServicesPanel">
+      <a class="nav-mobile__sublink" href="{{base}}pages/services.html">All Services</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/cloud-services.html">Cloud Services</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/it-infrastructure-management.html">IT Infrastructure Management</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/network-solutions.html">Network Solutions</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/cyber-security.html">Cyber Security Services</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/internet-management.html">Internet Management &amp; Monitoring</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/it-procurement.html">IT Procurement &amp; Hardware Supply</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/it-support-amc.html">IT Support &amp; AMC Services</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/project-implementation.html">Project Implementation Services</a>
+    </div>
+
+    <a class="nav-mobile__link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
+
+    <div class="nav-mobile__cta">
+      <a class="btn btn--primary btn--block" href="{{base}}pages/contact.html">Get in touch</a>
+    </div>
+  </nav>
+</header>

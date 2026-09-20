@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Teleon Networks Pvt Ltd</title>
+  <meta name="description" content="Send an enquiry to Teleon Networks Pvt Ltd about cloud services, IT infrastructure management, networks, cyber security, internet monitoring, procurement, AMC support or project implementation.">
+  <link rel="icon" href="../assets/images/teleon-logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Manrope:wght@500..800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="contact" data-base="../">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+
+    <section class="hero hero--page">
+      <div class="shell">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li><span aria-current="page">Contact Us</span></li>
+          </ol>
+        </nav>
+        <p class="hero__tagline">WE MANAGE IT. YOU GROW IT.</p>
+        <h1>Contact Teleon Networks</h1>
+        <p class="hero__lede">
+          Tell us about your IT environment and the service you are looking for. Include as much detail as
+          you can — sites, users, servers, network or internet links — so we can respond usefully.
+        </p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="shell">
+        <div class="split">
+
+          <div class="reveal">
+            <p class="eyebrow">Send an enquiry</p>
+            <h2>Start the conversation</h2>
+            <p class="lede">
+              Complete the form and choose the service you are interested in. Every field marked with an
+              asterisk is required.
+            </p>
+
+            <form class="form" id="enquiryForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="name" name="name" autocomplete="name"
+                         placeholder="Your full name" required>
+                  <p class="field__error" id="name-error" role="alert"></p>
+                </div>
+
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" autocomplete="organization"
+                         placeholder="Company or organisation">
+                  <p class="field__error" id="company-error" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" autocomplete="email"
+                         placeholder="name@company.com" required>
+                  <p class="field__error" id="email-error" role="alert"></p>
+                </div>
+
+                <div class="field">
+                  <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel"
+                         placeholder="Contact number" required>
+                  <p class="field__error" id="phone-error" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="service">Service required <span class="req" aria-hidden="true">*</span></label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="cloud-services">Cloud Services</option>
+                  <option value="it-infrastructure-management">IT Infrastructure Management</option>
+                  <option value="network-solutions">Network Solutions</option>
+                  <option value="cyber-security">Cyber Security Services</option>
+                  <option value="internet-management">Internet Management &amp; Monitoring</option>
+                  <option value="it-procurement">IT Procurement &amp; Hardware Supply</option>
+                  <option value="it-support-amc">IT Support &amp; AMC Services</option>
+                  <option value="project-implementation">Project Implementation Services</option>
+                </select>
+                <p class="field__error" id="service-error" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="6"
+                          placeholder="Describe your requirement — locations, users, servers, network, internet links or the project you are planning." required></textarea>
+                <p class="field__error" id="message-error" role="alert"></p>
+              </div>
+
+              <div class="form-status form-status--success" id="formStatus" role="status">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span>
+                  <strong>Form checks passed.</strong>
+                  This website is frontend-only, so nothing has been transmitted and no email has been sent.
+                  Connect the form to an email service or backend endpoint to receive enquiries.
+                </span>
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn--primary">Submit enquiry</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="split__media reveal">
+            <div class="panel">
+              <h3>Contact details</h3>
+              <p style="color:rgba(255,255,255,0.72)">
+                Contact information has not been supplied yet. Replace the placeholders below with the
+                company's published details.
+              </p>
+
+              <div class="panel-rows" style="margin-top:1.4rem">
+                <div class="panel-row">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Phone number to be added</span>
+                </div>
+                <div class="panel-row">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
+                  <span>Email address to be added</span>
+                </div>
+                <div class="panel-row">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  <span>Office address to be added</span>
+                </div>
+                <div class="panel-row">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                  <span>Working hours to be added</span>
+                </div>
+              </div>
+
+              <p class="footer-tagline" style="margin-top:1.6rem">WE MANAGE IT. YOU GROW IT.</p>
+            </div>
+
+            <div class="notice" style="margin-top:1.25rem">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01M11 12h1v4h1"></path></svg>
+              <p>
+                Scope, response times and commercial terms are confirmed in the quotation or service
+                agreement for the services selected.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="shell cta-band__inner">
+        <div>
+          <h2>Looking for something specific?</h2>
+          <p class="lede" style="color:rgba(255,255,255,0.78)">
+            Browse the eight service areas to see exactly what each one covers before you get in touch.
+          </p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="services.html">View all services</a>
+          <a class="btn btn--onDark" href="about.html">About Teleon Networks</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <button type="button" class="to-top" id="toTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg>
+  </button>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
