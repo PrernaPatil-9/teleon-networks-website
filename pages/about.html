@@ -20,280 +20,637 @@
 
   <main id="main">
 
-    <section class="hero hero--page">
-      <div class="shell">
-        <nav class="crumbs" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><span aria-current="page">About Us</span></li>
-          </ol>
-        </nav>
-        <p class="hero__tagline">WE MANAGE IT. YOU GROW IT.</p>
-        <h1>About Teleon Networks</h1>
-        <p class="hero__lede">
-          Teleon Networks Pvt Ltd is an IT &amp; Infrastructure Solutions provider. We manage and support
-          business IT infrastructure through proactive monitoring, maintenance, troubleshooting, security,
-          backup and on-site or remote support.
+<!-- ============================================================ -->
+<!-- HERO SECTION – page header with background image             -->
+<!-- ============================================================ -->
+<section class="relative isolate overflow-hidden bg-[#071b3a] py-24 text-white sm:py-28 lg:py-32">
+  <!-- background image -->
+  <div class="absolute inset-0 -z-20 bg-[url('/assets/images/a_b1.webp')] bg-cover bg-center bg-no-repeat" aria-hidden="true"></div>
+  <!-- subtle dark overlay for readability -->
+  <div class="absolute inset-0 -z-10 bg-[#071b3a]/40" aria-hidden="true"></div>
+  <!-- subtle dot pattern overlay -->
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(155,211,255,0.14)_1px,transparent_0)] [background-size:32px_32px]" aria-hidden="true"></div>
+  <!-- decorative blurred shapes -->
+  <div class="pointer-events-none absolute -right-40 -top-32 -z-10 h-[30rem] w-[30rem] rounded-full bg-blue-600/25 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-40 -left-32 -z-10 h-[26rem] w-[26rem] rounded-full bg-sky-500/15 blur-3xl" aria-hidden="true"></div>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <nav class="mb-8 flex items-center gap-2 text-sm text-blue-200/70" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2">
+        <li><a class="transition hover:text-white" href="../index.html">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><span class="text-white" aria-current="page">About Us</span></li>
+      </ol>
+    </nav>
+
+    <!-- <p class="mb-5 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-amber-400 before:h-px before:w-10 before:bg-amber-400">We manage IT. You grow IT.</p> -->
+
+    <!-- <h1 class="max-w-3xl font-['Manrope','Inter',sans-serif] text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+      About Teleon Networks
+    </h1> -->
+
+    <!-- <p class="mt-6 max-w-2xl text-lg leading-8 text-blue-100/80">
+      Teleon Networks Pvt Ltd is an IT &amp; Infrastructure Solutions provider. We manage and support
+      business IT infrastructure through proactive monitoring, maintenance, troubleshooting, security,
+      backup and on-site or remote support.
+    </p> -->
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ABOUT INTRO – compact redesigned company overview            -->
+<!-- ============================================================ -->
+<section class="relative isolate overflow-hidden bg-white py-14 sm:py-16 lg:py-20" aria-labelledby="about-intro-title">
+
+  <!-- decorative layers -->
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(15,23,42,0.05)_1px,transparent_0)] [background-size:22px_22px]" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -right-24 top-0 -z-10 h-72 w-72 rounded-full bg-blue-300/20 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -left-20 bottom-0 -z-10 h-64 w-64 rounded-full bg-amber-200/25 blur-3xl" aria-hidden="true"></div>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+
+    <!-- Header row: eyebrow + headline (left) · CTA (right) -->
+    <div class="grid items-end gap-6 lg:grid-cols-12">
+
+      <div class="lg:col-span-8">
+        <p class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/70 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true"></span>
+          About Teleon Networks
+        </p>
+
+        <h2 id="about-intro-title" class="mt-4 font-['Manrope','Inter',sans-serif] text-[1.75rem] font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.5rem]">
+          We don't just fix IT.
+          <span class="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">We run it for you.</span>
+        </h2>
+
+        <p class="mt-3 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base">
+          Teleon Networks Pvt Ltd is an IT &amp; Infrastructure Solutions provider. From the desktop
+          on a desk to the server in the rack, the network between them and the cloud above —
+          we manage it, monitor it and keep it running.
         </p>
       </div>
-    </section>
 
-    <!-- ================== IT & Infrastructure Solutions ================== -->
-    <section class="band">
-      <div class="shell">
-        <div class="split">
-          <div class="reveal">
-            <p class="eyebrow">IT &amp; Infrastructure Solutions</p>
-            <h2>Complete IT solutions, delivered as one service</h2>
-            <p class="lede">
-              Our work spans the full lifecycle of business IT: designing and installing infrastructure,
-              configuring networks and security, migrating and managing cloud platforms, supplying hardware,
-              and maintaining everything afterwards under support and AMC arrangements.
-            </p>
-            <p class="lede">
-              Services can be taken individually or combined, so a business can start with a single
-              requirement — a network installation, a cloud migration, an AMC — and extend the scope as
-              their infrastructure grows.
-            </p>
-          </div>
-
-          <div class="split__media reveal">
-            <div class="panel">
-              <h3>Service areas</h3>
-              <ul class="feature-list" style="margin-top:1rem">
-                <li style="color:rgba(255,255,255,0.78)">Cloud Services</li>
-                <li style="color:rgba(255,255,255,0.78)">IT Infrastructure Management</li>
-                <li style="color:rgba(255,255,255,0.78)">Network Solutions</li>
-                <li style="color:rgba(255,255,255,0.78)">Cyber Security Services</li>
-                <li style="color:rgba(255,255,255,0.78)">Internet Management &amp; Monitoring</li>
-                <li style="color:rgba(255,255,255,0.78)">IT Procurement &amp; Hardware Supply</li>
-                <li style="color:rgba(255,255,255,0.78)">IT Support &amp; AMC Services</li>
-                <li style="color:rgba(255,255,255,0.78)">Project Implementation Services</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="lg:col-span-4 lg:justify-self-end">
+        <a href="contact.html" class="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900">
+          Send an enquiry
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
-    </section>
 
-    <!-- ========================= What we manage ========================= -->
-    <section class="band band--light">
-      <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow">What we manage</p>
-          <h2>The infrastructure behind daily business</h2>
-          <p>Everything listed here sits within the scope of our management and support services.</p>
-        </div>
+    </div>
 
-        <ul class="taglist reveal">
-          <li>Desktop &amp; Laptop</li>
-          <li>Server</li>
-          <li>Network</li>
-          <li>Firewall</li>
-          <li>Wi-Fi</li>
-          <li>Cloud</li>
-          <li>Backup</li>
-          <li>Security</li>
-          <li>Printer</li>
-          <li>CCTV</li>
-          <li>Monitoring</li>
-          <li>IT Support</li>
-          <li>AMC</li>
-        </ul>
+    <!-- Compact feature band: 4 cards in one row -->
+    <div class="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
 
-        <div class="grid grid--3 reveal" style="margin-top:2.5rem">
-          <article class="card">
-            <h3>End-user IT</h3>
-            <ul class="feature-list">
-              <li>Desktop and laptop management</li>
-              <li>OS installation and configuration</li>
-              <li>Software installation and updates</li>
-              <li>User account and access support</li>
-              <li>Remote and on-site support</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Servers &amp; cloud</h3>
-            <ul class="feature-list">
-              <li>Windows and Linux server management</li>
-              <li>Server health monitoring</li>
-              <li>Cloud server and storage management</li>
-              <li>Microsoft 365 / Google Workspace management</li>
-              <li>Cloud user management</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Network &amp; internet</h3>
-            <ul class="feature-list">
-              <li>Router and switch management</li>
-              <li>LAN/WAN and Wi-Fi management</li>
-              <li>Firewall management</li>
-              <li>Internet link monitoring</li>
-              <li>Network troubleshooting</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Security</h3>
-            <ul class="feature-list">
-              <li>Firewall and endpoint security</li>
-              <li>User access control</li>
-              <li>Password and account policies</li>
-              <li>Security updates</li>
-              <li>Basic security monitoring</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Backup &amp; data</h3>
-            <ul class="feature-list">
-              <li>Data and server backup management</li>
-              <li>Cloud backup</li>
-              <li>Backup monitoring</li>
-              <li>Data restore support</li>
-              <li>Backup health reports</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Peripherals &amp; physical IT</h3>
-            <ul class="feature-list">
-              <li>Printer and scanner management</li>
-              <li>Preventive maintenance</li>
-              <li>CCTV/NVR health monitoring</li>
-              <li>Rack management</li>
-              <li>UPS and basic power infrastructure coordination</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= Service capabilities ======================= -->
-    <section class="band">
-      <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow">Service capabilities</p>
-          <h2>From first survey to ongoing maintenance</h2>
-          <p>Our capabilities cover implementation, management and supply across the IT estate.</p>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="card card--interactive reveal">
-            <h3>Implementation</h3>
-            <p>Site survey, requirement and planning, BOQ, procurement, installation and configuration, testing and commissioning, documentation and handover.</p>
-            <p class="service-card__cta">
-              <a class="textlink card-link" href="services/project-implementation.html">
-                Project Implementation Services
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-              </a>
-            </p>
-          </article>
-
-          <article class="card card--interactive reveal">
-            <h3>Management &amp; monitoring</h3>
-            <p>Server, network, internet link, device health and bandwidth monitoring, with monthly IT health reports and alerting.</p>
-            <p class="service-card__cta">
-              <a class="textlink card-link" href="services/it-infrastructure-management.html">
-                IT Infrastructure Management
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-              </a>
-            </p>
-          </article>
-
-          <article class="card card--interactive reveal">
-            <h3>Support &amp; AMC</h3>
-            <p>Remote and on-site support, preventive maintenance, helpdesk and ticket handling, escalation management and monthly service reports.</p>
-            <p class="service-card__cta">
-              <a class="textlink card-link" href="services/it-support-amc.html">
-                IT Support &amp; AMC Services
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-              </a>
-            </p>
-          </article>
-
-          <article class="card card--interactive reveal">
-            <h3>Cloud</h3>
-            <p>Cloud backup, storage, cloud server and VPS, business email, migration, cloud security and disaster recovery.</p>
-            <p class="service-card__cta">
-              <a class="textlink card-link" href="services/cloud-services.html">
-                Cloud Services
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-              </a>
-            </p>
-          </article>
-
-          <article class="card card--interactive reveal">
-            <h3>Security</h3>
-            <p>Endpoint, network, identity and email security, data protection, security monitoring, vulnerability management and assessments.</p>
-            <p class="service-card__cta">
-              <a class="textlink card-link" href="services/cyber-security.html">
-                Cyber Security Services
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-              </a>
-            </p>
-          </article>
-
-          <article class="card card--interactive reveal">
-            <h3>Procurement</h3>
-            <p>Hardware requirement analysis, product selection, BOQ preparation, vendor coordination, delivery, installation and warranty coordination.</p>
-            <p class="service-card__cta">
-              <a class="textlink card-link" href="services/it-procurement.html">
-                IT Procurement &amp; Hardware Supply
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-              </a>
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================= Management approach ======================= -->
-    <section class="band band--grid-bg">
-      <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow">Management approach</p>
-          <h2>How we look after an IT environment</h2>
-          <p>The same five stages apply whether we manage a single office or several branch locations.</p>
-        </div>
-
-        <dl class="approach reveal">
-          <div class="approach__item">
-            <dt>Assess</dt>
-            <dd>Understand existing infrastructure.</dd>
-          </div>
-          <div class="approach__item">
-            <dt>Manage</dt>
-            <dd>Maintain devices, servers and network.</dd>
-          </div>
-          <div class="approach__item">
-            <dt>Monitor</dt>
-            <dd>Track health, connectivity and performance.</dd>
-          </div>
-          <div class="approach__item">
-            <dt>Secure</dt>
-            <dd>Apply security, access and backup practices.</dd>
-          </div>
-          <div class="approach__item">
-            <dt>Report</dt>
-            <dd>Provide periodic IT health and support reports.</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section class="cta-band">
-      <div class="shell cta-band__inner">
+      <!-- 01 -->
+      <div class="group relative flex items-start gap-3.5 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 ring-1 ring-blue-100 transition group-hover:bg-blue-600 group-hover:text-white group-hover:ring-blue-600">
+          <svg class="h-4.5 w-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        </span>
         <div>
-          <h2>Work with Teleon Networks</h2>
-          <p class="lede" style="color:rgba(255,255,255,0.78)">
-            Share your requirement and we will map it to the right service — management, support,
-            implementation or procurement.
-          </p>
-        </div>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="contact.html">Send an enquiry</a>
-          <a class="btn btn--onDark" href="services.html">View all services</a>
+          <h3 class="font-['Manrope','Inter',sans-serif] text-[15px] font-bold text-slate-900">End-user &amp; devices</h3>
+          <p class="mt-1 text-[13.5px] leading-5 text-slate-600">Desktops, laptops, OS, software and user support.</p>
         </div>
       </div>
+
+      <!-- 02 -->
+      <div class="group relative flex items-start gap-3.5 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100 transition group-hover:bg-emerald-600 group-hover:text-white group-hover:ring-emerald-600">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+        </span>
+        <div>
+          <h3 class="font-['Manrope','Inter',sans-serif] text-[15px] font-bold text-slate-900">Servers &amp; cloud</h3>
+          <p class="mt-1 text-[13.5px] leading-5 text-slate-600">Windows, Linux, M365, Workspace, cloud &amp; VPS.</p>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="group relative flex items-start gap-3.5 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-md">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600 ring-1 ring-amber-100 transition group-hover:bg-amber-500 group-hover:text-white group-hover:ring-amber-500">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.8 16.6M12 11.5l5.2 5.1"/></svg>
+        </span>
+        <div>
+          <h3 class="font-['Manrope','Inter',sans-serif] text-[15px] font-bold text-slate-900">Network &amp; internet</h3>
+          <p class="mt-1 text-[13.5px] leading-5 text-slate-600">Routers, Wi-Fi, firewalls and link monitoring.</p>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="group relative flex items-start gap-3.5 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-rose-300 hover:shadow-md">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-rose-50 text-rose-600 ring-1 ring-rose-100 transition group-hover:bg-rose-600 group-hover:text-white group-hover:ring-rose-600">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <div>
+          <h3 class="font-['Manrope','Inter',sans-serif] text-[15px] font-bold text-slate-900">Security &amp; backup</h3>
+          <p class="mt-1 text-[13.5px] leading-5 text-slate-600">Endpoint, firewall, policies, cloud backup.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Thin mission strip -->
+    <div class="mt-6 flex flex-col items-start gap-4 rounded-xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-start gap-3">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#071b3a] text-amber-300">
+          <svg class="h-4.5 w-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        </span>
+        <p class="text-[14px] leading-6 text-slate-700">
+          <span class="font-semibold text-slate-900">Our mission:</span>
+          manage IT so completely that our clients stop thinking about it.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+        <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>8 service areas</span>
+        <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>24/7 monitoring</span>
+        <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>AMC &amp; support</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ============================================================ -->
+    <!-- MANAGEMENT APPROACH – five-step process on dark background   -->
+    <!-- ============================================================ -->
+    <section class="relative isolate overflow-hidden bg-[#071b3a] py-20 text-white lg:py-28">
+      <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(155,211,255,0.14)_1px,transparent_0)] [background-size:32px_32px]" aria-hidden="true"></div>
+
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="mb-5 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-widest text-amber-400 before:h-px before:w-10 before:bg-amber-400 after:h-px after:w-10 after:bg-amber-400">Management approach</p>
+          <h2 class="font-['Manrope','Inter',sans-serif] text-3xl font-extrabold tracking-tight text-white sm:text-4xl">How we look after an IT environment</h2>          <p class="mt-4 text-lg text-blue-100/80">The same five stages apply whether we manage a single office or several branch locations.</p>
+        </div>
+
+<!-- Infinite marquee carousel for management approach -->
+<div class="relative mt-14 overflow-hidden">
+  <!-- fade edges -->
+  <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#071b3a] to-transparent" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#071b3a] to-transparent" aria-hidden="true"></div>
+
+  <ol class="approach-marquee flex w-max items-stretch gap-6">
+
+    <!-- Set 1 -->
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">01</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Assess</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Understand existing infrastructure.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">02</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Manage</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Maintain devices, servers and network.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">03</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Monitor</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Track health, connectivity and performance.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">04</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Secure</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Apply security, access and backup practices.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">05</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Report</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Provide periodic IT health and support reports.</p>
+    </li>
+
+    <!-- Set 2 (duplicate for seamless loop) -->
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6" aria-hidden="true">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">01</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Assess</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Understand existing infrastructure.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6" aria-hidden="true">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">02</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Manage</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Maintain devices, servers and network.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6" aria-hidden="true">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">03</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Monitor</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Track health, connectivity and performance.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6" aria-hidden="true">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">04</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Secure</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Apply security, access and backup practices.</p>
+    </li>
+
+    <li class="relative flex w-72 flex-col items-start gap-3 rounded-2xl bg-white/5 p-6" aria-hidden="true">
+      <span class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 font-['Manrope','Inter',sans-serif] text-sm font-extrabold text-[#071b3a]">05</span>
+      <h3 class="font-['Manrope','Inter',sans-serif] text-lg font-bold text-white">Report</h3>
+      <p class="text-[15px] leading-6 text-blue-100/75">Provide periodic IT health and support reports.</p>
+    </li>
+
+  </ol>
+</div>
+
+<!-- CSS (add inside a <style> tag or your stylesheet) -->
+<style>
+  .approach-marquee {
+    animation: approach-marquee 35s linear infinite;
+  }
+  .approach-marquee:hover {
+    animation-play-state: paused;
+  }
+  @keyframes approach-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .approach-marquee {
+      animation: none;
+    }
+  }
+</style>
+      </div>
     </section>
+
+<!-- ============================================================ -->
+<!-- WHAT WE MANAGE – tag list + feature cards                    -->
+<!-- ============================================================ -->
+<section class="bg-slate-50 pt-10 pb-20 lg:pt-14 lg:pb-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="mb-5 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-widest text-blue-600 before:h-px before:w-10 before:bg-amber-400 after:h-px after:w-10 after:bg-amber-400">What we manage</p>
+      <h2 class="font-['Manrope','Inter',sans-serif] text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">The infrastructure behind daily business</h2>
+      <p class="mt-4 text-lg text-slate-600">Everything listed here sits within the scope of our management and support services.</p>
+    </div>
+
+<!-- Infinite marquee carousel -->
+<div class="relative mt-10 overflow-hidden">
+  <!-- fade edges -->
+  <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-slate-50 to-transparent" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-slate-50 to-transparent" aria-hidden="true"></div>
+
+  <ul class="marquee-track flex w-max items-center gap-3">
+    <!-- Set 1 -->
+    <li class="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm whitespace-nowrap">Desktop &amp; Laptop</li>
+    <li class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm whitespace-nowrap">Server</li>
+    <li class="rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-700 shadow-sm whitespace-nowrap">Network</li>
+    <li class="rounded-full border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700 shadow-sm whitespace-nowrap">Firewall</li>
+    <li class="rounded-full border border-violet-200 bg-violet-50 px-4 py-2 text-sm font-medium text-violet-700 shadow-sm whitespace-nowrap">Wi-Fi</li>
+    <li class="rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm whitespace-nowrap">Cloud</li>
+    <li class="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm whitespace-nowrap">Backup</li>
+    <li class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm whitespace-nowrap">Security</li>
+    <li class="rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-700 shadow-sm whitespace-nowrap">Printer</li>
+    <li class="rounded-full border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700 shadow-sm whitespace-nowrap">CCTV</li>
+    <li class="rounded-full border border-violet-200 bg-violet-50 px-4 py-2 text-sm font-medium text-violet-700 shadow-sm whitespace-nowrap">Monitoring</li>
+    <li class="rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm whitespace-nowrap">IT Support</li>
+    <li class="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm whitespace-nowrap">AMC</li>
+
+    <!-- Set 2 (duplicate for seamless loop) -->
+    <li class="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm whitespace-nowrap" aria-hidden="true">Desktop &amp; Laptop</li>
+    <li class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm whitespace-nowrap" aria-hidden="true">Server</li>
+    <li class="rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-700 shadow-sm whitespace-nowrap" aria-hidden="true">Network</li>
+    <li class="rounded-full border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700 shadow-sm whitespace-nowrap" aria-hidden="true">Firewall</li>
+    <li class="rounded-full border border-violet-200 bg-violet-50 px-4 py-2 text-sm font-medium text-violet-700 shadow-sm whitespace-nowrap" aria-hidden="true">Wi-Fi</li>
+    <li class="rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm whitespace-nowrap" aria-hidden="true">Cloud</li>
+    <li class="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm whitespace-nowrap" aria-hidden="true">Backup</li>
+    <li class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700 shadow-sm whitespace-nowrap" aria-hidden="true">Security</li>
+    <li class="rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-700 shadow-sm whitespace-nowrap" aria-hidden="true">Printer</li>
+    <li class="rounded-full border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-medium text-rose-700 shadow-sm whitespace-nowrap" aria-hidden="true">CCTV</li>
+    <li class="rounded-full border border-violet-200 bg-violet-50 px-4 py-2 text-sm font-medium text-violet-700 shadow-sm whitespace-nowrap" aria-hidden="true">Monitoring</li>
+    <li class="rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700 shadow-sm whitespace-nowrap" aria-hidden="true">IT Support</li>
+    <li class="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm whitespace-nowrap" aria-hidden="true">AMC</li>
+  </ul>
+</div>
+
+<!-- CSS (add inside a <style> tag or your stylesheet) -->
+<style>
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>
+
+<div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+  <!-- End-user IT -->
+  <article class="rounded-2xl border border-blue-200 bg-blue-50/60 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-blue-900">End-user IT</h3>
+    <ul class="mt-4 space-y-2.5">
+      <li class="flex gap-2.5 text-[15px] leading-6 text-blue-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Desktop and laptop management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-blue-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>OS installation and configuration</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-blue-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Software installation and updates</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-blue-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>User account and access support</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-blue-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Remote and on-site support</span></li>
+    </ul>
+  </article>
+
+  <!-- Servers & cloud -->
+  <article class="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"></rect><rect x="3" y="13" width="18" height="7" rx="2"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-emerald-900">Servers &amp; cloud</h3>
+    <ul class="mt-4 space-y-2.5">
+      <li class="flex gap-2.5 text-[15px] leading-6 text-emerald-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Windows and Linux server management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-emerald-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Server health monitoring</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-emerald-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Cloud server and storage management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-emerald-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Microsoft 365 / Google Workspace management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-emerald-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Cloud user management</span></li>
+    </ul>
+  </article>
+
+  <!-- Network & internet -->
+  <article class="rounded-2xl border border-amber-200 bg-amber-50/60 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"></circle><circle cx="5" cy="19" r="2.5"></circle><circle cx="19" cy="19" r="2.5"></circle><path d="M12 7.5v4M12 11.5 6.8 16.6M12 11.5l5.2 5.1"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-amber-900">Network &amp; internet</h3>
+    <ul class="mt-4 space-y-2.5">
+      <li class="flex gap-2.5 text-[15px] leading-6 text-amber-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Router and switch management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-amber-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>LAN/WAN and Wi-Fi management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-amber-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Firewall management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-amber-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Internet link monitoring</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-amber-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Network troubleshooting</span></li>
+    </ul>
+  </article>
+
+  <!-- Security -->
+  <article class="rounded-2xl border border-rose-200 bg-rose-50/60 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-rose-600">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-rose-900">Security</h3>
+    <ul class="mt-4 space-y-2.5">
+      <li class="flex gap-2.5 text-[15px] leading-6 text-rose-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Firewall and endpoint security</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-rose-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>User access control</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-rose-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Password and account policies</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-rose-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Security updates</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-rose-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Basic security monitoring</span></li>
+    </ul>
+  </article>
+
+  <!-- Backup & data -->
+  <article class="rounded-2xl border border-violet-200 bg-violet-50/60 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-600">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"></path><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-violet-900">Backup &amp; data</h3>
+    <ul class="mt-4 space-y-2.5">
+      <li class="flex gap-2.5 text-[15px] leading-6 text-violet-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-violet-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Data and server backup management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-violet-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-violet-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Cloud backup</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-violet-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-violet-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Backup monitoring</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-violet-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-violet-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Data restore support</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-violet-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-violet-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Backup health reports</span></li>
+    </ul>
+  </article>
+
+  <!-- Peripherals & physical IT -->
+  <article class="rounded-2xl border border-sky-200 bg-sky-50/60 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-600">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="13" height="12" rx="2"></rect><path d="m15 10 7-4v12l-7-4z"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-sky-900">Peripherals &amp; physical IT</h3>
+    <ul class="mt-4 space-y-2.5">
+      <li class="flex gap-2.5 text-[15px] leading-6 text-sky-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Printer and scanner management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-sky-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Preventive maintenance</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-sky-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>CCTV/NVR health monitoring</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-sky-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Rack management</span></li>
+      <li class="flex gap-2.5 text-[15px] leading-6 text-sky-800/80"><svg class="mt-0.5 h-4 w-4 shrink-0 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>UPS and basic power infrastructure coordination</span></li>
+    </ul>
+  </article>
+
+</div>
+  </div>
+</section>
+
+    <!-- ============================================================ -->
+    <!-- SERVICE CAPABILITIES – implementation, management, support  -->
+    <!-- ============================================================ -->
+<!-- <section class="bg-white py-20 lg:py-28"> <div class="mx-auto max-w-7xl px-6 lg:px-10">
+<div class="mx-auto max-w-2xl text-center">
+  <p class="mb-5 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-widest text-blue-600 before:h-px before:w-10 before:bg-amber-400 after:h-px after:w-10 after:bg-amber-400">Service capabilities</p>
+  <h2 class="font-['Manrope','Inter',sans-serif] text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">From first survey to ongoing maintenance</h2>
+  <p class="mt-4 text-lg text-slate-600">Our capabilities cover implementation, management and supply across the IT estate.</p>
+</div>
+
+<div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+  <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"></rect><path d="M9.5 4V3h5v1"></path><path d="m9.5 13 2 2 3.5-3.5"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-slate-900">Implementation</h3>
+    <p class="mt-3 flex-1 text-[15px] leading-6 text-slate-600">Site survey, requirement and planning, BOQ, procurement, installation and configuration, testing and commissioning, documentation and handover.</p>
+    <a href="services/project-implementation.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3">
+      Project Implementation Services <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </article>
+
+  <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"></rect><rect x="3" y="13" width="18" height="7" rx="2"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-slate-900">Management &amp; monitoring</h3>
+    <p class="mt-3 flex-1 text-[15px] leading-6 text-slate-600">Server, network, internet link, device health and bandwidth monitoring, with monthly IT health reports and alerting.</p>
+    <a href="services/it-infrastructure-management.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3">
+      IT Infrastructure Management <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </article>
+
+  <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"></path><rect x="2" y="13" width="5" height="7" rx="2"></rect><rect x="17" y="13" width="5" height="7" rx="2"></rect><path d="M20 20a3 3 0 0 1-3 3h-3"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-slate-900">Support &amp; AMC</h3>
+    <p class="mt-3 flex-1 text-[15px] leading-6 text-slate-600">Remote and on-site support, preventive maintenance, helpdesk and ticket handling, escalation management and monthly service reports.</p>
+    <a href="services/it-support-amc.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3">
+      IT Support &amp; AMC Services <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </article>
+
+  <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.2 9.5 4.5 4.5 0 0 0 6.5 19z"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-slate-900">Cloud</h3>
+    <p class="mt-3 flex-1 text-[15px] leading-6 text-slate-600">Cloud backup, storage, cloud server and VPS, business email, migration, cloud security and disaster recovery.</p>
+    <a href="services/cloud-services.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3">
+      Cloud Services <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </article>
+
+  <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-slate-900">Security</h3>
+    <p class="mt-3 flex-1 text-[15px] leading-6 text-slate-600">Endpoint, network, identity and email security, data protection, security monitoring, vulnerability management and assessments.</p>
+    <a href="services/cyber-security.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3">
+      Cyber Security Services <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </article>
+
+  <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 8-9-5-9 5v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>
+    </div>
+    <h3 class="font-['Manrope','Inter',sans-serif] text-xl font-bold text-slate-900">Procurement</h3>
+    <p class="mt-3 flex-1 text-[15px] leading-6 text-slate-600">Hardware requirement analysis, product selection, BOQ preparation, vendor coordination, delivery, installation and warranty coordination.</p>
+    <a href="services/it-procurement.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition group-hover:gap-3">
+      IT Procurement &amp; Hardware Supply <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </article>
+
+</div>
+
+</div> </section> -->
+
+
+    <!-- ============================================================ -->
+    <!-- CTA BAND – "Work with Teleon Networks"                       -->
+    <!-- ============================================================ -->
+    <!-- ============================================================ -->
+<!-- CTA – "Work with Teleon Networks" (matches home page CTA)    -->
+<!-- ============================================================ -->
+<section class="cta-about py-20 lg:py-24">
+  <style>
+    .cta-about { background: #eef0f5; }
+
+    .cta-about-card {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 24px;
+      border-radius: 18px;
+      background:
+        radial-gradient(45% 70% at 18% 8%, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(40% 60% at 8% 100%, rgba(10, 124, 240, .25) 0%, rgba(10, 124, 240, 0) 70%),
+        radial-gradient(35% 80% at 60% 60%, rgba(30, 144, 255, .22) 0%, rgba(30, 144, 255, 0) 75%),
+        linear-gradient(105deg, #e6f0fb 0%, #f3f8ff 24%, #dbe9fb 46%, #b7d4f5 72%, #8fb8e8 100%);
+      box-shadow: 0 16px 38px rgba(10, 31, 68, .12), 0 2px 6px rgba(10, 31, 68, .05);
+    }
+
+    .cta-about-title {
+      margin: 0;
+      font-family: 'Manrope', 'Inter', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.01em;
+      color: #0a1f44;
+    }
+    .cta-about-title .cta-about-accent { color: #0a7cf0; }
+
+    .cta-about-text {
+      margin: 12px 0 0;
+      max-width: 620px;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      line-height: 1.55;
+      color: #33415c;
+    }
+
+    .cta-about-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .cta-about-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .cta-about-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .cta-about-btn:focus-visible { outline: 3px solid #0a1f44; outline-offset: 4px; }
+
+    .cta-about-btn--primary {
+      color: #fff;
+      background: linear-gradient(135deg, #0a7cf0 0%, #0a1f44 100%);
+      box-shadow: 0 8px 18px rgba(10, 124, 240, .35);
+    }
+    .cta-about-btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(10, 124, 240, .45);
+    }
+
+    .cta-about-btn--outline {
+      color: #0a7cf0;
+      background: transparent;
+      border-color: #0a7cf0;
+    }
+    .cta-about-btn--outline:hover {
+      color: #fff;
+      background: #0a7cf0;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .cta-about-card { padding: 32px 18px; border-radius: 16px; }
+      .cta-about-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+      .cta-about-btn { padding: 11px 22px; font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cta-about-btn { transition: none; }
+      .cta-about-btn:hover { transform: none; }
+    }
+  </style>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="cta-about-card flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <h2 class="cta-about-title">Work with <span class="cta-about-accent">Teleon Networks</span></h2>
+        <p class="cta-about-text">
+          Share your requirement and we will map it to the right service — management, support,
+          implementation or procurement.
+        </p>
+      </div>
+      <div class="cta-about-actions">
+        <a class="cta-about-btn cta-about-btn--primary" href="contact.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          Send an enquiry
+        </a>
+        <a class="cta-about-btn cta-about-btn--outline" href="services.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          View all services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
   </main>
 

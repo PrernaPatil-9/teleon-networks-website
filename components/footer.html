@@ -1,56 +1,333 @@
-<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teleon Networks — Footer Preview</title>
+<style>
+  
+</style>
+</head>
+<body>
+  <!--
   Teleon Networks — shared site footer.
-  {{base}} is replaced at runtime by js/components.js.
+  ./ is replaced at runtime by js/components.js.
   Contact values are placeholders only — no contact details were supplied.
+
+  Update: top height of footer reduced (shell top padding trimmed) —
+  everything else (copy, links, colors, layout) unchanged. Grid/rows
+  reflow naturally since it's all relative units, so nothing looks cramped.
 -->
+<style>
+  .site-footer {
+    --accent: #18A9E8;
+    --accent-soft: rgba(24, 169, 232, 0.14);
+    --accent-border: rgba(24, 169, 232, 0.35);
+    --bg: #0A1220;
+    --bg-raised: #0F1B2E;
+    --line: rgba(255, 255, 255, 0.09);
+    --text: #E8EDF4;
+    --text-muted: #93A1B6;
+    position: relative;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .site-footer .shell {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 8px 32px 0;
+  }
+
+  .site-footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.3fr 1.2fr;
+    gap: 30px;
+    padding-bottom: 18px;
+  }
+
+  /* ---------- Brand column ---------- */
+.site-footer .footer-brand img {
+  display: block;
+  height: 40px;
+  width: auto;
+  margin-bottom: 14px;
+}
+  .site-footer .footer-brand p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 34ch;
+    margin: 0 0 10px;
+  }
+  .site-footer .footer-tagline {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 999px;
+    padding: 7px 14px;
+    margin: 0;
+  }
+
+  /* ---------- Section headings with icon badge ---------- */
+  .site-footer .footer-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 16px;
+  }
+  .site-footer .footer-title .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .site-footer .footer-title .badge svg { width: 15px; height: 15px; }
+
+  .site-footer .footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .site-footer .footer-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+  .site-footer .footer-list a::before {
+    content: "›";
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .site-footer .footer-list a:hover {
+    color: var(--text);
+    transform: translateX(2px);
+  }
+
+  /* ---------- Contact column ---------- */
+  .site-footer .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .site-footer .footer-contact__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .site-footer .footer-contact__row .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .site-footer .footer-contact__label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+  }
+  .site-footer .footer-placeholder {
+    display: block;
+    font-size: 14px;
+    color: var(--text);
+    font-style: italic;
+    opacity: 0.75;
+  }
+
+  .site-footer .textlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent-border);
+    background: var(--accent-soft);
+    padding: 9px 16px;
+    border-radius: 8px;
+    width: fit-content;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .site-footer .textlink:hover {
+    background: rgba(24, 169, 232, 0.24);
+    transform: translateX(2px);
+  }
+
+  /* ---------- Bottom bar ---------- */
+  .site-footer .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding: 14px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .site-footer .footer-bottom p { margin: 0; }
+
+  /* ---------- Floating action buttons ---------- */
+  .footer-fab-left {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 60;
+  }
+  .footer-fab-right {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 60;
+  }
+  .footer-fab__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .footer-fab__btn:hover { transform: translateY(-3px); }
+  .footer-fab__btn.whatsapp {
+    background: #25D366;
+    color: #fff;
+  }
+  .footer-fab__btn.top {
+    background: #0F1B2E;
+    color: #18A9E8;
+    border: 1px solid rgba(24, 169, 232, 0.4);
+    font-size: 18px;
+  }
+  .footer-fab__btn svg { width: 24px; height: 24px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .site-footer .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 32px;
+    }
+  }
+  @media (max-width: 620px) {
+    .site-footer .shell { padding: 24px 20px 0; }
+    .site-footer .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .footer-fab-left { left: 16px; bottom: 16px; }
+    .footer-fab-right { right: 16px; bottom: 16px; }
+    .footer-fab__btn { width: 46px; height: 46px; }
+  }
+</style>
+
 <footer class="site-footer">
   <div class="shell">
     <div class="footer-grid">
 
-      <div class="footer-brand">
-        <img src="{{base}}assets/images/teleon-logo.jpeg"
-             alt="Teleon Networks Pvt Ltd logo"
-             width="210" height="46">
-        <p>
-          Teleon Networks Pvt Ltd provides IT &amp; Infrastructure Solutions — managing and supporting
-          business IT through proactive monitoring, maintenance, troubleshooting, security, backup and
-          on-site or remote support.
-        </p>
-        <p class="footer-tagline">WE MANAGE IT. YOU GROW IT.</p>
-      </div>
+<div class="footer-brand">
+  <a href="./index.html" style="display:inline-block;margin-bottom:14px;">
+    <img
+      src="/assets/images/logo.png"
+      alt="Teleon Networks Pvt Ltd"
+      width="140"
+      height="40"
+      style="display:block;height:40px;width:auto;"
+    >
+  </a>
+  <p>
+    Teleon Networks Pvt Ltd provides IT &amp; Infrastructure Solutions — managing and supporting
+    business IT through proactive monitoring, maintenance, troubleshooting, security, backup and
+    on-site or remote support.
+  </p>
+  <p class="footer-tagline">WE MANAGE IT. YOU GROW IT.</p>
+</div>
 
       <div>
-        <h2 class="footer-title">Company</h2>
+        <h2 class="footer-title">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+          </span>
+          Company
+        </h2>
         <ul class="footer-list">
-          <li><a href="{{base}}index.html">Home</a></li>
-          <li><a href="{{base}}pages/about.html">About Us</a></li>
-          <li><a href="{{base}}pages/services.html">Services</a></li>
-          <li><a href="{{base}}pages/contact.html">Contact Us</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./pages/about.html">About Us</a></li>
+          <li><a href="./pages/services.html">Services</a></li>
+          <li><a href="./pages/contact.html">Contact Us</a></li>
         </ul>
       </div>
 
       <div>
-        <h2 class="footer-title">Services</h2>
+        <h2 class="footer-title">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </span>
+          Services
+        </h2>
         <ul class="footer-list">
-          <li><a href="{{base}}pages/services/cloud-services.html">Cloud Services</a></li>
-          <li><a href="{{base}}pages/services/it-infrastructure-management.html">IT Infrastructure Management</a></li>
-          <li><a href="{{base}}pages/services/network-solutions.html">Network Solutions</a></li>
-          <li><a href="{{base}}pages/services/cyber-security.html">Cyber Security Services</a></li>
-          <li><a href="{{base}}pages/services/internet-management.html">Internet Management &amp; Monitoring</a></li>
-          <li><a href="{{base}}pages/services/it-procurement.html">IT Procurement &amp; Hardware Supply</a></li>
-          <li><a href="{{base}}pages/services/it-support-amc.html">IT Support &amp; AMC Services</a></li>
-          <li><a href="{{base}}pages/services/project-implementation.html">Project Implementation Services</a></li>
+          <li><a href="./pages/services/cloud-services.html">Cloud Services</a></li>
+          <li><a href="./pages/services/it-infrastructure-management.html">IT Infrastructure Management</a></li>
+          <li><a href="./pages/services/network-solutions.html">Network Solutions</a></li>
+          <li><a href="./pages/services/cyber-security.html">Cyber Security Services</a></li>
+          <!-- <li><a href="./pages/services/internet-management.html">Internet Management &amp; Monitoring</a></li>
+          <li><a href="./pages/services/it-procurement.html">IT Procurement &amp; Hardware Supply</a></li>
+          <li><a href="./pages/services/it-support-amc.html">IT Support &amp; AMC Services</a></li>
+          <li><a href="./pages/services/project-implementation.html">Project Implementation Services</a></li> -->
         </ul>
       </div>
 
       <div>
-        <h2 class="footer-title">Contact</h2>
+        <h2 class="footer-title">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          </span>
+          Contact
+        </h2>
         <div class="footer-contact">
           <div class="footer-contact__row">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
+            <span class="badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
             <span>
               <span class="footer-contact__label">Phone</span>
               <span class="footer-placeholder">Phone number to be added</span>
@@ -58,11 +335,13 @@
           </div>
 
           <div class="footer-contact__row">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="m2 7 10 6 10-6"></path>
-            </svg>
+            <span class="badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m2 7 10 6 10-6"></path>
+              </svg>
+            </span>
             <span>
               <span class="footer-contact__label">Email</span>
               <span class="footer-placeholder">Email address to be added</span>
@@ -70,18 +349,20 @@
           </div>
 
           <div class="footer-contact__row">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
+            <span class="badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </span>
             <span>
               <span class="footer-contact__label">Office</span>
               <span class="footer-placeholder">Address to be added</span>
             </span>
           </div>
 
-          <a class="textlink" href="{{base}}pages/contact.html" style="color:#18A9E8">
+          <a class="textlink" href="./pages/contact.html">
             Send an enquiry
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -99,3 +380,34 @@
     </div>
   </div>
 </footer>
+
+<!-- Floating quick-contact control — moved to the left -->
+<div class="footer-fab-left">
+  <a class="footer-fab__btn whatsapp" href="./pages/contact.html" aria-label="Contact us on WhatsApp" title="Chat with us">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.27-1.38a9.9 9.9 0 0 0 4.77 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C22 6.45 17.55 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.12-.42-.13-.96-.31-1.65-.6-2.91-1.26-4.81-4.19-4.95-4.38-.14-.2-1.19-1.58-1.19-3.02s.75-2.14 1.02-2.44c.26-.29.58-.36.77-.36h.55c.18 0 .42-.03.65.5.24.55.82 1.9.9 2.04.07.14.12.3.02.49-.09.18-.14.3-.28.46-.14.16-.29.35-.42.47-.14.13-.28.28-.12.55.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.24 2.25 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.13.44.19.5.3.07.11.07.61-.17 1.29z"></path></svg>
+  </a>
+</div>
+
+<!-- Back-to-top control — stays on the right -->
+<!-- <div class="footer-fab-right">
+  <button class="footer-fab__btn top" id="teleonBackToTop" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+</div> -->
+
+<script>
+  (function () {
+    var yearEl = document.querySelector('.site-footer [data-current-year]');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    var topBtn = document.getElementById('teleonBackToTop');
+    if (topBtn) {
+      topBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

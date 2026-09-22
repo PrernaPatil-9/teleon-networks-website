@@ -11,6 +11,379 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Manrope:wght@500..800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- ============================================================ -->
+  <!-- Scoped styles for this sub-service page                     -->
+  <!-- ============================================================ -->
+  <style>
+    /* ---------- Compact all-in-one info section ---------- */
+    .svc-all { padding-block: clamp(2.75rem, 6vw, 4.5rem); }
+
+    .svc-all__top {
+      display: grid;
+      gap: clamp(1.5rem, 3vw, 2.75rem);
+      align-items: center;
+      grid-template-columns: 1fr;
+      padding-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+      border-bottom: 1px solid #e6ecf3;
+      margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+    }
+    @media (min-width: 900px) {
+      .svc-all__top { grid-template-columns: 1.15fr 0.85fr; }
+    }
+
+    .svc-all__lede {
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.65;
+      margin: 0.6rem 0 0;
+      max-width: 62ch;
+    }
+    .svc-all__lede + .svc-all__lede { margin-top: 0.75rem; }
+
+    .svc-all__media {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0b2a4a;
+      box-shadow: 0 22px 50px -22px rgba(8,43,102,0.42), 0 6px 16px -8px rgba(8,43,102,0.15);
+    }
+    .svc-all__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .svc-all__media--fallback {
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,.14) 0, transparent 55%),
+        radial-gradient(circle at 85% 90%, rgba(24,169,232,.30) 0, transparent 60%),
+        linear-gradient(135deg, #0b2a4a 0%, #14508a 100%);
+    }
+
+    /* ---------- Compact point-cards ---------- */
+    .svc-all__grid {
+      display: grid;
+      gap: clamp(1rem, 1.8vw, 1.35rem);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
+
+    .svc-all__card {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid #dbe6f2;
+      border-radius: 16px;
+      padding: 1.3rem 1.25rem 1.3rem;
+      box-shadow:
+        0 1px 2px rgba(15, 23, 42, .04),
+        0 12px 28px -16px rgba(15, 23, 42, .16),
+        0 24px 48px -30px rgba(15, 23, 42, .10);
+      transition:
+        transform .3s cubic-bezier(.22,.61,.36,1),
+        box-shadow .3s cubic-bezier(.22,.61,.36,1),
+        border-color .3s cubic-bezier(.22,.61,.36,1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .svc-all__card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: var(--card-accent, #0a7cf0);
+      opacity: .85;
+    }
+
+    .svc-all__card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-accent, #0a7cf0);
+      box-shadow:
+        0 1px 2px rgba(15, 23, 42, .05),
+        0 18px 38px -18px var(--card-shadow, rgba(10, 124, 240, .35)),
+        0 32px 60px -30px rgba(15, 23, 42, .14);
+    }
+
+    /* Per-card color themes */
+    .svc-all__card--blue {
+      --card-accent: #0a7cf0;
+      --card-shadow: rgba(10, 124, 240, .35);
+      background: linear-gradient(180deg, #f7fbff 0%, #ffffff 60%);
+    }
+    .svc-all__card--blue .svc-all__icon {
+      background: linear-gradient(135deg, rgba(10,124,240,.14), rgba(24,169,232,.22));
+      color: #0a7cf0;
+    }
+
+    .svc-all__card--cyan {
+      --card-accent: #0aa2c0;
+      --card-shadow: rgba(10, 162, 192, .32);
+      background: linear-gradient(180deg, #f2fbfd 0%, #ffffff 60%);
+    }
+    .svc-all__card--cyan .svc-all__icon {
+      background: linear-gradient(135deg, rgba(10,162,192,.14), rgba(24,200,232,.22));
+      color: #0aa2c0;
+    }
+    .svc-all__card--cyan .svc-all__points li::before { background: #0aa2c0; }
+
+    .svc-all__card--gold {
+      --card-accent: #e0a92b;
+      --card-shadow: rgba(224, 169, 43, .35);
+      background: linear-gradient(180deg, #fffaf0 0%, #ffffff 60%);
+    }
+    .svc-all__card--gold .svc-all__icon {
+      background: linear-gradient(135deg, rgba(224,169,43,.18), rgba(242,182,50,.24));
+      color: #b8860b;
+    }
+    .svc-all__card--gold .svc-all__steps li::before {
+      background: linear-gradient(135deg, #d99a00, #f2b632);
+    }
+
+    .svc-all__card--violet {
+      --card-accent: #7c3aed;
+      --card-shadow: rgba(124, 58, 237, .30);
+      background: linear-gradient(180deg, #f8f5ff 0%, #ffffff 60%);
+    }
+    .svc-all__card--violet .svc-all__icon {
+      background: linear-gradient(135deg, rgba(124,58,237,.14), rgba(168,85,247,.22));
+      color: #7c3aed;
+    }
+    .svc-all__card--violet .svc-all__points li::before { background: #7c3aed; }
+    .svc-all__card--violet .svc-all__chips li {
+      color: #6d28d9;
+      background: #f0e9ff;
+      border-color: #ddd0fb;
+    }
+
+    /* Card head */
+    .svc-all__card-head {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.85rem;
+    }
+    .svc-all__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      flex: none;
+    }
+    .svc-all__icon svg { width: 17px; height: 17px; }
+
+    .svc-all__card-head h3 {
+      margin: 0;
+      font-family: var(--font-display, 'Manrope','Inter',sans-serif);
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0b1a2e;
+      letter-spacing: -0.005em;
+    }
+
+    /* Bullet list */
+    .svc-all__points {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.4rem;
+    }
+    .svc-all__points li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.87rem;
+      line-height: 1.5;
+      color: #475569;
+      margin: 0;
+    }
+    .svc-all__points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #0a7cf0;
+    }
+
+    /* Numbered steps */
+    .svc-all__steps {
+      list-style: none;
+      counter-reset: s;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+    .svc-all__steps li {
+      counter-increment: s;
+      position: relative;
+      padding-left: 1.6rem;
+      font-size: 0.87rem;
+      line-height: 1.5;
+      color: #475569;
+      margin: 0;
+    }
+    .svc-all__steps li::before {
+      content: counter(s);
+      position: absolute;
+      left: 0;
+      top: 0.05em;
+      width: 1.15rem;
+      height: 1.15rem;
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #075FC8, #18A9E8);
+      border-radius: 5px;
+      font-family: var(--font-display, 'Manrope','Inter',sans-serif);
+    }
+    .svc-all__steps b { color: #0b1a2e; font-weight: 700; }
+
+    .svc-all__mini-label {
+      margin: 0.85rem 0 0.45rem;
+      font-family: var(--font-display, 'Manrope','Inter',sans-serif);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+    .svc-all__mini-label:first-of-type { margin-top: 0; }
+
+    /* Chips */
+    .svc-all__chips {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .svc-all__chips li {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #075FC8;
+      background: #eaf4ff;
+      border: 1px solid #d3e5fb;
+      border-radius: 999px;
+      padding: 0.28rem 0.65rem;
+      margin: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .svc-all__card { transition: none; }
+      .svc-all__card:hover { transform: none; }
+    }
+  </style>
+
+  <!-- ============================================================ -->
+  <!-- CTA styles                                                   -->
+  <!-- ============================================================ -->
+  <style>
+    .cta2 { padding: 28px 0; background: #eef0f5; }
+
+    .cta2-card {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 24px;
+      text-align: center;
+      border-radius: 18px;
+      background:
+        radial-gradient(45% 70% at 18% 8%, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(40% 60% at 8% 100%, rgba(10, 124, 240, .25) 0%, rgba(10, 124, 240, 0) 70%),
+        radial-gradient(35% 80% at 60% 60%, rgba(30, 144, 255, .22) 0%, rgba(30, 144, 255, 0) 75%),
+        linear-gradient(105deg, #e6f0fb 0%, #f3f8ff 24%, #dbe9fb 46%, #b7d4f5 72%, #8fb8e8 100%);
+      box-shadow: 0 16px 38px rgba(10, 31, 68, .12), 0 2px 6px rgba(10, 31, 68, .05);
+    }
+
+    .cta2-title {
+      margin: 0;
+      font-family: 'Manrope', 'Inter', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.01em;
+      color: #0a1f44;
+    }
+    .cta2-title .cta2-accent { color: #0a7cf0; }
+
+    .cta2-text {
+      margin: 12px auto 0;
+      max-width: 620px;
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      line-height: 1.55;
+      color: #33415c;
+    }
+
+    .cta2-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .cta2-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .cta2-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .cta2-btn:focus-visible { outline: 3px solid #0a1f44; outline-offset: 4px; }
+
+    .cta2-btn--primary {
+      color: #fff;
+      background: linear-gradient(135deg, #0a7cf0 0%, #0a1f44 100%);
+      box-shadow: 0 8px 18px rgba(10, 124, 240, .35);
+    }
+    .cta2-btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(10, 124, 240, .45);
+    }
+
+    .cta2-btn--outline {
+      color: #0a7cf0;
+      background: transparent;
+      border-color: #0a7cf0;
+    }
+    .cta2-btn--outline:hover {
+      color: #fff;
+      background: #0a7cf0;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .cta2 { padding: 20px 0; }
+      .cta2-card { padding: 32px 18px; border-radius: 16px; }
+      .cta2-actions { flex-direction: column; align-items: stretch; gap: 12px; max-width: 280px; margin-left: auto; margin-right: auto; }
+      .cta2-btn { padding: 11px 22px; font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cta2-btn { transition: none; }
+      .cta2-btn:hover { transform: none; }
+    }
+  </style>
 </head>
 <body data-page="services" data-base="../../">
 
@@ -20,248 +393,210 @@
 
   <main id="main">
 
-    <section class="hero hero--page">
-      <div class="shell">
-        <nav class="crumbs" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../services.html">Services</a></li>
-            <li><span aria-current="page">IT Support &amp; AMC Services</span></li>
-          </ol>
-        </nav>
-        <p class="hero__tagline">WE MANAGE IT. YOU GROW IT.</p>
-        <h1>IT Support &amp; AMC Services</h1>
-        <p class="hero__lede">Reliable IT support, maintenance and managed services.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="../contact.html">Enquire about this service</a>
-          <a class="btn btn--onDark" href="../services.html">All services</a>
+    <!-- ============================================================ -->
+    <!-- SECTION 1 — HERO with background image (Tailwind only)       -->
+    <!-- ============================================================ -->
+    <section class="relative isolate overflow-hidden flex items-center min-h-[440px] sm:min-h-[500px] lg:min-h-[560px] py-16 sm:py-20 lg:py-24">
+
+      <div class="absolute inset-0 -z-20 bg-[url('/assets/images/s7_b.png')] bg-cover bg-center bg-no-repeat scale-[1.02]" aria-hidden="true"></div>
+
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#03080f]/75 via-[#03080f]/50 to-[#03080f]/25" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(10,124,240,0.15)_0%,transparent_55%)]" aria-hidden="true"></div>
+
+      <div class="relative z-10 w-full">
+        <div class="mx-auto max-w-7xl px-6 lg:px-10">
+
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex flex-wrap items-center gap-2 text-sm text-white/70">
+              <li><a class="transition hover:text-white" href="../../index.html">Home</a></li>
+              <li aria-hidden="true" class="text-white/40">/</li>
+              <li><a class="transition hover:text-white" href="../services.html">Services</a></li>
+              <li aria-hidden="true" class="text-white/40">/</li>
+              <li><span class="text-[#18A9E8]" aria-current="page">IT Support &amp; AMC Services</span></li>
+            </ol>
+          </nav>
+
+          <p class="text-sm sm:text-base font-extrabold tracking-widest uppercase bg-gradient-to-r from-white to-[#18A9E8] bg-clip-text text-transparent mb-3">
+            WE MANAGE IT. YOU GROW IT.
+          </p>
+
+          <h1 class="font-['Manrope','Inter',sans-serif] text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-[#18A9E8] max-w-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
+            IT Support &amp; AMC Services
+          </h1>
+
+          <p class="mt-5 max-w-2xl text-base sm:text-lg leading-8 text-white/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]">
+            Reliable IT support, maintenance and managed services — remote and on-site support,
+            preventive maintenance, helpdesk and AMC for business IT infrastructure.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="../contact.html"
+               class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#075FC8] via-[#087FEA] to-[#18A9E8] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:shadow-xl hover:shadow-blue-600/40">
+              Enquire about this service
+            </a>
+            <a href="../services.html"
+               class="inline-flex items-center gap-2 rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20">
+              All services
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="band">
+    <!-- ============================================================ -->
+    <!-- SECTION 2 — COMPACT INFO (everything in one view)            -->
+    <!-- ============================================================ -->
+    <section class="band svc-all">
       <div class="shell">
-        <div class="split">
-          <div class="reveal">
+
+        <!-- Top row: overview + larger image -->
+        <div class="svc-all__top">
+          <div class="svc-all__text reveal">
             <p class="eyebrow">Service overview</p>
             <h2>Support that covers the whole IT environment</h2>
-            <p class="lede">Remote and on-site IT support, preventive maintenance and AMC services for business IT infrastructure.</p>
-            <ul class="taglist" style="margin-top:1.4rem"><li>Desktop</li><li>Laptop</li><li>Server</li><li>Network</li><li>Wi-Fi</li><li>Printer</li><li>CCTV</li><li>Firewall</li><li>Backup</li><li>Cloud</li><li>Email</li><li>Security</li><li>Remote &amp; On-site Support</li><li>Preventive Maintenance</li></ul>
+            <p class="svc-all__lede">
+              Remote and on-site IT support, preventive maintenance and AMC services for business
+              IT infrastructure — from desktops, laptops and printers to network, server, CCTV,
+              backup, cloud and email.
+            </p>
+            <p class="svc-all__lede">
+              Support is delivered through a helpdesk and on-site engineer visits, with scheduled
+              preventive maintenance, monitoring of health and backups, escalation management
+              and monthly service reports.
+            </p>
+            <p class="svc-all__lede">
+              AMC scope is set per selected services — spare parts, consumables and major
+              replacements can be charged separately unless specifically included in the
+              quotation / SLA.
+            </p>
           </div>
-          <div class="split__media reveal">
-            <div class="card" style="border-color:rgba(8,127,234,0.35)">
-              <div class="card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"></path><rect x="2" y="13" width="5" height="7" rx="2"></rect><rect x="17" y="13" width="5" height="7" rx="2"></rect><path d="M20 20a3 3 0 0 1-3 3h-3"></path></svg>
-              </div>
-              <h3>Support at a glance</h3>
-              <ul class="feature-list">
-                <li>Desktop, laptop and printer support</li>
-                <li>Network, server and CCTV support</li>
-                <li>Backup, data and security support</li>
-                <li>Cloud and business email support</li>
-                <li>Scheduled preventive maintenance</li>
-                <li>Helpdesk, on-site visits and monthly reports</li>
-              </ul>
+
+          <div class="svc-all__media reveal">
+            <img src="/assets/images/s7.png" alt=""
+                 loading="lazy" decoding="async"
+                 onerror="this.style.display='none';this.parentElement.classList.add('svc-all__media--fallback')">
+          </div>
+        </div>
+
+        <!-- Points grid: 4 compact point-cards in one row -->
+        <div class="svc-all__grid">
+
+          <!-- What it covers -->
+          <div class="svc-all__card svc-all__card--blue reveal">
+            <div class="svc-all__card-head">
+              <span class="svc-all__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2" y="13" width="5" height="7" rx="2"/><rect x="17" y="13" width="5" height="7" rx="2"/><path d="M20 20a3 3 0 0 1-3 3h-3"/></svg>
+              </span>
+              <h3>What it covers</h3>
             </div>
+            <ul class="svc-all__points">
+              <li>Desktop, laptop &amp; printer support</li>
+              <li>Network, server &amp; CCTV support</li>
+              <li>Backup, data &amp; security support</li>
+              <li>Cloud &amp; business email support</li>
+              <li>Scheduled preventive maintenance</li>
+              <li>Helpdesk, on-site visits &amp; monthly reports</li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="band band--light">
-      <div class="shell">
-        <div class="section-head reveal">
-        <p class="eyebrow">Support capabilities</p>
-        <h2>Ten areas of IT support</h2>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">01</span>
-          <h3>Desktop &amp; Laptop Support</h3>
-          <ul class="feature-list">
-          <li>Hardware troubleshooting</li>
-          <li>Windows installation &amp; configuration</li>
-          <li>Software installation &amp; updates</li>
-          <li>Driver installation</li>
-          <li>Performance troubleshooting</li>
-          <li>User-level IT support</li>
-          <li>Remote &amp; On-site support</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">02</span>
-          <h3>Printer Support</h3>
-          <ul class="feature-list">
-          <li>Printer installation &amp; configuration</li>
-          <li>Printing/scanning issues</li>
-          <li>Network printer setup</li>
-          <li>Printer troubleshooting</li>
-          <li>Preventive cleaning &amp; maintenance</li>
-          <li>Consumables coordination</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">03</span>
-          <h3>Network Support</h3>
-          <ul class="feature-list">
-          <li>LAN/Wi-Fi troubleshooting</li>
-          <li>Router &amp; Switch configuration</li>
-          <li>Internet connectivity issues</li>
-          <li>IP/DHCP issues</li>
-          <li>Network performance troubleshooting</li>
-          <li>Basic firewall support</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">04</span>
-          <h3>Server Support</h3>
-          <ul class="feature-list">
-          <li>Windows/Linux server support</li>
-          <li>Server health checking</li>
-          <li>User &amp; permission management</li>
-          <li>Storage monitoring</li>
-          <li>Server updates</li>
-          <li>Backup monitoring</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">05</span>
-          <h3>CCTV Support</h3>
-          <ul class="feature-list">
-          <li>Camera health checking</li>
-          <li>NVR/DVR support</li>
-          <li>Recording/playback issues</li>
-          <li>Remote viewing support</li>
-          <li>CCTV network troubleshooting</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">06</span>
-          <h3>Backup &amp; Data Support</h3>
-          <ul class="feature-list">
-          <li>Data backup configuration</li>
-          <li>Backup monitoring</li>
-          <li>Cloud backup support</li>
-          <li>Data restore assistance</li>
-          <li>Backup health checks</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">07</span>
-          <h3>IT Security Support</h3>
-          <ul class="feature-list">
-          <li>Antivirus/endpoint security</li>
-          <li>Security updates</li>
-          <li>Basic firewall support</li>
-          <li>MFA setup</li>
-          <li>User access management</li>
-          <li>Basic security checks</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">08</span>
-          <h3>Cloud &amp; Email Support</h3>
-          <ul class="feature-list">
-          <li>Microsoft 365 / Google Workspace support</li>
-          <li>Business email configuration</li>
-          <li>User management</li>
-          <li>Email troubleshooting</li>
-          <li>Cloud storage support</li>
-          <li>Cloud backup support</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">09</span>
-          <h3>Preventive Maintenance</h3>
-          <ul class="feature-list">
-          <li>Regular IT health checks</li>
-          <li>Hardware inspection</li>
-          <li>Network inspection</li>
-          <li>Software/update checks</li>
-          <li>Backup verification</li>
-          <li>IT asset status reporting</li>
-          </ul>
-          </article>
-          <article class="card card--interactive reveal">
-          <span class="service-card__num">10</span>
-          <h3>Helpdesk &amp; On-site Support</h3>
-          <ul class="feature-list">
-          <li>User complaint/ticket handling</li>
-          <li>Remote support</li>
-          <li>On-site engineer visits</li>
-          <li>Troubleshooting</li>
-          <li>Escalation management</li>
-          <li>Monthly service reports</li>
-          </ul>
-          </article>
+          <!-- Capabilities -->
+          <div class="svc-all__card svc-all__card--cyan reveal">
+            <div class="svc-all__card-head">
+              <span class="svc-all__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+              </span>
+              <h3>Capabilities</h3>
+            </div>
+            <ul class="svc-all__points">
+              <li>Desktop &amp; laptop support</li>
+              <li>Printer support</li>
+              <li>Network support (LAN/Wi-Fi, router, switch)</li>
+              <li>Server support (Windows / Linux)</li>
+              <li>CCTV support (NVR/DVR, remote viewing)</li>
+              <li>Backup &amp; data support</li>
+              <li>IT security support</li>
+              <li>Cloud &amp; email support</li>
+              <li>Preventive maintenance</li>
+              <li>Helpdesk &amp; on-site support</li>
+            </ul>
           </div>
-      </div>
-    </section>
 
-    <section class="band">
-      <div class="shell">
-        <div class="section-head reveal">
-        <p class="eyebrow">AMC service approach</p>
-        <h2>How an AMC works with us</h2>
+          <!-- Process -->
+          <div class="svc-all__card svc-all__card--gold reveal">
+            <div class="svc-all__card-head">
+              <span class="svc-all__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+              </span>
+              <h3>How we work</h3>
+            </div>
+            <ol class="svc-all__steps">
+              <li><b>Support</b> — remote &amp; on-site assistance.</li>
+              <li><b>Maintenance</b> — scheduled preventive maintenance.</li>
+              <li><b>Monitoring</b> — basic health and backup checks.</li>
+              <li><b>Reporting</b> — service / issue reports as agreed.</li>
+              <li><b>Scope</b> — services covered as per selected AMC scope.</li>
+            </ol>
+          </div>
+
+          <!-- Business model + audience -->
+          <div class="svc-all__card svc-all__card--violet reveal">
+            <div class="svc-all__card-head">
+              <span class="svc-all__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21 8-9-5-9 5v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
+              </span>
+              <h3>Charging &amp; audience</h3>
+            </div>
+            <p class="svc-all__mini-label">Charged as</p>
+            <ul class="svc-all__points">
+              <li>Annual Maintenance Contract (AMC)</li>
+              <li>Per-device or per-user basis</li>
+              <li>Remote &amp; on-site support options</li>
+            </ul>
+            <p class="svc-all__mini-label">Ideal for</p>
+            <ul class="svc-all__chips">
+              <li>SMEs</li><li>Corporate</li><li>Branches</li>
+              <li>Professional firms</li><li>Education</li>
+            </ul>
+          </div>
+
         </div>
 
-        <dl class="approach reveal">
-          <div class="approach__item"><dt>Support</dt><dd>Remote &amp; On-site assistance.</dd></div>
-          <div class="approach__item"><dt>Maintenance</dt><dd>Scheduled preventive maintenance.</dd></div>
-          <div class="approach__item"><dt>Monitoring</dt><dd>Basic health and backup checks.</dd></div>
-          <div class="approach__item"><dt>Reporting</dt><dd>Service / issue reports as agreed.</dd></div>
-          <div class="approach__item"><dt>Scope</dt><dd>Services covered as per selected AMC scope.</dd></div>
-          </dl>
-      </div>
-    </section>
-
-    <section class="band band--tight band--light">
-      <div class="shell">
-        <div class="notice reveal">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01M11 12h1v4h1"></path></svg>
-          <p>
-          <strong>Recommended AMC scope</strong>
-          AMC Scope &ndash; As per selected services. Include only the services selected by the client in the quotation/SLA. Spare parts, consumables and major replacements can be charged separately unless specifically included.
-          </p></div>
-      </div>
-    </section>
-
-    <section class="band band--light">
-      <div class="shell">
-        <div class="section-head reveal">
-        <p class="eyebrow">Coverage</p>
-        <h2>Systems we support</h2>
+        <!-- Recommended AMC scope note -->
+        <div class="reveal mt-6 flex items-start gap-3 rounded-xl border border-[#dbe6f2] border-l-[3px] border-l-[#0a7cf0] bg-[#f4f8fd] px-5 py-4 text-[0.9rem] leading-relaxed text-[#334155] sm:mt-8">
+          <svg class="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#0a7cf0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 8h.01M11 12h1v4h1"/>
+          </svg>
+          <p class="m-0">
+            <strong class="font-bold text-[#0b1a2e]">Recommended AMC scope</strong> — AMC Scope as per selected services. Include only the services selected by the client in the quotation / SLA. Spare parts, consumables and major replacements can be charged separately unless specifically included.
+          </p>
         </div>
 
-        <ul class="taglist reveal">
-          <li>Desktop</li>
-          <li>Laptop</li>
-          <li>Server</li>
-          <li>Network</li>
-          <li>Wi-Fi</li>
-          <li>Printer</li>
-          <li>CCTV</li>
-          <li>Firewall</li>
-          <li>Backup</li>
-          <li>Cloud</li>
-          <li>Email</li>
-          <li>Security</li>
-          <li>Remote &amp; On-site Support</li>
-          <li>Preventive Maintenance</li>
-          </ul>
       </div>
     </section>
 
-    <section class="cta-band">
-      <div class="shell cta-band__inner">
-        <div>
-          <h2>Looking for an AMC partner?</h2>
-          <p class="lede" style="color:rgba(255,255,255,0.78)">Tell us which systems you want covered and we will scope the support, maintenance, monitoring and reporting.</p>
-        </div>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="../contact.html">Send an enquiry</a>
-          <a class="btn btn--onDark" href="../services.html">View all services</a>
+    <!-- ============================================================ -->
+    <!-- SECTION 3 — CTA (matches home page CTA)                      -->
+    <!-- ============================================================ -->
+    <section class="cta2">
+      <div class="shell">
+        <div class="cta2-card">
+          <h2 class="cta2-title">Looking for an <span class="cta2-accent">AMC partner</span>?</h2>
+          <p class="cta2-text">
+            Tell us which systems you want covered and we will scope the support, maintenance,
+            monitoring and reporting — from a single office to a multi-site environment.
+          </p>
+          <div class="cta2-actions">
+            <a class="cta2-btn cta2-btn--primary" href="../contact.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              Send an enquiry
+            </a>
+            <a class="cta2-btn cta2-btn--outline" href="../services.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+              View all services
+            </a>
+          </div>
         </div>
       </div>
     </section>

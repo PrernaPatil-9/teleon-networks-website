@@ -17,83 +17,105 @@
       <a class="nav-link" href="{{base}}index.html" data-nav="home">Home</a>
       <a class="nav-link" href="{{base}}pages/about.html" data-nav="about">About Us</a>
 
-      <div class="nav-item" data-dropdown>
-        <button type="button"
-                class="nav-link"
-                id="servicesTrigger"
-                data-dropdown-trigger
-                aria-expanded="false"
-                aria-controls="servicesDropdown"
-                data-nav="services">
-          Services
-          <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-               stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 9l6 6 6-6"></path>
-          </svg>
-        </button>
+<div class="relative inline-flex items-center group" data-dropdown>
 
-        <div class="dropdown" id="servicesDropdown" role="menu" aria-labelledby="servicesTrigger">
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/cloud-services.html">
-            <span class="dropdown__num">01</span>
-            <span>
-              <span class="dropdown__title">Cloud Services</span>
-              <span class="dropdown__desc">Backup, storage, cloud server, email and migration</span>
-            </span>
-          </a>
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/it-infrastructure-management.html">
-            <span class="dropdown__num">02</span>
-            <span>
-              <span class="dropdown__title">IT Infrastructure Management</span>
-              <span class="dropdown__desc">Monitoring, maintenance, security and support</span>
-            </span>
-          </a>
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/network-solutions.html">
-            <span class="dropdown__num">03</span>
-            <span>
-              <span class="dropdown__title">Network Solutions</span>
-              <span class="dropdown__desc">LAN/WAN, Wi-Fi, router, switch and firewall</span>
-            </span>
-          </a>
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/cyber-security.html">
-            <span class="dropdown__num">04</span>
-            <span>
-              <span class="dropdown__title">Cyber Security Services</span>
-              <span class="dropdown__desc">Endpoint, network, identity and email security</span>
-            </span>
-          </a>
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/internet-management.html">
-            <span class="dropdown__num">05</span>
-            <span>
-              <span class="dropdown__title">Internet Management &amp; Monitoring</span>
-              <span class="dropdown__desc">Leased line, WAN and bandwidth monitoring</span>
-            </span>
-          </a>
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/it-procurement.html">
-            <span class="dropdown__num">06</span>
-            <span>
-              <span class="dropdown__title">IT Procurement &amp; Hardware Supply</span>
-              <span class="dropdown__desc">Requirement analysis, BOQ, supply and delivery</span>
-            </span>
-          </a>
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/it-support-amc.html">
-            <span class="dropdown__num">07</span>
-            <span>
-              <span class="dropdown__title">IT Support &amp; AMC Services</span>
-              <span class="dropdown__desc">Remote and on-site support with AMC</span>
-            </span>
-          </a>
-          <a class="dropdown__link" role="menuitem" href="{{base}}pages/services/project-implementation.html">
-            <span class="dropdown__num">08</span>
-            <span>
-              <span class="dropdown__title">Project Implementation Services</span>
-              <span class="dropdown__desc">Survey, installation, testing and handover</span>
-            </span>
-          </a>
-        </div>
-      </div>
+  <!-- "Services" — navigates to All Services -->
+  <a
+    href="{{base}}pages/services.html"
+    data-nav="services-all"
+    class="inline-flex items-center rounded-l-md py-2 pl-3 pr-1.5 text-sm font-semibold text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8]">
+    Services
+  </a>
 
-      <a class="nav-link" href="{{base}}pages/services.html" data-nav="services-all">All Services</a>
+  <!-- Caret — toggles the dropdown -->
+  <button
+    type="button"
+    id="servicesTrigger"
+    data-dropdown-trigger
+    aria-expanded="false"
+    aria-controls="servicesDropdown"
+    aria-label="Open services menu"
+    class="inline-flex items-center justify-center rounded-r-md py-2 pl-1 pr-2.5 text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087FEA] focus-visible:ring-offset-2">
+    <svg class="h-3 w-3 transition-transform duration-200 group-[.is-open]:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </button>
+
+  <!-- Dropdown panel -->
+  <div id="servicesDropdown" role="menu" aria-labelledby="servicesTrigger"
+       class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(620px,calc(100vw-3rem))] -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
+
+    <div class="grid grid-cols-2 gap-1">
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cloud-services.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">01</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Cloud Services</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Backup, storage, cloud server, email and migration</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-infrastructure-management.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">02</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Infrastructure Management</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Monitoring, maintenance, security and support</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/network-solutions.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">03</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Network Solutions</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">LAN/WAN, Wi-Fi, router, switch and firewall</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cyber-security.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">04</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Cyber Security Services</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Endpoint, network, identity and email security</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/internet-management.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">05</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Internet Management &amp; Monitoring</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Leased line, WAN and bandwidth monitoring</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-procurement.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">06</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Procurement &amp; Hardware Supply</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Requirement analysis, BOQ, supply and delivery</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-support-amc.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">07</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Support &amp; AMC Services</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Remote and on-site support with AMC</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/project-implementation.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">08</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Project Implementation Services</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Survey, installation, testing and handover</span>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+      <!-- <a class="nav-link" href="{{base}}pages/services.html" data-nav="services-all">All Services</a> -->
       <a class="nav-link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
     </nav>
 

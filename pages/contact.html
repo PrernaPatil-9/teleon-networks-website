@@ -11,6 +11,197 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Manrope:wght@500..800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../css/style.css">
+
+  <!-- ============================================================ -->
+  <!-- Scoped styles for the contact page                          -->
+  <!-- ============================================================ -->
+  <style>
+    /* ---------- Form field styles (kept from site-wide set) ---------- */
+    .c-form { display: grid; gap: 1.1rem; }
+    .c-form__grid {
+      display: grid;
+      gap: 1.1rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
+    .c-field { display: grid; gap: 0.4rem; min-width: 0; }
+    .c-field label {
+      font-family: var(--font-display, 'Manrope','Inter',sans-serif);
+      font-size: 0.85rem;
+      font-weight: 650;
+      color: #0b1a2e;
+    }
+    .c-field .req { color: #0a7cf0; }
+
+    .c-field input,
+    .c-field select,
+    .c-field textarea {
+      width: 100%;
+      max-width: 100%;
+      font-family: var(--font-body, 'Inter', sans-serif);
+      font-size: 0.95rem;
+      color: #162033;
+      background: #ffffff;
+      border: 1px solid #dbe6f2;
+      border-radius: 10px;
+      padding: 0.8rem 0.95rem;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .c-field textarea { resize: vertical; min-height: 130px; }
+    .c-field select { appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      background-size: 14px;
+      padding-right: 2.4rem;
+    }
+    .c-field input::placeholder,
+    .c-field textarea::placeholder { color: #9AA8BC; }
+
+    .c-field input:focus,
+    .c-field select:focus,
+    .c-field textarea:focus {
+      outline: none;
+      border-color: #087FEA;
+      box-shadow: 0 0 0 3px rgba(8, 127, 234, .15);
+    }
+
+    .c-field.has-error input,
+    .c-field.has-error select,
+    .c-field.has-error textarea { border-color: #D64545; }
+    .c-field.has-error input:focus,
+    .c-field.has-error select:focus,
+    .c-field.has-error textarea:focus { box-shadow: 0 0 0 3px rgba(214, 69, 69, .15); }
+
+    .c-field__error {
+      font-size: 0.8rem;
+      color: #C23232;
+      min-height: 1rem;
+      display: none;
+    }
+    .c-field.has-error .c-field__error { display: block; }
+
+    .c-status {
+      display: none;
+      gap: 0.75rem;
+      align-items: flex-start;
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      font-size: 0.9rem;
+      border: 1px solid;
+    }
+    .c-status.is-visible { display: flex; }
+    .c-status--success {
+      background: #ECFDF5;
+      border-color: #A7F3D0;
+      color: #065F46;
+    }
+    .c-status--success strong { color: #064E3B; display: block; margin-bottom: 0.2rem; }
+    .c-status svg { flex: none; margin-top: 0.15rem; }
+  </style>
+
+  <!-- ============================================================ -->
+  <!-- CTA styles (matches home CTA card)                           -->
+  <!-- ============================================================ -->
+  <style>
+    .cta2 { padding: 28px 0; background: #eef0f5; }
+
+    .cta2-card {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 24px;
+      text-align: center;
+      border-radius: 18px;
+      background:
+        radial-gradient(45% 70% at 18% 8%, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(40% 60% at 8% 100%, rgba(10, 124, 240, .25) 0%, rgba(10, 124, 240, 0) 70%),
+        radial-gradient(35% 80% at 60% 60%, rgba(30, 144, 255, .22) 0%, rgba(30, 144, 255, 0) 75%),
+        linear-gradient(105deg, #e6f0fb 0%, #f3f8ff 24%, #dbe9fb 46%, #b7d4f5 72%, #8fb8e8 100%);
+      box-shadow: 0 16px 38px rgba(10, 31, 68, .12), 0 2px 6px rgba(10, 31, 68, .05);
+    }
+
+    .cta2-title {
+      margin: 0;
+      font-family: 'Manrope', 'Inter', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.01em;
+      color: #0a1f44;
+    }
+    .cta2-title .cta2-accent { color: #0a7cf0; }
+
+    .cta2-text {
+      margin: 12px auto 0;
+      max-width: 620px;
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      line-height: 1.55;
+      color: #33415c;
+    }
+
+    .cta2-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .cta2-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .cta2-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .cta2-btn:focus-visible { outline: 3px solid #0a1f44; outline-offset: 4px; }
+
+    .cta2-btn--primary {
+      color: #fff;
+      background: linear-gradient(135deg, #0a7cf0 0%, #0a1f44 100%);
+      box-shadow: 0 8px 18px rgba(10, 124, 240, .35);
+    }
+    .cta2-btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(10, 124, 240, .45);
+    }
+
+    .cta2-btn--outline {
+      color: #0a7cf0;
+      background: transparent;
+      border-color: #0a7cf0;
+    }
+    .cta2-btn--outline:hover {
+      color: #fff;
+      background: #0a7cf0;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .cta2 { padding: 20px 0; }
+      .cta2-card { padding: 32px 18px; border-radius: 16px; }
+      .cta2-actions { flex-direction: column; align-items: stretch; gap: 12px; max-width: 280px; margin-left: auto; margin-right: auto; }
+      .cta2-btn { padding: 11px 22px; font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cta2-btn { transition: none; }
+      .cta2-btn:hover { transform: none; }
+    }
+  </style>
 </head>
 <body data-page="contact" data-base="../">
 
@@ -20,69 +211,102 @@
 
   <main id="main">
 
-    <section class="hero hero--page">
-      <div class="shell">
-        <nav class="crumbs" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><span aria-current="page">Contact Us</span></li>
-          </ol>
-        </nav>
-        <p class="hero__tagline">WE MANAGE IT. YOU GROW IT.</p>
-        <h1>Contact Teleon Networks</h1>
-        <p class="hero__lede">
-          Tell us about your IT environment and the service you are looking for. Include as much detail as
-          you can — sites, users, servers, network or internet links — so we can respond usefully.
-        </p>
+    <!-- ============================================================ -->
+    <!-- SECTION 1 — HERO with background image (Tailwind only)       -->
+    <!-- ============================================================ -->
+    <section class="relative isolate overflow-hidden flex items-center min-h-[360px] sm:min-h-[420px] lg:min-h-[460px] py-16 sm:py-20 lg:py-24">
+
+      <div class="absolute inset-0 -z-20 bg-[url('/assets/images/c_b1.jpg')] bg-cover bg-center bg-no-repeat scale-[1.02]" aria-hidden="true"></div>
+
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#03080f]/80 via-[#03080f]/55 to-[#03080f]/30" aria-hidden="true"></div>
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(10,124,240,0.18)_0%,transparent_55%)]" aria-hidden="true"></div>
+
+      <div class="relative z-10 w-full">
+        <div class="mx-auto max-w-7xl px-6 lg:px-10">
+
+          <nav class="mb-8" aria-label="Breadcrumb">
+            <ol class="flex flex-wrap items-center gap-2 text-sm text-white/70">
+              <li><a class="transition hover:text-white" href="../index.html">Home</a></li>
+              <li aria-hidden="true" class="text-white/40">/</li>
+              <li><span class="text-[#18A9E8]" aria-current="page">Contact Us</span></li>
+            </ol>
+          </nav>
+
+          <p class="text-sm sm:text-base font-extrabold tracking-widest uppercase bg-gradient-to-r from-white to-[#18A9E8] bg-clip-text text-transparent mb-3">
+            WE MANAGE IT. YOU GROW IT.
+          </p>
+
+          <h1 class="font-['Manrope','Inter',sans-serif] text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-[#18A9E8] max-w-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
+            Contact Teleon Networks
+          </h1>
+
+          <p class="mt-5 max-w-2xl text-base sm:text-lg leading-8 text-white/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]">
+            Tell us about your IT environment and the service you are looking for — sites, users,
+            servers, network or internet links — so we can respond usefully.
+          </p>
+
+        </div>
       </div>
     </section>
 
-    <section class="band">
-      <div class="shell">
-        <div class="split">
+    <!-- ============================================================ -->
+    <!-- SECTION 2 — Form + Contact info (two columns)                -->
+    <!-- ============================================================ -->
+    <section class="py-14 sm:py-16 lg:py-20 bg-white">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
 
-          <div class="reveal">
-            <p class="eyebrow">Send an enquiry</p>
-            <h2>Start the conversation</h2>
-            <p class="lede">
-              Complete the form and choose the service you are interested in. Every field marked with an
-              asterisk is required.
+        <div class="grid gap-10 lg:grid-cols-12 lg:gap-14">
+
+          <!-- Left: Form -->
+          <div class="lg:col-span-7 xl:col-span-7">
+            <p class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/70 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-700 mb-5">
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true"></span>
+              Send an enquiry
             </p>
 
-            <form class="form" id="enquiryForm" novalidate>
-              <div class="form-grid">
-                <div class="field">
+            <h2 class="font-['Manrope','Inter',sans-serif] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+              Start the conversation
+            </h2>
+            <p class="mt-3 text-[15px] leading-7 text-slate-600 max-w-xl">
+              Complete the form and choose the service you are interested in. Every field marked
+              with an asterisk is required.
+            </p>
+
+            <form class="c-form mt-8" id="enquiryForm" novalidate>
+
+              <div class="c-form__grid">
+                <div class="c-field">
                   <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
                   <input type="text" id="name" name="name" autocomplete="name"
                          placeholder="Your full name" required>
-                  <p class="field__error" id="name-error" role="alert"></p>
+                  <p class="c-field__error" id="name-error" role="alert"></p>
                 </div>
 
-                <div class="field">
+                <div class="c-field">
                   <label for="company">Company</label>
                   <input type="text" id="company" name="company" autocomplete="organization"
                          placeholder="Company or organisation">
-                  <p class="field__error" id="company-error" role="alert"></p>
+                  <p class="c-field__error" id="company-error" role="alert"></p>
                 </div>
               </div>
 
-              <div class="form-grid">
-                <div class="field">
+              <div class="c-form__grid">
+                <div class="c-field">
                   <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
                   <input type="email" id="email" name="email" autocomplete="email"
                          placeholder="name@company.com" required>
-                  <p class="field__error" id="email-error" role="alert"></p>
+                  <p class="c-field__error" id="email-error" role="alert"></p>
                 </div>
 
-                <div class="field">
+                <div class="c-field">
                   <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
                   <input type="tel" id="phone" name="phone" autocomplete="tel"
                          placeholder="Contact number" required>
-                  <p class="field__error" id="phone-error" role="alert"></p>
+                  <p class="c-field__error" id="phone-error" role="alert"></p>
                 </div>
               </div>
 
-              <div class="field">
+              <div class="c-field">
                 <label for="service">Service required <span class="req" aria-hidden="true">*</span></label>
                 <select id="service" name="service" required>
                   <option value="">Select a service</option>
@@ -95,18 +319,18 @@
                   <option value="it-support-amc">IT Support &amp; AMC Services</option>
                   <option value="project-implementation">Project Implementation Services</option>
                 </select>
-                <p class="field__error" id="service-error" role="alert"></p>
+                <p class="c-field__error" id="service-error" role="alert"></p>
               </div>
 
-              <div class="field">
+              <div class="c-field">
                 <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
                 <textarea id="message" name="message" rows="6"
                           placeholder="Describe your requirement — locations, users, servers, network, internet links or the project you are planning." required></textarea>
-                <p class="field__error" id="message-error" role="alert"></p>
+                <p class="c-field__error" id="message-error" role="alert"></p>
               </div>
 
-              <div class="form-status form-status--success" id="formStatus" role="status">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+              <div class="c-status c-status--success" id="formStatus" role="status">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
                 <span>
                   <strong>Form checks passed.</strong>
                   This website is frontend-only, so nothing has been transmitted and no email has been sent.
@@ -115,65 +339,68 @@
               </div>
 
               <div>
-                <button type="submit" class="btn btn--primary">Submit enquiry</button>
+                <button type="submit"
+                        class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#075FC8] via-[#087FEA] to-[#18A9E8] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:shadow-xl hover:shadow-blue-600/40">
+                  Submit enquiry
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
               </div>
             </form>
           </div>
 
-          <div class="split__media reveal">
-            <div class="panel">
-              <h3>Contact details</h3>
-              <p style="color:rgba(255,255,255,0.72)">
+          <!-- Right: Contact details + notice -->
+          <div class="lg:col-span-5 xl:col-span-5 space-y-5">
+
+            <!-- Contact details card -->
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#071b3a] via-[#0b2a4a] to-[#0a3a6b] p-7 text-white shadow-2xl shadow-blue-900/25 sm:p-8">
+              <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl" aria-hidden="true"></div>
+
+              <h3 class="relative font-['Manrope','Inter',sans-serif] text-xl font-bold text-white">Contact details</h3>
+              <p class="relative mt-2 text-[15px] leading-6 text-blue-100/80">
                 Contact information has not been supplied yet. Replace the placeholders below with the
                 company's published details.
               </p>
 
-              <div class="panel-rows" style="margin-top:1.4rem">
-                <div class="panel-row">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <span>Phone number to be added</span>
-                </div>
-                <div class="panel-row">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
-                  <span>Email address to be added</span>
-                </div>
-                <div class="panel-row">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <span>Office address to be added</span>
-                </div>
-                <div class="panel-row">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-                  <span>Working hours to be added</span>
-                </div>
-              </div>
+              <ul class="relative mt-6 space-y-3">
+                <li class="flex items-start gap-3 rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#18A9E8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.26-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span class="text-[14px] text-blue-100/90">Phone number to be added</span>
+                </li>
 
-              <p class="footer-tagline" style="margin-top:1.6rem">WE MANAGE IT. YOU GROW IT.</p>
-            </div>
+                <li class="flex items-start gap-3 rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#18A9E8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                  <span class="text-[14px] text-blue-100/90">Email address to be added</span>
+                </li>
 
-            <div class="notice" style="margin-top:1.25rem">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01M11 12h1v4h1"></path></svg>
-              <p>
-                Scope, response times and commercial terms are confirmed in the quotation or service
-                agreement for the services selected.
+                <li class="flex items-start gap-3 rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#18A9E8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span class="text-[14px] text-blue-100/90">Office address to be added</span>
+                </li>
+
+                <li class="flex items-start gap-3 rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-[#18A9E8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  <span class="text-[14px] text-blue-100/90">Working hours to be added</span>
+                </li>
+              </ul>
+
+              <p class="relative mt-6 inline-block rounded-full border border-[#18A9E8]/40 bg-[#18A9E8]/15 px-4 py-1.5 text-[12px] font-bold tracking-wider text-[#18A9E8]">
+                WE MANAGE IT. YOU GROW IT.
               </p>
             </div>
+
+            <!-- Scope note -->
+            <div class="flex items-start gap-3 rounded-xl border border-[#dbe6f2] border-l-[3px] border-l-[#0a7cf0] bg-[#f4f8fd] px-5 py-4 text-[0.9rem] leading-relaxed text-[#334155]">
+              <svg class="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#0a7cf0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 8h.01M11 12h1v4h1"/>
+              </svg>
+              <p class="m-0">
+                <strong class="font-bold text-[#0b1a2e]">Good to know</strong> — Scope, response times and commercial terms are confirmed in the quotation or service agreement for the services selected.
+              </p>
+            </div>
+
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-band">
-      <div class="shell cta-band__inner">
-        <div>
-          <h2>Looking for something specific?</h2>
-          <p class="lede" style="color:rgba(255,255,255,0.78)">
-            Browse the eight service areas to see exactly what each one covers before you get in touch.
-          </p>
-        </div>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="services.html">View all services</a>
-          <a class="btn btn--onDark" href="about.html">About Teleon Networks</a>
         </div>
       </div>
     </section>
