@@ -151,7 +151,6 @@
   <main id="main">
 
 <!-- ============================ Hero (sliding image banners) ============================ -->
-
 <section class="hb" id="heroBanner" aria-roledescription="carousel" aria-label="Featured services" data-interval="6000"
          style="min-height: 580px;">
   <div class="hb__viewport" style="touch-action: pan-y; min-height: 580px;">
@@ -241,14 +240,14 @@
 </section>
 
 <!-- ===================== About intro (Tailwind only — beige bg, blue + gold) ===================== -->
-<section class="relative isolate overflow-hidden bg-[#FCFAF5] py-10 sm:py-12 lg:py-16" aria-labelledby="about-intro-title">  <!-- Soft background glows (subtle, over the beige) -->
+<section class="relative isolate overflow-hidden bg-[#FCFAF5] py-6 sm:py-8 lg:py-10" aria-labelledby="about-intro-title">
   <div class="pointer-events-none absolute -left-40 -top-24 -z-10 h-72 w-72 rounded-full bg-blue-200/40 blur-3xl" aria-hidden="true"></div>
   <div class="pointer-events-none absolute -right-40 bottom-0 -z-10 h-80 w-80 rounded-full bg-amber-200/45 blur-3xl" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(120,100,60,0.05)_1px,transparent_0)] [background-size:26px_26px]" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(120,100,60,0.18)_1.5px,transparent_0)] [background-size:26px_26px]" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
 
-    <!-- ============ 1. Centered heading block ============ -->
+    
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="font-['Manrope','Inter',sans-serif] text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-[2.6rem]">
         A Trusted Partner in
@@ -259,13 +258,13 @@
       </p>
     </div>
 
-    <!-- ============ 2. Two-column main content ============ -->
-    <div class="mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-2 lg:gap-14">
+    
+    <div class="mt-6 grid items-start gap-8 lg:mt-8 lg:grid-cols-2 lg:gap-12">
 
-      <!-- ---------- LEFT: text, features, stats, CTAs ---------- -->
+      
       <div>
 
-        <!-- Certification pill (blue) -->
+        
         <div class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/70 px-3.5 py-1 text-[12px] font-semibold text-blue-700">
           <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/>
@@ -274,26 +273,26 @@
           ISO-aligned process · Certified engineers · 24×7 monitoring
         </div>
 
-        <!-- Sub heading with underline (blue + gold) -->
-        <h3 class="relative mt-5 inline-block font-['Manrope','Inter',sans-serif] text-2xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-3xl">
+        
+        <h3 class="relative mt-4 inline-block font-['Manrope','Inter',sans-serif] text-2xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-3xl">
           Delivering Excellence Across
           <span class="block text-amber-500">Cloud, Network &amp; Security</span>
           <span class="absolute -bottom-2 left-0 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-amber-400" aria-hidden="true"></span>
         </h3>
 
-        <!-- Description -->
-        <p class="mt-6 text-[15px] leading-7 text-slate-600 sm:text-base">
+        
+        <p class="mt-5 text-[15px] leading-7 text-slate-600 sm:text-base">
           <strong class="font-bold text-slate-900">Teleon Networks Pvt Ltd</strong> is an IT &amp;
           Infrastructure Solutions provider. We manage and support business IT through proactive
           monitoring, maintenance, troubleshooting, security, backup and on-site or remote support.
         </p>
-        <p class="mt-2.5 text-[15px] leading-7 text-slate-600 sm:text-base">
+        <p class="mt-2 text-[15px] leading-7 text-slate-600 sm:text-base">
           From a single desktop to a server room, branch network or cloud migration, our services
           cover setup, configuration, monitoring and ongoing maintenance.
         </p>
 
-        <!-- Feature checkmarks (2-column, blue) -->
-        <ul class="mt-6 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
+        
+        <ul class="mt-5 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
           <li class="flex items-center gap-2.5 text-[14.5px] text-slate-700">
             <span class="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-blue-600 text-white">
               <svg class="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
@@ -320,8 +319,8 @@
           </li>
         </ul>
 
-        <!-- Stats strip (compact, on beige) -->
-        <div class="mt-7 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
+        
+        <div class="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
           <div class="rounded-lg border border-amber-200/70 bg-white/80 p-3 text-center shadow-sm">
             <p class="font-['Manrope','Inter',sans-serif] text-2xl font-extrabold text-blue-600">8</p>
             <p class="mt-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-slate-500">Service Areas</p>
@@ -340,8 +339,8 @@
           </div>
         </div>
 
-        <!-- CTAs (blue primary + amber outline) -->
-        <div class="mt-7 flex flex-wrap gap-2.5">
+        
+        <div class="mt-5 flex flex-wrap gap-2.5">
           <a href="pages/about.html"
              class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/25 transition hover:bg-blue-700 hover:shadow-lg">
             Discover Our Journey
@@ -360,33 +359,26 @@
 
       </div>
 
-      <!-- ---------- RIGHT: images + floating badge ---------- -->
+      
       <div class="relative">
 
-        <!-- Main video/hero image -->
+        
         <div class="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#0b2a4a] shadow-2xl shadow-slate-900/20">
           <img
-            src="assets/images/h_ab2.jpg"
+            src="assets/images/h_ab3.webp"
             onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1200 750%27 preserveAspectRatio=%27xMidYMid slice%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%23071b3a%27/%3E%3Cstop offset=%271%27 stop-color=%27%2314508a%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%271200%27 height=%27750%27 fill=%27url(%23g)%27/%3E%3C/svg%3E'"
             alt="Teleon Networks managing IT infrastructure"
             class="h-full w-full object-cover"
             loading="lazy" decoding="async">
 
-          <!-- Dark overlay + play button -->
+          
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" aria-hidden="true"></div>
           <div class="absolute inset-0 flex flex-col items-center justify-center gap-2.5">
-            <!-- <button type="button"
-                    class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl transition hover:scale-110"
-                    aria-label="Watch our story">
-              <svg class="ml-0.5 h-5 w-5 text-blue-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/>
-              </svg>
-            </button>
-            <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-white drop-shadow-lg">Watch Our Story</p> -->
+            
           </div>
         </div>
 
-        <!-- Two small images + badge row -->
+        
         <div class="relative mt-3 grid grid-cols-2 gap-3">
 
           <div class="aspect-[16/10] overflow-hidden rounded-xl bg-slate-200 shadow-lg">
@@ -403,13 +395,11 @@
                  loading="lazy" decoding="async">
           </div>
 
-          <!-- Floating badge (blue + gold) -->
+          
           <div class="pointer-events-none absolute -bottom-5 left-1/2 z-10 hidden -translate-x-1/2 items-center gap-2.5 rounded-xl bg-blue-600 px-4 py-3 text-white shadow-xl shadow-blue-900/25 sm:flex">
-            <!-- <p class="font-['Manrope','Inter',sans-serif] text-2xl font-extrabold leading-none">
-              7<span class="text-sm align-top text-amber-300">+</span>
-            </p> -->
+            
             <div class="leading-tight">
-              <!-- <p class="text-[12px] font-semibold">Years of</p> -->
+              
               <p class="text-[12px] font-semibold">IT Excellence</p>
             </div>
             <span class="ml-1 flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-blue-900">
@@ -426,13 +416,137 @@
   </div>
 </section>
 
-<!-- ============== Trusted collaborations + Selected clients (marquee) ============== -->
-<section class="mq-section" aria-label="Trusted industry collaborations and selected clients">
+<!-- ========================== CTA ========================== -->
+<section class="cta2">
   <style>
-    /* ---------- Marquee section (scoped to .mq-*) ---------- */
+    /* ---------- CTA (scoped to .cta2-*) ---------- */
+    .cta2 { padding: 28px 0; background: #ffffff; }
+
+    .cta2-card {
+      position: relative;
+      overflow: hidden;
+      padding: 48px 24px;
+      text-align: center;
+      border-radius: 18px;
+      background:
+        radial-gradient(45% 70% at 18% 8%, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(40% 60% at 8% 100%, rgba(10, 124, 240, .25) 0%, rgba(10, 124, 240, 0) 70%),
+        radial-gradient(35% 80% at 60% 60%, rgba(30, 144, 255, .22) 0%, rgba(30, 144, 255, 0) 75%),
+        linear-gradient(105deg, #e6f0fb 0%, #f3f8ff 24%, #dbe9fb 46%, #b7d4f5 72%, #8fb8e8 100%);
+      box-shadow: 0 16px 38px rgba(10, 31, 68, .12), 0 2px 6px rgba(10, 31, 68, .05);
+    }
+
+    .cta2-title {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.01em;
+      color: #0a1f44;              /* TeleOn navy */
+    }
+    .cta2-title .cta2-accent { color: #0a7cf0; }  /* TeleOn bright blue */
+
+    .cta2-text {
+      margin: 12px auto 0;
+      max-width: 620px;
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      line-height: 1.55;
+      color: #33415c;
+    }
+
+    .cta2-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .cta2-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .cta2-btn svg {
+      width: 17px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .cta2-btn:focus-visible { outline: 3px solid #0a1f44; outline-offset: 4px; }
+
+    /* Primary button — TeleOn navy → bright blue gradient */
+    .cta2-btn--primary {
+      color: #fff;
+      background: linear-gradient(135deg, #0a7cf0 0%, #0a1f44 100%);
+      box-shadow: 0 8px 18px rgba(10, 124, 240, .35);
+    }
+    .cta2-btn--primary:hover {
+      color: #fff;
+      background: linear-gradient(135deg, #0968cc 0%, #071733 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(10, 124, 240, .45);
+    }
+
+    /* Outline button — bright blue */
+    .cta2-btn--outline {
+      color: #0a7cf0;
+      background: transparent;
+      border-color: #0a7cf0;
+    }
+    .cta2-btn--outline:hover {
+      color: #fff;
+      background: #0a7cf0;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .cta2 { padding: 20px 0; }
+      .cta2-card { padding: 32px 18px; border-radius: 16px; }
+      .cta2-actions { flex-direction: column; align-items: stretch; gap: 12px; max-width: 280px; margin-left: auto; margin-right: auto; }
+      .cta2-btn { padding: 11px 22px; font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cta2-btn { transition: none; }
+      .cta2-btn:hover { transform: none; }
+    }
+  </style>
+
+  <div class="shell">
+    <div class="cta2-card">
+      <h2 class="cta2-title">Let's look at your IT <span class="cta2-accent">environment</span></h2>
+      <p class="cta2-text">
+        Tell us what you run today — devices, servers, network, internet links or cloud — and we will
+        recommend the right mix of management, support and implementation services.
+      </p>
+      <div class="cta2-actions">
+        <a class="cta2-btn cta2-btn--primary" href="pages/contact.html">Send an enquiry</a>
+        <a class="cta2-btn cta2-btn--outline" href="pages/services.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          View all services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== Trusted collaborations + Selected clients (marquee) ============== -->
+<!-- <section class="mq-section" aria-label="Trusted industry collaborations and selected clients">
+  <style>
     .mq-section {
-      --mq-speed-1: 90s;   /* row 1 speed (higher = slower) */
-      --mq-speed-2: 100s;  /* row 2 speed */
+      --mq-speed-1: 90s;
+      --mq-speed-2: 100s;
       padding: 56px 0;
       overflow: hidden;
       text-align: center;
@@ -446,17 +560,23 @@
       text-transform: uppercase;
       color: #a3aabd;
     }
-    .mq-label--second { margin-top: 52px; }
 
-    /* Viewport with faded left/right edges */
+    .mq-label--second {
+      margin-top: 52px;
+    }
+
     .mq-viewport {
       overflow: hidden;
       -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-              mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
     }
-    .mq-track { display: flex; width: max-content; min-width: 100%; }
 
-    /* Each group is at least as wide as the viewport, so the loop is always seamless */
+    .mq-track {
+      display: flex;
+      width: max-content;
+      min-width: 100%;
+    }
+
     .mq-group {
       flex: 0 0 auto;
       min-width: 100vw;
@@ -470,17 +590,40 @@
       animation: mq-scroll var(--mq-speed-1) linear infinite;
     }
 
-    /* Row 1: right → left */
-    .mq-row--rtl .mq-group { animation-name: mq-scroll; animation-duration: var(--mq-speed-1); }
-    /* Row 2: left → right */
-    .mq-row--ltr .mq-group { animation-name: mq-scroll-rev; animation-duration: var(--mq-speed-2); gap: 16px; padding-right: 16px; }
+    .mq-row--rtl .mq-group {
+      animation-name: mq-scroll;
+      animation-duration: var(--mq-speed-1);
+    }
 
-    @keyframes mq-scroll     { from { transform: translateX(0); }     to { transform: translateX(-100%); } }
-    @keyframes mq-scroll-rev { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+    .mq-row--ltr .mq-group {
+      animation-name: mq-scroll-rev;
+      animation-duration: var(--mq-speed-2);
+      gap: 16px;
+      padding-right: 16px;
+    }
 
-    .mq-viewport:hover .mq-group { animation-play-state: paused; }
+    @keyframes mq-scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
 
-    /* ---------- Pill style (matches "What we manage" carousel) ---------- */
+    @keyframes mq-scroll-rev {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .mq-viewport:hover .mq-group {
+      animation-play-state: paused;
+    }
+
     .mq-pill {
       display: inline-flex;
       align-items: center;
@@ -494,15 +637,42 @@
       box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
     }
 
-    /* Color cycles — blue / emerald / amber / rose / violet / sky */
-    .mq-pill--blue    { background:#eff6ff; border:1px solid #bfdbfe; color:#1d4ed8; }
-    .mq-pill--emerald { background:#ecfdf5; border:1px solid #a7f3d0; color:#047857; }
-    .mq-pill--amber   { background:#fffbeb; border:1px solid #fde68a; color:#b45309; }
-    .mq-pill--rose    { background:#fff1f2; border:1px solid #fecdd3; color:#be123c; }
-    .mq-pill--violet  { background:#f5f3ff; border:1px solid #ddd6fe; color:#6d28d9; }
-    .mq-pill--sky     { background:#f0f9ff; border:1px solid #bae6fd; color:#0369a1; }
+    .mq-pill--blue {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+    }
 
-    /* Client names — same colored pill treatment */
+    .mq-pill--emerald {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #047857;
+    }
+
+    .mq-pill--amber {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #b45309;
+    }
+
+    .mq-pill--rose {
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      color: #be123c;
+    }
+
+    .mq-pill--violet {
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      color: #6d28d9;
+    }
+
+    .mq-pill--sky {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      color: #0369a1;
+    }
+
     .mq-client {
       display: inline-flex;
       align-items: center;
@@ -516,26 +686,60 @@
       border-radius: 999px;
       box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
     }
-    .mq-client img { display: block; height: 32px; width: auto; }
 
-    @media (max-width: 640px) {
-      .mq-section { padding: 40px 0; }
-      .mq-client { font-size: 15px; padding: 8px 16px; }
-      .mq-pill { font-size: 14px; padding: 8px 16px; }
-      .mq-label--second { margin-top: 40px; }
+    .mq-client img {
+      display: block;
+      height: 32px;
+      width: auto;
     }
 
-    /* Respect reduced-motion: no scrolling, show one wrapped, centred set */
+    @media (max-width: 640px) {
+      .mq-section {
+        padding: 40px 0;
+      }
+
+      .mq-client {
+        font-size: 15px;
+        padding: 8px 16px;
+      }
+
+      .mq-pill {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .mq-label--second {
+        margin-top: 40px;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .mq-viewport { -webkit-mask-image: none; mask-image: none; }
-      .mq-track { width: auto; }
-      .mq-group { animation: none !important; flex-wrap: wrap; justify-content: center; min-width: 0; padding: 0 20px; row-gap: 14px; }
-      .mq-group[aria-hidden="true"] { display: none; }
+      .mq-viewport {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+
+      .mq-track {
+        width: auto;
+      }
+
+      .mq-group {
+        animation: none !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-width: 0;
+        padding: 0 20px;
+        row-gap: 14px;
+      }
+
+      .mq-group[aria-hidden="true"] {
+        display: none;
+      }
     }
   </style>
 
-  <!-- Row 1: technology partners — moves right to left -->
   <p class="mq-label">Trusted industry collaborations</p>
+
   <div class="mq-viewport mq-row--rtl">
     <div class="mq-track">
       <ul class="mq-group">
@@ -552,7 +756,7 @@
         <li class="mq-pill mq-pill--violet">Fortinet</li>
         <li class="mq-pill mq-pill--sky">HP</li>
       </ul>
-      <!-- duplicate set for the seamless loop (keep identical to the set above) -->
+
       <ul class="mq-group" aria-hidden="true">
         <li class="mq-pill mq-pill--blue">Microsoft</li>
         <li class="mq-pill mq-pill--emerald">Tata Communications</li>
@@ -570,8 +774,8 @@
     </div>
   </div>
 
-  <!-- Row 2: clients — moves left to right -->
   <p class="mq-label mq-label--second">Selected clients</p>
+
   <div class="mq-viewport mq-row--ltr">
     <div class="mq-track">
       <ul class="mq-group">
@@ -583,7 +787,7 @@
         <li class="mq-client mq-pill--sky">Ullu</li>
         <li class="mq-client mq-pill--blue">Eduauraa</li>
       </ul>
-      <!-- duplicate set for the seamless loop (keep identical to the set above) -->
+
       <ul class="mq-group" aria-hidden="true">
         <li class="mq-client mq-pill--blue">Goodrich Maritime</li>
         <li class="mq-client mq-pill--emerald">upGrad</li>
@@ -595,10 +799,10 @@
       </ul>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- ===================== All 8 services (Tailwind only, carousel) ===================== -->
-<section id="services" class="relative overflow-hidden bg-[#f8f8f8] py-20 lg:py-24" aria-labelledby="services-title">
+<section id="services" class="relative overflow-hidden bg-[#f8f8f8] py-14 lg:py-16" aria-labelledby="services-title">
 
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
 
@@ -606,13 +810,13 @@
     <div class="mb-14 flex flex-wrap items-end justify-between gap-6">
       <div class="max-w-2xl">
         <p class="mb-5 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-blue-600 before:h-px before:w-10 before:bg-amber-500">Our services</p>
-        <h2 id="services-title" class="font-['Manrope','Inter',sans-serif] text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
+        <h2 id="services-title" class="whitespace-nowrap font-['Manrope','Inter',sans-serif] text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
           Eight service areas, one accountable partner
         </h2>
         <p class="mt-3 max-w-xl text-base text-gray-600">Each service can be delivered on its own or combined into a managed IT arrangement.</p>
       </div>
 
-      <a href="pages/services.html" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/25 transition hover:bg-blue-700">
+      <a href="pages/services.html" class="-translate-y-6 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/25 transition hover:bg-blue-700">
         View All Services
         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -1101,7 +1305,7 @@
       flex: 0 0 auto;
       width: 320px;
       background: #ffffff;
-      border: 1px solid #e6ecf3;
+      border: 1.5px solid #b9d3f0;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 8px 24px -14px rgba(15,23,42,.10);
@@ -1111,7 +1315,7 @@
     }
     .svc-proj:hover {
       transform: translateY(-4px);
-      border-color: #c7d7ea;
+      border-color: #0a7cf0;
       box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 22px 48px -20px rgba(15,23,42,.22);
     }
 
@@ -1249,7 +1453,6 @@
     @media (max-width: 620px) { .svc-grid { grid-template-columns: 1fr; } }
 
     .svc-card {
-      /* per-card colour tokens (overridden by .svc-c1 … .svc-c6) */
       --accent: #ff2d6f;
       --tint: #fde2ea;
       --num: #f0bfd0;
@@ -1263,11 +1466,11 @@
       flex-direction: column;
       padding: 28px;
       background: #fff;
-      border: 1px solid #e8ecf3;
+      border: 1.5px solid #b9d3f0;
       border-radius: 22px;
-      box-shadow: 0 1px 2px rgba(15, 23, 42, .03);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, .06), 0 1px 3px rgba(15, 23, 42, .04);
       overflow: hidden;
-      transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+      transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
     }
 
     .svc-c1 { --accent:#ff2d6f; --tint:#fde2ea; --num:#f0bfd0; --chip-bg:#fbdde6; --chip-bd:#f3b6c8; --chip-tx:#be123c; --hover-bd:#f4a8c3; }
@@ -1277,14 +1480,14 @@
     .svc-c5 { --accent:#ec4899; --tint:#fde4f1; --num:#e5c7e6; --chip-bg:#ffe4ee; --chip-bd:#fbc1d6; --chip-tx:#be123c; --hover-bd:#f6a6c8; }
     .svc-c6 { --accent:#a855f7; --tint:#f3e8ff; --num:#c8d6f5; --chip-bg:#f3edff; --chip-bd:#dcd0fb; --chip-tx:#6d28d9; --hover-bd:#cdb3fa; }
 
-    /* Highlight state: on hover, and on card 1 by default (until the grid is hovered) */
-    .svc-card:hover,
-    .svc-grid:not(:hover) .svc-card.is-active {
+    /* Highlight state: only on hover */
+    .svc-card:hover {
       border-color: var(--hover-bd);
       background:
-        radial-gradient(circle at 50% 100%, rgba(168, 120, 240, .38) 0%, rgba(168, 120, 240, 0) 62%),
-        linear-gradient(135deg, #fdeef4 0%, #f5eefd 55%, #efe6fb 100%);
-      box-shadow: 0 12px 32px rgba(139, 92, 246, .16), 0 2px 6px rgba(15, 23, 42, .05);
+        radial-gradient(circle at 50% 100%, rgba(96, 165, 250, .38) 0%, rgba(96, 165, 250, 0) 62%),
+        linear-gradient(135deg, #eff6ff 0%, #e6f2fd 55%, #dcecfb 100%);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, .22), 0 6px 14px rgba(15, 23, 42, .08);
+      transform: translateY(-4px);
     }
 
     .svc-top {
@@ -1339,7 +1542,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: auto 0 22px;   /* pushes tags + link to the bottom so rows line up */
+      margin: auto 0 22px;
       padding: 0;
       list-style: none;
     }
@@ -1374,27 +1577,28 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .svc-card:hover .svc-more,
-    .svc-grid:not(:hover) .svc-card.is-active .svc-more { color: #7c3aed; }
-    .svc-more:focus-visible { outline: 2px solid #7c3aed; outline-offset: 4px; border-radius: 4px; }
+    .svc-card:hover .svc-more { color: #2563eb; }
+    .svc-more:focus-visible { outline: 2px solid #2563eb; outline-offset: 4px; border-radius: 4px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .svc-card { transition: background .25s ease, border-color .25s ease, box-shadow .25s ease; }
+      .svc-card:hover { transform: none; }
+    }
   </style>
 
 <div class="shell">
   <!-- Section head (Tailwind only) -->
   <div class="mx-auto max-w-3xl text-center">
-    <!-- Eyebrow: blue text with blue → gold gradient bar -->
     <p class="mb-4 inline-flex items-center justify-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.14em] text-blue-600">
       <span class="h-[2px] w-7 rounded-full bg-gradient-to-r from-blue-600 to-amber-500" aria-hidden="true"></span>
       What we manage
     </p>
 
-    <!-- Headline: smaller, navy with gold accent word -->
     <h2 class="font-['Manrope','Inter',sans-serif] text-2xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
       Every layer of your
       <span class="text-amber-500">IT infrastructure</span>
     </h2>
 
-    <!-- Subtext: smaller, muted slate, centered -->
     <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
       End-user devices, servers, networks, security, backup, peripherals, CCTV and cloud services —
       managed, monitored and reported on as one environment.
@@ -1404,7 +1608,7 @@
     <div class="svc-grid reveal">
 
       <!-- 01 End-user & peripherals -->
-      <article class="svc-card svc-c1 is-active">
+      <article class="svc-card svc-c1">
         <div class="svc-top">
           <span class="svc-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
@@ -1962,128 +2166,6 @@
   </div>
 </section>
 
-<!-- ========================== CTA ========================== -->
-<section class="cta2">
-  <style>
-    /* ---------- CTA (scoped to .cta2-*) ---------- */
-    .cta2 { padding: 28px 0; background: #eef0f5; }
-
-    .cta2-card {
-      position: relative;
-      overflow: hidden;
-      padding: 48px 24px;
-      text-align: center;
-      border-radius: 18px;
-      background:
-        radial-gradient(45% 70% at 18% 8%, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, 0) 70%),
-        radial-gradient(40% 60% at 8% 100%, rgba(10, 124, 240, .25) 0%, rgba(10, 124, 240, 0) 70%),
-        radial-gradient(35% 80% at 60% 60%, rgba(30, 144, 255, .22) 0%, rgba(30, 144, 255, 0) 75%),
-        linear-gradient(105deg, #e6f0fb 0%, #f3f8ff 24%, #dbe9fb 46%, #b7d4f5 72%, #8fb8e8 100%);
-      box-shadow: 0 16px 38px rgba(10, 31, 68, .12), 0 2px 6px rgba(10, 31, 68, .05);
-    }
-
-    .cta2-title {
-      margin: 0;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -.01em;
-      color: #0a1f44;              /* TeleOn navy */
-    }
-    .cta2-title .cta2-accent { color: #0a7cf0; }  /* TeleOn bright blue */
-
-    .cta2-text {
-      margin: 12px auto 0;
-      max-width: 620px;
-      font-size: clamp(0.9rem, 1.3vw, 1rem);
-      line-height: 1.55;
-      color: #33415c;
-    }
-
-    .cta2-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 22px;
-    }
-    .cta2-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 26px;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.2;
-      text-decoration: none;
-      border-radius: 999px;
-      border: 2px solid transparent;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-    }
-    .cta2-btn svg {
-      width: 17px;
-      height: 17px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .cta2-btn:focus-visible { outline: 3px solid #0a1f44; outline-offset: 4px; }
-
-    /* Primary button — TeleOn navy → bright blue gradient */
-    .cta2-btn--primary {
-      color: #fff;
-      background: linear-gradient(135deg, #0a7cf0 0%, #0a1f44 100%);
-      box-shadow: 0 8px 18px rgba(10, 124, 240, .35);
-    }
-    .cta2-btn--primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 22px rgba(10, 124, 240, .45);
-    }
-
-    /* Outline button — bright blue */
-    .cta2-btn--outline {
-      color: #0a7cf0;
-      background: transparent;
-      border-color: #0a7cf0;
-    }
-    .cta2-btn--outline:hover {
-      color: #fff;
-      background: #0a7cf0;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 640px) {
-      .cta2 { padding: 20px 0; }
-      .cta2-card { padding: 32px 18px; border-radius: 16px; }
-      .cta2-actions { flex-direction: column; align-items: stretch; gap: 12px; max-width: 280px; margin-left: auto; margin-right: auto; }
-      .cta2-btn { padding: 11px 22px; font-size: 14px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .cta2-btn { transition: none; }
-      .cta2-btn:hover { transform: none; }
-    }
-  </style>
-
-  <div class="shell">
-    <div class="cta2-card">
-      <h2 class="cta2-title">Let's look at your IT <span class="cta2-accent">environment</span></h2>
-      <p class="cta2-text">
-        Tell us what you run today — devices, servers, network, internet links or cloud — and we will
-        recommend the right mix of management, support and implementation services.
-      </p>
-      <div class="cta2-actions">
-        <a class="cta2-btn cta2-btn--primary" href="pages/contact.html">Send an enquiry</a>
-        <a class="cta2-btn cta2-btn--outline" href="pages/services.html">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-          View all services
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 
   </main>
 
