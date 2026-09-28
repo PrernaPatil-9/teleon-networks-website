@@ -141,6 +141,158 @@
         .hb__track, .hb__slide, .hb__bar { transition: none; }
       }
     </style>
+
+      <style>
+    /* ---------- Compact service cards (scoped to .svc-*) ---------- */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 40px;
+    }
+    @media (max-width: 960px) { .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .svc-grid { grid-template-columns: 1fr; } }
+
+    .svc-card {
+      --accent: #ff2d6f;
+      --tint: #fff0f4;
+
+      position: relative;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      column-gap: 14px;
+      align-items: start;
+      padding: 16px 16px 16px 16px;
+      background: #fff;
+      border: 1px solid #e5eaf1;
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .svc-c1 { --accent:#ff2d6f; --tint:#fff0f4; }
+    .svc-c2 { --accent:#7c3aed; --tint:#f4efff; }
+    .svc-c3 { --accent:#0891b2; --tint:#e9fbff; }
+    .svc-c4 { --accent:#2563eb; --tint:#edf3ff; }
+    .svc-c5 { --accent:#db2777; --tint:#fff0f8; }
+    .svc-c6 { --accent:#9333ea; --tint:#f7efff; }
+
+    .svc-card:hover,
+    .svc-card:focus-within {
+      transform: translateY(-3px);
+      background: var(--tint);
+      border-color: color-mix(in srgb, var(--accent) 30%, #e5eaf1);
+      border-left-color: var(--accent);
+      box-shadow: 0 12px 24px -12px color-mix(in srgb, var(--accent) 50%, transparent);
+    }
+
+    .svc-icon {
+      grid-row: 1 / span 2;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      background: var(--tint);
+      transition: background .2s ease, color .2s ease;
+    }
+    .svc-card:hover .svc-icon { background: var(--accent); color: #fff; }
+    .svc-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .svc-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 2px 0 4px;
+    }
+    .svc-card h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #0f172a;
+    }
+    .svc-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: #a3aebf;
+      user-select: none;
+    }
+    .svc-desc {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #5b6678;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .svc-tags {
+      grid-column: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .svc-tags li {
+      padding: 2px 9px;
+      font-size: 11.5px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--accent);
+      background: var(--tint);
+      border-radius: 6px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .svc-card:hover .svc-tags li { background: #fff; }
+
+    /* Whole card clickable */
+    .svc-link { position: absolute; inset: 0; border-radius: 12px; z-index: 2; }
+    .svc-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .svc-arrow {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .svc-arrow svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .svc-card:hover .svc-arrow,
+    .svc-card:focus-within .svc-arrow { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .svc-card, .svc-icon, .svc-arrow { transition: none; }
+      .svc-card:hover { transform: none; }
+    }
+  </style>
 </head>
 <body data-page="home" data-base="">
 
@@ -1440,9 +1592,8 @@
 </section>
 
 <!-- ============== IT & Infrastructure capability ============== -->
-<section class="band band--grid-bg pt-6 sm:pt-8 lg:pt-10" style="padding-bottom: clamp(3.25rem, 7vw, 6rem);">
+<!-- <section class="band band--grid-bg pt-6 sm:pt-8 lg:pt-10" style="padding-bottom: clamp(3.25rem, 7vw, 6rem);">
   <style>
-    /* ---------- Service cards (scoped to .svc-*) ---------- */
     .svc-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1480,7 +1631,6 @@
     .svc-c5 { --accent:#ec4899; --tint:#fde4f1; --num:#e5c7e6; --chip-bg:#ffe4ee; --chip-bd:#fbc1d6; --chip-tx:#be123c; --hover-bd:#f6a6c8; }
     .svc-c6 { --accent:#a855f7; --tint:#f3e8ff; --num:#c8d6f5; --chip-bg:#f3edff; --chip-bd:#dcd0fb; --chip-tx:#6d28d9; --hover-bd:#cdb3fa; }
 
-    /* Highlight state: only on hover */
     .svc-card:hover {
       border-color: var(--hover-bd);
       background:
@@ -1496,6 +1646,7 @@
       justify-content: space-between;
       margin-bottom: 26px;
     }
+
     .svc-icon {
       width: 48px;
       height: 48px;
@@ -1505,6 +1656,7 @@
       background: var(--tint);
       color: var(--accent);
     }
+
     .svc-icon svg {
       width: 20px;
       height: 20px;
@@ -1514,6 +1666,7 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
+
     .svc-num {
       font-size: 34px;
       font-weight: 800;
@@ -1531,6 +1684,7 @@
       letter-spacing: -.01em;
       color: #0f172a;
     }
+
     .svc-desc {
       margin: 0 0 22px;
       font-size: 16px;
@@ -1546,6 +1700,7 @@
       padding: 0;
       list-style: none;
     }
+
     .svc-tags li {
       padding: 4px 12px;
       font-size: 13px;
@@ -1568,6 +1723,7 @@
       text-decoration: none;
       transition: color .2s ease;
     }
+
     .svc-more svg {
       width: 13px;
       height: 13px;
@@ -1577,6 +1733,7 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
+
     .svc-card:hover .svc-more { color: #2563eb; }
     .svc-more:focus-visible { outline: 2px solid #2563eb; outline-offset: 4px; border-radius: 4px; }
 
@@ -1586,6 +1743,150 @@
     }
   </style>
 
+  <div class="shell">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="mb-4 inline-flex items-center justify-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.14em] text-blue-600">
+        <span class="h-[2px] w-7 rounded-full bg-gradient-to-r from-blue-600 to-amber-500" aria-hidden="true"></span>
+        What we manage
+      </p>
+
+      <h2 class="font-['Manrope','Inter',sans-serif] text-2xl font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
+        Every layer of your
+        <span class="text-amber-500">IT infrastructure</span>
+      </h2>
+
+      <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
+        End-user devices, servers, networks, security, backup, peripherals, CCTV and cloud services —
+        managed, monitored and reported on as one environment.
+      </p>
+    </div>
+
+    <div class="svc-grid reveal">
+      <article class="svc-card svc-c1">
+        <div class="svc-top">
+          <span class="svc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </span>
+          <span class="svc-num" aria-hidden="true">01</span>
+        </div>
+        <h3>End-user &amp; Peripherals</h3>
+        <p class="svc-desc">
+          Desktop and laptop management, OS and software updates, user account support,
+          and printer, scanner and peripheral care.
+        </p>
+        <ul class="svc-tags">
+          <li>Desktops</li><li>Laptops</li><li>Software</li><li>Peripherals</li>
+        </ul>
+        <a class="svc-more" href="#">Learn more
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </article>
+
+      <article class="svc-card svc-c2">
+        <div class="svc-top">
+          <span class="svc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg>
+          </span>
+          <span class="svc-num" aria-hidden="true">02</span>
+        </div>
+        <h3>Servers &amp; Storage</h3>
+        <p class="svc-desc">
+          Windows and Linux server management with health monitoring, user and permission
+          control, storage management and server backup.
+        </p>
+        <ul class="svc-tags">
+          <li>Windows</li><li>Linux</li><li>Monitoring</li><li>Storage</li>
+        </ul>
+        <a class="svc-more" href="#">Learn more
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </article>
+
+      <article class="svc-card svc-c3">
+        <div class="svc-top">
+          <span class="svc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg>
+          </span>
+          <span class="svc-num" aria-hidden="true">03</span>
+        </div>
+        <h3>Network &amp; Connectivity</h3>
+        <p class="svc-desc">
+          Router, switch and Wi-Fi management across LAN and WAN, with firewall
+          management and round-the-clock internet link monitoring.
+        </p>
+        <ul class="svc-tags">
+          <li>LAN/WAN</li><li>Wi-Fi</li><li>Firewall</li><li>Link Monitoring</li>
+        </ul>
+        <a class="svc-more" href="#">Learn more
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </article>
+
+      <article class="svc-card svc-c4">
+        <div class="svc-top">
+          <span class="svc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          </span>
+          <span class="svc-num" aria-hidden="true">04</span>
+        </div>
+        <h3>Security &amp; Access</h3>
+        <p class="svc-desc">
+          Firewall and endpoint security, user access control, password and account
+          policies, plus ongoing security updates and monitoring.
+        </p>
+        <ul class="svc-tags">
+          <li>Firewall</li><li>Endpoint</li><li>Access Control</li><li>Policies</li>
+        </ul>
+        <a class="svc-more" href="#">Learn more
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </article>
+
+      <article class="svc-card svc-c5">
+        <div class="svc-top">
+          <span class="svc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></svg>
+          </span>
+          <span class="svc-num" aria-hidden="true">05</span>
+        </div>
+        <h3>Backup &amp; Data</h3>
+        <p class="svc-desc">
+          Data, server and cloud backup with continuous monitoring, restore support
+          and regular backup health reports.
+        </p>
+        <ul class="svc-tags">
+          <li>Data</li><li>Server</li><li>Cloud</li><li>Restore</li>
+        </ul>
+        <a class="svc-more" href="#">Learn more
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </article>
+
+      <article class="svc-card svc-c6">
+        <div class="svc-top">
+          <span class="svc-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.94a.5.5 0 0 0-.78-.42L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+          </span>
+          <span class="svc-num" aria-hidden="true">06</span>
+        </div>
+        <h3>CCTV &amp; Physical IT</h3>
+        <p class="svc-desc">
+          CCTV and NVR health monitoring, CCTV network support, rack management,
+          and UPS and basic power infrastructure coordination.
+        </p>
+        <ul class="svc-tags">
+          <li>CCTV</li><li>NVR</li><li>Racks</li><li>UPS</li>
+        </ul>
+        <a class="svc-more" href="#">Learn more
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section> -->
+
+<!-- ============== IT & Infrastructure capability ============== -->
+<section class="band band--grid-bg pt-6 sm:pt-8 lg:pt-10" style="padding-bottom: clamp(3.25rem, 7vw, 6rem);">
 <div class="shell">
   <!-- Section head (Tailwind only) -->
   <div class="mx-auto max-w-3xl text-center">
@@ -1609,128 +1910,98 @@
 
       <!-- 01 End-user & peripherals -->
       <article class="svc-card svc-c1">
-        <div class="svc-top">
-          <span class="svc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </span>
-          <span class="svc-num" aria-hidden="true">01</span>
+        <span class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        <div>
+          <div class="svc-head"><h3>End-user &amp; Peripherals</h3><span class="svc-num" aria-hidden="true">01</span></div>
+          <p class="svc-desc">Desktop and laptop management, OS and software updates, user account support, and printer, scanner and peripheral care.</p>
         </div>
-        <h3>End-user &amp; Peripherals</h3>
-        <p class="svc-desc">
-          Desktop and laptop management, OS and software updates, user account support,
-          and printer, scanner and peripheral care.
-        </p>
         <ul class="svc-tags">
           <li>Desktops</li><li>Laptops</li><li>Software</li><li>Peripherals</li>
         </ul>
-        <a class="svc-more" href="#">Learn more
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
+        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about End-user &amp; Peripherals"></a>
       </article>
 
       <!-- 02 Servers & storage -->
       <article class="svc-card svc-c2">
-        <div class="svc-top">
-          <span class="svc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg>
-          </span>
-          <span class="svc-num" aria-hidden="true">02</span>
+        <span class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg>
+        </span>
+        <div>
+          <div class="svc-head"><h3>Servers &amp; Storage</h3><span class="svc-num" aria-hidden="true">02</span></div>
+          <p class="svc-desc">Windows and Linux server management with health monitoring, user and permission control, storage management and server backup.</p>
         </div>
-        <h3>Servers &amp; Storage</h3>
-        <p class="svc-desc">
-          Windows and Linux server management with health monitoring, user and permission
-          control, storage management and server backup.
-        </p>
         <ul class="svc-tags">
           <li>Windows</li><li>Linux</li><li>Monitoring</li><li>Storage</li>
         </ul>
-        <a class="svc-more" href="#">Learn more
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
+        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Servers &amp; Storage"></a>
       </article>
 
       <!-- 03 Network & connectivity -->
       <article class="svc-card svc-c3">
-        <div class="svc-top">
-          <span class="svc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg>
-          </span>
-          <span class="svc-num" aria-hidden="true">03</span>
+        <span class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg>
+        </span>
+        <div>
+          <div class="svc-head"><h3>Network &amp; Connectivity</h3><span class="svc-num" aria-hidden="true">03</span></div>
+          <p class="svc-desc">Router, switch and Wi-Fi management across LAN and WAN, with firewall management and round-the-clock internet link monitoring.</p>
         </div>
-        <h3>Network &amp; Connectivity</h3>
-        <p class="svc-desc">
-          Router, switch and Wi-Fi management across LAN and WAN, with firewall
-          management and round-the-clock internet link monitoring.
-        </p>
         <ul class="svc-tags">
           <li>LAN/WAN</li><li>Wi-Fi</li><li>Firewall</li><li>Link Monitoring</li>
         </ul>
-        <a class="svc-more" href="#">Learn more
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
+        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Network &amp; Connectivity"></a>
       </article>
 
       <!-- 04 Security & access -->
       <article class="svc-card svc-c4">
-        <div class="svc-top">
-          <span class="svc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-          </span>
-          <span class="svc-num" aria-hidden="true">04</span>
+        <span class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        </span>
+        <div>
+          <div class="svc-head"><h3>Security &amp; Access</h3><span class="svc-num" aria-hidden="true">04</span></div>
+          <p class="svc-desc">Firewall and endpoint security, user access control, password and account policies, plus ongoing security updates and monitoring.</p>
         </div>
-        <h3>Security &amp; Access</h3>
-        <p class="svc-desc">
-          Firewall and endpoint security, user access control, password and account
-          policies, plus ongoing security updates and monitoring.
-        </p>
         <ul class="svc-tags">
           <li>Firewall</li><li>Endpoint</li><li>Access Control</li><li>Policies</li>
         </ul>
-        <a class="svc-more" href="#">Learn more
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
+        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Security &amp; Access"></a>
       </article>
 
       <!-- 05 Backup & data -->
       <article class="svc-card svc-c5">
-        <div class="svc-top">
-          <span class="svc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></svg>
-          </span>
-          <span class="svc-num" aria-hidden="true">05</span>
+        <span class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></svg>
+        </span>
+        <div>
+          <div class="svc-head"><h3>Backup &amp; Data</h3><span class="svc-num" aria-hidden="true">05</span></div>
+          <p class="svc-desc">Data, server and cloud backup with continuous monitoring, restore support and regular backup health reports.</p>
         </div>
-        <h3>Backup &amp; Data</h3>
-        <p class="svc-desc">
-          Data, server and cloud backup with continuous monitoring, restore support
-          and regular backup health reports.
-        </p>
         <ul class="svc-tags">
           <li>Data</li><li>Server</li><li>Cloud</li><li>Restore</li>
         </ul>
-        <a class="svc-more" href="#">Learn more
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
+        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Backup &amp; Data"></a>
       </article>
 
       <!-- 06 CCTV & physical IT -->
       <article class="svc-card svc-c6">
-        <div class="svc-top">
-          <span class="svc-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.94a.5.5 0 0 0-.78-.42L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-          </span>
-          <span class="svc-num" aria-hidden="true">06</span>
+        <span class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.94a.5.5 0 0 0-.78-.42L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+        </span>
+        <div>
+          <div class="svc-head"><h3>CCTV &amp; Physical IT</h3><span class="svc-num" aria-hidden="true">06</span></div>
+          <p class="svc-desc">CCTV and NVR health monitoring, CCTV network support, rack management, and UPS and basic power infrastructure coordination.</p>
         </div>
-        <h3>CCTV &amp; Physical IT</h3>
-        <p class="svc-desc">
-          CCTV and NVR health monitoring, CCTV network support, rack management,
-          and UPS and basic power infrastructure coordination.
-        </p>
         <ul class="svc-tags">
           <li>CCTV</li><li>NVR</li><li>Racks</li><li>UPS</li>
         </ul>
-        <a class="svc-more" href="#">Learn more
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-        </a>
+        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about CCTV &amp; Physical IT"></a>
       </article>
 
     </div>
@@ -1738,7 +2009,6 @@
 </section>
 
 <!-- ===================== All 8 services (Tailwind only) ===================== -->
-
     <!-- <section id="services" class="bg-[#f8f8f8] py-24" aria-labelledby="services-title">
       <div class="mx-auto max-w-7xl px-6 lg:px-10">
 
