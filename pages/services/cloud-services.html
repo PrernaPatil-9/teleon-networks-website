@@ -487,122 +487,154 @@
   </div>
 </section>
 
-    <!-- ============================================================ -->
-    <!-- SECTION 2 — COMPACT INFO (everything in one view)            -->
-    <!-- ============================================================ -->
-    <section class="band svc-all">
-      <div class="shell">
+<!-- ============================================================ -->
+<!-- SECTION 2 — CLOUD SERVICES AT A GLANCE (Tailwind only)       -->
+<!-- One panel, rows of naturally equal blocks. No stretched cards -->
+<!-- ============================================================ -->
+<section class="py-16 sm:py-20 bg-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        <!-- Top row: overview + larger image -->
-        <div class="svc-all__top">
-          <div class="svc-all__text reveal">
-            <p class="eyebrow">Service overview</p>
-            <h2>Cloud services at a glance</h2>
-            <p class="svc-all__lede">
-              We help businesses move, protect, manage and monitor their IT infrastructure on reliable
-              cloud platforms, using leading providers per client requirements.
-            </p>
-            <p class="svc-all__lede">
-              Cloud engagements at Teleon Networks cover the full lifecycle — from assessing what you
-              run today, to planning the right platform and architecture, migrating workloads with
-              minimum disruption, and then managing the environment on an ongoing basis.
-            </p>
-            <p class="svc-all__lede">
-              Services can be taken individually or as a managed arrangement, and can be delivered on
-              Microsoft Azure, Microsoft 365, Google Workspace or other leading cloud platforms
-              depending on your applications, users and data.
-            </p>
-          </div>
-
-          <div class="svc-all__media reveal">
-            <img src="/assets/images/s1.jpg" alt=""
-                 loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-all__media--fallback')">
-          </div>
-        </div>
-
-        <!-- Points grid: 4 compact point-cards in one row -->
-        <div class="svc-all__grid">
-
-          <!-- What it covers -->
-          <div class="svc-all__card svc-all__card--blue reveal">
-            <div class="svc-all__card-head">
-              <span class="svc-all__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.2 9.5 4.5 4.5 0 0 0 6.5 19z"/></svg>
-              </span>
-              <h3>What it covers</h3>
-            </div>
-            <ul class="svc-all__points">
-              <li>Cloud backup &amp; disaster recovery</li>
-              <li>Cloud storage &amp; file sharing</li>
-              <li>Cloud server / VPS hosting</li>
-              <li>Business email (M365 / Workspace)</li>
-              <li>Migration of servers, files, email &amp; apps</li>
-              <li>Cloud security, monitoring &amp; management</li>
-            </ul>
-          </div>
-
-          <!-- Capabilities -->
-          <div class="svc-all__card svc-all__card--cyan reveal">
-            <div class="svc-all__card-head">
-              <span class="svc-all__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
-              </span>
-              <h3>Capabilities</h3>
-            </div>
-            <ul class="svc-all__points">
-              <li>Cloud Backup &amp; restore support</li>
-              <li>Cloud Storage &amp; permissions</li>
-              <li>Cloud Server / VPS (Win / Linux)</li>
-              <li>Cloud Email setup &amp; migration</li>
-              <li>Cloud Migration (server, files, apps)</li>
-              <li>Cloud Security (MFA, access control)</li>
-              <li>Monitoring &amp; account management</li>
-              <li>Disaster Recovery &amp; continuity</li>
-            </ul>
-          </div>
-
-          <!-- Process -->
-          <div class="svc-all__card svc-all__card--gold reveal">
-            <div class="svc-all__card-head">
-              <span class="svc-all__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
-              </span>
-              <h3>How we work</h3>
-            </div>
-            <ol class="svc-all__steps">
-              <li><b>Assess</b> — applications, users, data, infrastructure.</li>
-              <li><b>Plan</b> — platform, architecture, backup strategy.</li>
-              <li><b>Setup / Migrate</b> — configure and move with minimum disruption.</li>
-              <li><b>Manage</b> — monitor, maintain and support ongoing.</li>
-            </ol>
-          </div>
-
-          <!-- Business model + audience -->
-          <div class="svc-all__card svc-all__card--violet reveal">
-            <div class="svc-all__card-head">
-              <span class="svc-all__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21 8-9-5-9 5v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
-              </span>
-              <h3>Charging &amp; audience</h3>
-            </div>
-            <p class="svc-all__mini-label">Charged as</p>
-            <ul class="svc-all__points">
-              <li>Cloud provider charges (usage)</li>
-              <li>Teleon setup / migration charges</li>
-              <li>Monthly management &amp; support</li>
-            </ul>
-            <p class="svc-all__mini-label">Ideal for</p>
-            <ul class="svc-all__chips">
-              <li>SMEs</li><li>Corporate</li><li>Branches</li>
-              <li>Professional firms</li><li>Education</li>
-            </ul>
-          </div>
-
-        </div>
-
+    <!-- Top row: overview + image -->
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+      <div>
+        <p class="text-sm font-semibold text-blue-600">Service overview</p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          Cloud services at a glance
+        </h2>
+        <p class="mt-5 leading-relaxed text-slate-600">
+          We help businesses move, protect, manage and monitor their IT infrastructure on reliable
+          cloud platforms, using leading providers per client requirements.
+        </p>
+        <p class="mt-4 leading-relaxed text-slate-600">
+          Cloud engagements at Teleon Networks cover the full lifecycle — from assessing what you
+          run today, to planning the right platform and architecture, migrating workloads with
+          minimum disruption, and then managing the environment on an ongoing basis.
+        </p>
+        <p class="mt-4 leading-relaxed text-slate-600">
+          Services can be taken individually or as a managed arrangement, and can be delivered on
+          Microsoft Azure, Microsoft 365, Google Workspace or other leading cloud platforms
+          depending on your applications, users and data.
+        </p>
       </div>
-    </section>
+
+      <div class="overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-200">
+        <img src="/assets/images/s1.jpg" alt="" loading="lazy" decoding="async"
+             class="aspect-[4/3] h-full w-full object-cover"
+             onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <!-- Single panel: every row is built so its blocks are equal by design -->
+    <div class="mt-14 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+
+      <!-- Row 1: two lists with the same number of items -->
+      <div class="grid divide-y divide-slate-200 md:grid-cols-2 md:divide-x md:divide-y-0">
+
+        <!-- What it covers -->
+        <div class="p-6 sm:p-8">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.2 9.5 4.5 4.5 0 0 0 6.5 19z"/></svg>
+            </span>
+            <h3 class="text-lg font-semibold text-slate-900">What it covers</h3>
+          </div>
+          <ul class="mt-6 grid gap-x-6 gap-y-3 text-[15px] text-slate-700 sm:grid-cols-2">
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>Cloud backup &amp; disaster recovery</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>Cloud storage &amp; file sharing</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>Cloud server / VPS hosting</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>Business email (M365 / Workspace)</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>Migration of servers, files, email &amp; apps</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>Cloud security, monitoring &amp; management</li>
+          </ul>
+        </div>
+
+        <!-- Capabilities -->
+        <div class="p-6 sm:p-8">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-100 text-cyan-600">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+            </span>
+            <h3 class="text-lg font-semibold text-slate-900">Capabilities</h3>
+          </div>
+          <ul class="mt-6 grid gap-x-6 gap-y-3 text-[15px] text-slate-700 sm:grid-cols-2">
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span>Backup &amp; restore support</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span>Storage &amp; permissions</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span>Cloud server / VPS (Win / Linux)</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span>Email setup &amp; migration</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span>Security (MFA, access control)</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span>Monitoring &amp; account management</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Row 2: process as a horizontal stepper (4 equal steps) -->
+      <div class="border-t border-slate-200 bg-amber-50/60 p-6 sm:p-8">
+        <div class="flex items-center gap-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+          </span>
+          <h3 class="text-lg font-semibold text-slate-900">How we work</h3>
+        </div>
+
+        <ol class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="flex gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-white">1</span>
+            <p class="text-[15px] leading-relaxed text-slate-600"><b class="text-slate-900">Assess</b> — applications, users, data, infrastructure.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-white">2</span>
+            <p class="text-[15px] leading-relaxed text-slate-600"><b class="text-slate-900">Plan</b> — platform, architecture, backup strategy.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-white">3</span>
+            <p class="text-[15px] leading-relaxed text-slate-600"><b class="text-slate-900">Setup / Migrate</b> — configure and move with minimum disruption.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-white">4</span>
+            <p class="text-[15px] leading-relaxed text-slate-600"><b class="text-slate-900">Manage</b> — monitor, maintain and support ongoing.</p>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Row 3: charging + audience side by side -->
+      <div class="grid divide-y divide-slate-200 border-t border-slate-200 md:grid-cols-2 md:divide-x md:divide-y-0">
+
+        <!-- Charged as -->
+        <div class="p-6 sm:p-8">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-100 text-violet-600">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 8-9-5-9 5v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
+            </span>
+            <h3 class="text-lg font-semibold text-slate-900">How it's charged</h3>
+          </div>
+          <ul class="mt-5 flex flex-wrap gap-2">
+            <li class="rounded-full bg-violet-50 px-3.5 py-1.5 text-sm font-medium text-violet-700 ring-1 ring-violet-200">Cloud provider charges (usage)</li>
+            <li class="rounded-full bg-violet-50 px-3.5 py-1.5 text-sm font-medium text-violet-700 ring-1 ring-violet-200">Teleon setup / migration charges</li>
+            <li class="rounded-full bg-violet-50 px-3.5 py-1.5 text-sm font-medium text-violet-700 ring-1 ring-violet-200">Monthly management &amp; support</li>
+          </ul>
+        </div>
+
+        <!-- Ideal for -->
+        <div class="p-6 sm:p-8">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3 class="text-lg font-semibold text-slate-900">Who it's for</h3>
+          </div>
+          <ul class="mt-5 flex flex-wrap gap-2">
+            <li class="rounded-full bg-emerald-50 px-3.5 py-1.5 text-sm font-medium text-emerald-700 ring-1 ring-emerald-200">SMEs</li>
+            <li class="rounded-full bg-emerald-50 px-3.5 py-1.5 text-sm font-medium text-emerald-700 ring-1 ring-emerald-200">Corporate</li>
+            <li class="rounded-full bg-emerald-50 px-3.5 py-1.5 text-sm font-medium text-emerald-700 ring-1 ring-emerald-200">Branches</li>
+            <li class="rounded-full bg-emerald-50 px-3.5 py-1.5 text-sm font-medium text-emerald-700 ring-1 ring-emerald-200">Professional firms</li>
+            <li class="rounded-full bg-emerald-50 px-3.5 py-1.5 text-sm font-medium text-emerald-700 ring-1 ring-emerald-200">Education</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================ -->
 <!-- SECTION 3 — CTA (matches home page CTA)                      -->
