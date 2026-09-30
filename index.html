@@ -302,15 +302,26 @@
 
   <main id="main">
 
-<!-- ============================ Hero (sliding image banners) ============================ -->
+<!-- ============================ Hero (sliding image banners with Video Background) ============================ -->
 <section class="hb" id="heroBanner" aria-roledescription="carousel" aria-label="Featured services" data-interval="6000"
-         style="min-height: 580px;">
-  <div class="hb__viewport" style="touch-action: pan-y; min-height: 580px;">
+         style="min-height: 580px; position: relative; overflow: hidden;">
+  
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline class="hb__video-bg">
+    <source src="assets/images/v1.0.mp4" type="video/mp4">
+    <!-- Fallback for browsers that don't support video -->
+    Your browser does not support the video tag.
+  </video>
+  
+  <!-- Dark Overlay to ensure text readability -->
+  <div class="hb__video-overlay"></div>
+
+  <div class="hb__viewport" style="touch-action: pan-y; min-height: 580px; position: relative; z-index: 2;">
     <div class="hb__track" id="heroBannerTrack">
 
       <!-- ============ Banner 1 ============ -->
       <div class="hb__slide hb__slide--1 is-active" role="group" aria-roledescription="slide" aria-label="1 of 3"
-           style="min-height: 580px; background-image: linear-gradient(to right, rgba(7,27,58,0.92) 0%, rgba(7,27,58,0.75) 45%, rgba(7,27,58,0.45) 100%), url('assets/images/b1.jpg'); background-size: cover; background-position: center;">
+           style="min-height: 580px; background: transparent;"> <!-- Removed image background -->
         <div class="shell">
           <div class="hb__content">
             <p class="hb__tag">We manage IT. You grow IT.</p>
@@ -329,7 +340,7 @@
 
       <!-- ============ Banner 2 ============ -->
       <div class="hb__slide hb__slide--2" role="group" aria-roledescription="slide" aria-label="2 of 3"
-           style="min-height: 580px; background-image: linear-gradient(to right, rgba(7,27,58,0.92) 0%, rgba(7,27,58,0.75) 45%, rgba(7,27,58,0.45) 100%), url('assets/images/b2.jpg'); background-size: cover; background-position: center;">
+           style="min-height: 580px; background: transparent;">
         <div class="shell">
           <div class="hb__content">
             <p class="hb__tag">Cloud &amp; cyber security</p>
@@ -348,7 +359,7 @@
 
       <!-- ============ Banner 3 ============ -->
       <div class="hb__slide hb__slide--3" role="group" aria-roledescription="slide" aria-label="3 of 3"
-           style="min-height: 580px; background-image: linear-gradient(to right, rgba(7,27,58,0.92) 0%, rgba(7,27,58,0.75) 45%, rgba(7,27,58,0.45) 100%), url('assets/images/b3.avif'); background-size: cover; background-position: center;">
+           style="min-height: 580px; background: transparent;">
         <div class="shell">
           <div class="hb__content">
             <p class="hb__tag">Projects, procurement &amp; AMC</p>
@@ -369,7 +380,7 @@
   </div>
 
   <!-- Controls -->
-  <div class="hb__ui">
+  <div class="hb__ui" style="position: relative; z-index: 2;">
     <div class="shell">
       <div class="hb__ui-row" role="group" aria-label="Slideshow controls">
         <div class="hb__bars">
@@ -389,13 +400,45 @@
       </div>
     </div>
   </div>
+
+  <!-- Inline styles for the video background -->
+  <style>
+    .hb__video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      /* Fallback background color if video fails */
+      background: #071b3a;
+    }
+    
+    .hb__video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(7,27,58,0.92) 0%, rgba(7,27,58,0.75) 45%, rgba(7,27,58,0.45) 100%);
+      z-index: 1;
+    }
+
+    /* Ensure slides don't have their own background images */
+    .hb__slide {
+      background-image: none !important;
+    }
+  </style>
 </section>
 
 <!-- ===================== About intro (Tailwind only — beige bg, blue + gold) ===================== -->
 <section class="relative isolate overflow-hidden bg-[#FCFAF5] py-6 sm:py-8 lg:py-10" aria-labelledby="about-intro-title">
   <div class="pointer-events-none absolute -left-40 -top-24 -z-10 h-72 w-72 rounded-full bg-blue-200/40 blur-3xl" aria-hidden="true"></div>
   <div class="pointer-events-none absolute -right-40 bottom-0 -z-10 h-80 w-80 rounded-full bg-amber-200/45 blur-3xl" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(120,100,60,0.18)_1.5px,transparent_0)] [background-size:26px_26px]" aria-hidden="true"></div>
+  
+  <!-- Dots grid opacity adjusted to 0.10 for subtle visibility -->
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(120,100,60,0.10)_1.5px,transparent_0)] [background-size:26px_26px]" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
 
@@ -953,11 +996,10 @@
   </div>
 </section> -->
 
-<!-- ===================== All 8 services (Tailwind only, carousel) ===================== -->
+<!-- ===================== All 8 services (Tailwind + rectangular fade cards, carousel) ===================== -->
 <section id="services" class="relative overflow-hidden bg-[#f8f8f8] py-14 lg:py-16" aria-labelledby="services-title">
 
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
-
     <!-- Section heading -->
     <div class="mb-14 flex flex-wrap items-end justify-between gap-6">
       <div class="max-w-2xl">
@@ -973,619 +1015,245 @@
         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
-
   </div>
 
   <!-- Marquee carousel -->
-  <div class="svc-carousel relative overflow-hidden">
-    <!-- Edge fades -->
+  <div class="svc-carousel relative overflow-hidden py-3">
     <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#f8f8f8] to-transparent sm:w-24" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#f8f8f8] to-transparent sm:w-24" aria-hidden="true"></div>
 
-    <ul class="svc-carousel__track flex w-max gap-5 pl-6 pr-6 lg:pl-10 lg:pr-10">
+    <ul id="svcTrack" class="svc-carousel__track flex w-max pl-6 lg:pl-10" style="margin:0;list-style:none">
 
       <!-- Card 1 — Cloud Services -->
-      <li class="svc-proj">
-        <a href="pages/services/cloud-services.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s1.jpg" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#0b2a4a,#14508a)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Cloud Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Cloud &amp; Managed Platform
-            </p>
-            <p class="svc-proj__meta">Backup · Storage · Cloud Server &amp; VPS · Business Email · Migration · Disaster Recovery · 24/7 Monitoring</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                Cloud
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#0b2a4a">
+        <a href="pages/services/cloud-services.html" class="svx-card__link">
+          <img src="assets/images/s1.jpg" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">Cloud Services</h3>
+            <p class="svx-card__sub">Cloud &amp; Managed Platform</p>
+            <p class="svx-card__meta">Backup · Storage · Cloud Server &amp; VPS · Business Email · Migration · Disaster Recovery · 24/7 Monitoring</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
 
       <!-- Card 2 — IT Infrastructure Management -->
-      <li class="svc-proj">
-        <a href="pages/services/it-infrastructure-management.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s2.webp" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#06213a,#0f5a73)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">IT Infrastructure Management</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              End-to-end IT Management
-            </p>
-            <p class="svc-proj__meta">Proactive Monitoring · Maintenance · Troubleshooting · Security · Backup · On-site &amp; Remote Support</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
-                Managed IT
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#06213a">
+        <a href="pages/services/it-infrastructure-management.html" class="svx-card__link">
+          <img src="assets/images/s2.webp" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">IT Infrastructure Management</h3>
+            <p class="svx-card__sub">End-to-end IT Management</p>
+            <p class="svx-card__meta">Proactive Monitoring · Maintenance · Troubleshooting · Security · Backup · On-site &amp; Remote Support</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
 
       <!-- Card 3 — Network Solutions -->
-      <li class="svc-proj">
-        <a href="pages/services/network-solutions.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s3.webp" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#0a1f45,#2a4f9e)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Network Solutions</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Offices · Enterprises · Branches
-            </p>
-            <p class="svc-proj__meta">Installation · Configuration · LAN/WAN · Wi-Fi · Firewall · Monitoring · Maintenance</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.8 16.6M12 11.5l5.2 5.1"/></svg>
-                Networking
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#0a1f45">
+        <a href="pages/services/network-solutions.html" class="svx-card__link">
+          <img src="assets/images/s3.webp" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">Network Solutions</h3>
+            <p class="svx-card__sub">Offices · Enterprises · Branches</p>
+            <p class="svx-card__meta">Installation · Configuration · LAN/WAN · Wi-Fi · Firewall · Monitoring · Maintenance</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
 
       <!-- Card 4 — Cyber Security Services -->
-      <li class="svc-proj">
-        <a href="pages/services/cyber-security.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s4.webp" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#0b1a36,#23306b)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Cyber Security Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Endpoint · Network · Identity
-            </p>
-            <p class="svc-proj__meta">Endpoint Protection · Firewall · Access Control · Email Security · Backup · Assessments</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                Security
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#0b1a36">
+        <a href="pages/services/cyber-security.html" class="svx-card__link">
+          <img src="assets/images/s4.webp" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">Cyber Security Services</h3>
+            <p class="svx-card__sub">Endpoint · Network · Identity</p>
+            <p class="svx-card__meta">Endpoint Protection · Firewall · Access Control · Email Security · Backup · Assessments</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
 
       <!-- Card 5 — Internet Management -->
-      <li class="svc-proj">
-        <a href="pages/services/internet-management.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s5.avif" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#062a3d,#0e6b8a)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Internet Management &amp; Monitoring</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              WAN · Leased Line · ISP
-            </p>
-            <p class="svc-proj__meta">Link Monitoring · Performance Monitoring · Alerts · ISP Coordination · Reporting · Managed Support</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
-                Connectivity
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#062a3d">
+        <a href="pages/services/internet-management.html" class="svx-card__link">
+          <img src="assets/images/s5.avif" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">Internet Management &amp; Monitoring</h3>
+            <p class="svx-card__sub">WAN · Leased Line · ISP</p>
+            <p class="svx-card__meta">Link Monitoring · Performance Monitoring · Alerts · ISP Coordination · Reporting · Managed Support</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
 
       <!-- Card 6 — IT Procurement -->
-      <li class="svc-proj">
-        <a href="pages/services/it-procurement.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s6.png" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#1a2038,#3a4a86)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">IT Procurement &amp; Hardware Supply</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Computers · Servers · Networking
-            </p>
-            <p class="svc-proj__meta">BOQ · Vendor Coordination · Delivery · Installation · Warranty · CCTV &amp; Accessories</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 8-9-5-9 5v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
-                Supply
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#1a2038">
+        <a href="pages/services/it-procurement.html" class="svx-card__link">
+          <img src="assets/images/s6.png" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">IT Procurement &amp; Hardware Supply</h3>
+            <p class="svx-card__sub">Computers · Servers · Networking</p>
+            <p class="svx-card__meta">BOQ · Vendor Coordination · Delivery · Installation · Warranty · CCTV &amp; Accessories</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
 
       <!-- Card 7 — IT Support & AMC -->
-      <li class="svc-proj">
-        <a href="pages/services/it-support-amc.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s7.png" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#071f33,#1a6a8f)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">IT Support &amp; AMC Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Remote &amp; On-site Support
-            </p>
-            <p class="svc-proj__meta">Helpdesk · Ticket Handling · Preventive Maintenance · AMC · Escalation · Service Reporting</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2" y="13" width="5" height="7" rx="2"/><rect x="17" y="13" width="5" height="7" rx="2"/><path d="M20 20a3 3 0 0 1-3 3h-3"/></svg>
-                Support
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#071f33">
+        <a href="pages/services/it-support-amc.html" class="svx-card__link">
+          <img src="assets/images/s7.png" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">IT Support &amp; AMC Services</h3>
+            <p class="svx-card__sub">Remote &amp; On-site Support</p>
+            <p class="svx-card__meta">Helpdesk · Ticket Handling · Preventive Maintenance · AMC · Escalation · Service Reporting</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
 
       <!-- Card 8 — Project Implementation -->
-      <li class="svc-proj">
-        <a href="pages/services/project-implementation.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s8.png" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#08213f,#1f5a96)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Project Implementation Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              New Offices · Branches · Server Rooms
-            </p>
-            <p class="svc-proj__meta">Site Survey · Planning · BOQ · Installation · Testing &amp; Commissioning · Documentation · Handover</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9.5 4V3h5v1"/><path d="m9.5 13 2 2 3.5-3.5"/></svg>
-                Projects
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Duplicate set for seamless loop -->
-     <!-- Card 1 — Cloud Services -->
-      <li class="svc-proj">
-        <a href="pages/services/cloud-services.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s1.jpg" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#0b2a4a,#14508a)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Cloud Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Cloud &amp; Managed Platform
-            </p>
-            <p class="svc-proj__meta">Backup · Storage · Cloud Server &amp; VPS · Business Email · Migration · Disaster Recovery · 24/7 Monitoring</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                Cloud
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Card 2 — IT Infrastructure Management -->
-      <li class="svc-proj">
-        <a href="pages/services/it-infrastructure-management.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s2.webp" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#06213a,#0f5a73)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">IT Infrastructure Management</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              End-to-end IT Management
-            </p>
-            <p class="svc-proj__meta">Proactive Monitoring · Maintenance · Troubleshooting · Security · Backup · On-site &amp; Remote Support</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
-                Managed IT
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Card 3 — Network Solutions -->
-      <li class="svc-proj">
-        <a href="pages/services/network-solutions.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s3.webp" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#0a1f45,#2a4f9e)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Network Solutions</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Offices · Enterprises · Branches
-            </p>
-            <p class="svc-proj__meta">Installation · Configuration · LAN/WAN · Wi-Fi · Firewall · Monitoring · Maintenance</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.8 16.6M12 11.5l5.2 5.1"/></svg>
-                Networking
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Card 4 — Cyber Security Services -->
-      <li class="svc-proj">
-        <a href="pages/services/cyber-security.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s4.webp" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#0b1a36,#23306b)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Cyber Security Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Endpoint · Network · Identity
-            </p>
-            <p class="svc-proj__meta">Endpoint Protection · Firewall · Access Control · Email Security · Backup · Assessments</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                Security
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Card 5 — Internet Management -->
-      <li class="svc-proj">
-        <a href="pages/services/internet-management.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s5.avif" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#062a3d,#0e6b8a)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Internet Management &amp; Monitoring</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              WAN · Leased Line · ISP
-            </p>
-            <p class="svc-proj__meta">Link Monitoring · Performance Monitoring · Alerts · ISP Coordination · Reporting · Managed Support</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
-                Connectivity
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Card 6 — IT Procurement -->
-      <li class="svc-proj">
-        <a href="pages/services/it-procurement.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s6.png" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#1a2038,#3a4a86)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">IT Procurement &amp; Hardware Supply</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Computers · Servers · Networking
-            </p>
-            <p class="svc-proj__meta">BOQ · Vendor Coordination · Delivery · Installation · Warranty · CCTV &amp; Accessories</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 8-9-5-9 5v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
-                Supply
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Card 7 — IT Support & AMC -->
-      <li class="svc-proj">
-        <a href="pages/services/it-support-amc.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s7.png" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#071f33,#1a6a8f)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">IT Support &amp; AMC Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Remote &amp; On-site Support
-            </p>
-            <p class="svc-proj__meta">Helpdesk · Ticket Handling · Preventive Maintenance · AMC · Escalation · Service Reporting</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2" y="13" width="5" height="7" rx="2"/><rect x="17" y="13" width="5" height="7" rx="2"/><path d="M20 20a3 3 0 0 1-3 3h-3"/></svg>
-                Support
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </div>
-        </a>
-      </li>
-
-      <!-- Card 8 — Project Implementation -->
-      <li class="svc-proj">
-        <a href="pages/services/project-implementation.html" class="svc-proj__link">
-          <div class="svc-proj__media">
-            <img src="assets/images/s8.png" alt="" loading="lazy" decoding="async"
-                 onerror="this.style.display='none';this.parentElement.classList.add('svc-proj__media--fallback');this.parentElement.style.setProperty('--fallback','linear-gradient(135deg,#08213f,#1f5a96)')">
-          </div>
-          <div class="svc-proj__body">
-            <h3 class="svc-proj__title">Project Implementation Services</h3>
-            <p class="svc-proj__loc">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              New Offices · Branches · Server Rooms
-            </p>
-            <p class="svc-proj__meta">Site Survey · Planning · BOQ · Installation · Testing &amp; Commissioning · Documentation · Handover</p>
-            <div class="svc-proj__foot">
-              <span class="svc-proj__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9.5 4V3h5v1"/><path d="m9.5 13 2 2 3.5-3.5"/></svg>
-                Projects
-              </span>
-              <span class="svc-proj__more">
-                View Details
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
+      <li class="svx-card" style="--bg:#08213f">
+        <a href="pages/services/project-implementation.html" class="svx-card__link">
+          <img src="assets/images/s8.png" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <div class="svx-card__fade"></div>
+          <div class="svx-card__body">
+            <h3 class="svx-card__title">Project Implementation Services</h3>
+            <p class="svx-card__sub">New Offices · Branches · Server Rooms</p>
+            <p class="svx-card__meta">Site Survey · Planning · BOQ · Installation · Testing &amp; Commissioning · Documentation · Handover</p>
+            <span class="svx-card__btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </a>
       </li>
     </ul>
   </div>
 
-  <!-- Carousel styles -->
+  <!-- Seamless loop: duplicates the 8 cards once (keeps HTML short) -->
+  <script>
+    (function () {
+      var track = document.getElementById('svcTrack');
+      if (!track) return;
+      Array.prototype.slice.call(track.children).forEach(function (li) {
+        var c = li.cloneNode(true);
+        c.setAttribute('aria-hidden', 'true');
+        c.querySelector('a').setAttribute('tabindex', '-1');
+        track.appendChild(c);
+      });
+    })();
+  </script>
+
   <style>
-    .svc-carousel__track {
-      animation: svc-marquee 60s linear infinite;
-    }
-    .svc-carousel:hover .svc-carousel__track {
-      animation-play-state: paused;
-    }
-    @keyframes svc-marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
+    .svc-carousel__track { animation: svc-marquee 70s linear infinite; }
+    .svc-carousel:hover .svc-carousel__track { animation-play-state: paused; }
+    @keyframes svc-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) {
       .svc-carousel__track { animation: none; }
       .svc-carousel { overflow-x: auto; }
     }
 
-    /* ---- Card ---- */
-    .svc-proj {
+    /* ---- Rectangular card ---- */
+    .svx-card {
       flex: 0 0 auto;
-      width: 320px;
-      background: #ffffff;
-      border: 1.5px solid #b9d3f0;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 8px 24px -14px rgba(15,23,42,.10);
-      transition: transform .35s cubic-bezier(.22,.61,.36,1),
-                  box-shadow .35s cubic-bezier(.22,.61,.36,1),
-                  border-color .35s cubic-bezier(.22,.61,.36,1);
-    }
-    .svc-proj:hover {
-      transform: translateY(-4px);
-      border-color: #0a7cf0;
-      box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 22px 48px -20px rgba(15,23,42,.22);
-    }
-
-    .svc-proj__link {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      text-decoration: none;
-      color: inherit;
-    }
-    .svc-proj__link:focus-visible {
-      outline: 2px solid #0a7cf0;
-      outline-offset: -4px;
-      border-radius: 20px;
-    }
-
-    /* Media */
-    .svc-proj__media {
-      position: relative;
-      aspect-ratio: 16 / 10;
-      background: #0b2a4a;
-      overflow: hidden;
-    }
-    .svc-proj__media img {
-      width: 100%; height: 100%;
-      object-fit: cover;
+      width: 440px;
+      height: 250px;
+      margin: 0 20px 0 0;
+      padding: 0;
       display: block;
+      border-radius: 28px;
+      border: 4px solid rgba(255,255,255,.95);
+      background: var(--bg, #0b2a4a);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 0 1px #c9dbf0, 0 14px 32px -16px rgba(15,23,42,.35);
+      transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s cubic-bezier(.22,.61,.36,1);
+    }
+    .svx-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 0 1px #0a7cf0, 0 24px 44px -18px rgba(15,23,42,.45);
+    }
+    .svx-card__link {
+      display: block; position: relative; width: 100%; height: 100%;
+      color: #fff; text-decoration: none;
+    }
+    .svx-card__link:focus-visible { outline: 2px solid #0a7cf0; outline-offset: -6px; border-radius: 24px; }
+
+    /* Photo on the right */
+    .svx-card__link img {
+      position: absolute; top: 0; right: 0;
+      width: 68%; height: 100%;
+      object-fit: cover;
       transition: transform .8s cubic-bezier(.22,.61,.36,1);
     }
-    .svc-proj:hover .svc-proj__media img { transform: scale(1.06); }
+    .svx-card:hover .svx-card__link img { transform: scale(1.06); }
 
-    .svc-proj__media--fallback { background: var(--fallback, linear-gradient(135deg,#0b2a4a,#14508a)); }
-    .svc-proj__media--fallback::after {
-      content: "";
+    /* Blue fade from the left over the photo */
+    .svx-card__fade {
       position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 20% 15%, rgba(255,255,255,.14) 0, transparent 55%),
-        radial-gradient(circle at 85% 90%, rgba(10,124,240,.22) 0, transparent 60%),
-        linear-gradient(135deg, rgba(6,20,40,.55), rgba(6,20,40,.15));
+      background: linear-gradient(90deg,
+        rgba(14,44,84,1) 0%,
+        rgba(14,44,84,.96) 32%,
+        rgba(14,44,84,.6) 52%,
+        rgba(14,44,84,.12) 78%,
+        rgba(14,44,84,0) 100%);
+      pointer-events: none;
     }
 
-    /* Body */
-    .svc-proj__body {
-      display: flex;
-      flex-direction: column;
-      padding: 18px 20px 16px;
-      flex: 1;
+    /* Text */
+    .svx-card__body {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: flex-start;
+      height: 100%; max-width: 64%;
+      padding: 22px 0 22px 24px;
     }
-    .svc-proj__title {
-      margin: 0 0 8px;
+    .svx-card__title {
+      margin: 0 0 6px;
+      color: #fff;
       font-family: var(--font-display, 'Manrope','Inter',sans-serif);
-      font-size: 1.2rem;
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -.01em;
-      color: #0b1a2e;
+      font-size: 1.15rem; font-weight: 700; line-height: 1.25; letter-spacing: -.01em;
     }
-    .svc-proj__loc {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin: 0 0 10px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #0a7cf0;
+    .svx-card__sub {
+      margin: 0 0 8px;
+      font-size: 13px; font-weight: 500; color: #ffd166;
     }
-    .svc-proj__loc svg { width: 15px; height: 15px; flex: none; }
-
-    .svc-proj__meta {
-      margin: 0 0 14px;
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: #55637a;
-      flex: 1;
+    .svx-card__meta {
+      margin: 0; flex: 1;
+      font-size: 12px; line-height: 1.55; color: rgba(255,255,255,.75);
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
     }
 
-    /* Footer */
-    .svc-proj__foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding-top: 12px;
-      border-top: 1px solid #eef2f7;
-    }
-    .svc-proj__chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 11px;
-      border-radius: 999px;
-      background: #eaf4ff;
-      color: #0a7cf0;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
+    /* White pill button */
+    .svx-card__btn {
+      display: inline-flex; align-items: center; gap: 8px;
       white-space: nowrap;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: #fff; color: #0b1a2e;
+      font-size: 13.5px; font-weight: 600;
+      box-shadow: 0 6px 16px -6px rgba(0,0,0,.4);
+      transition: gap .2s ease, background .2s ease;
     }
-    .svc-proj__chip svg { width: 13px; height: 13px; flex: none; }
+    .svx-card__btn svg { width: 15px; height: 15px; flex: none; transition: transform .2s ease; }
+    .svx-card:hover .svx-card__btn { gap: 11px; background: #eaf4ff; }
+    .svx-card:hover .svx-card__btn svg { transform: translateX(2px); }
 
-    .svc-proj__more {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #d99a00;
-      transition: gap .2s ease, color .2s ease;
+    @media (max-width: 480px) {
+      .svx-card { width: 320px; height: 240px; }
+      .svx-card__body { max-width: 72%; padding-left: 18px; }
     }
-    .svc-proj__more svg { width: 15px; height: 15px; flex: none; transition: transform .2s ease; }
-    .svc-proj:hover .svc-proj__more { gap: 9px; color: #b57e00; }
-    .svc-proj:hover .svc-proj__more svg { transform: translateX(2px); }
-
     @media (prefers-reduced-motion: reduce) {
-      .svc-proj, .svc-proj__media img, .svc-proj__more, .svc-proj__more svg { transition: none; }
-      .svc-proj:hover { transform: none; }
-      .svc-proj:hover .svc-proj__media img { transform: none; }
+      .svx-card, .svx-card__link img, .svx-card__btn, .svx-card__btn svg { transition: none; }
+      .svx-card:hover { transform: none; }
+      .svx-card:hover .svx-card__link img { transform: none; }
     }
   </style>
 
@@ -1886,9 +1554,8 @@
 </section> -->
 
 <!-- ============== IT & Infrastructure capability ============== -->
-<section class="band band--grid-bg pt-6 sm:pt-8 lg:pt-10" style="padding-bottom: clamp(3.25rem, 7vw, 6rem);">
+<!-- <section class="band band--grid-bg pt-6 sm:pt-8 lg:pt-10" style="padding-bottom: clamp(3.25rem, 7vw, 6rem);">
 <div class="shell">
-  <!-- Section head (Tailwind only) -->
   <div class="mx-auto max-w-3xl text-center">
     <p class="mb-4 inline-flex items-center justify-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.14em] text-blue-600">
       <span class="h-[2px] w-7 rounded-full bg-gradient-to-r from-blue-600 to-amber-500" aria-hidden="true"></span>
@@ -1906,107 +1573,101 @@
     </p>
   </div>
 
-    <div class="svc-grid reveal">
+  <div class="svc-grid reveal">
 
-      <!-- 01 End-user & peripherals -->
-      <article class="svc-card svc-c1">
-        <span class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </span>
-        <div>
-          <div class="svc-head"><h3>End-user &amp; Peripherals</h3><span class="svc-num" aria-hidden="true">01</span></div>
-          <p class="svc-desc">Desktop and laptop management, OS and software updates, user account support, and printer, scanner and peripheral care.</p>
-        </div>
-        <ul class="svc-tags">
-          <li>Desktops</li><li>Laptops</li><li>Software</li><li>Peripherals</li>
-        </ul>
-        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about End-user &amp; Peripherals"></a>
-      </article>
+    <article class="svc-card svc-c1">
+      <span class="svc-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </span>
+      <div>
+        <div class="svc-head"><h3>End-user &amp; Peripherals</h3><span class="svc-num" aria-hidden="true">01</span></div>
+        <p class="svc-desc">Desktop and laptop management, OS and software updates, user account support, and printer, scanner and peripheral care.</p>
+      </div>
+      <ul class="svc-tags">
+        <li>Desktops</li><li>Laptops</li><li>Software</li><li>Peripherals</li>
+      </ul>
+      <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="svc-link" href="/pages/services.html" aria-label="Learn more about End-user &amp; Peripherals"></a>
+    </article>
 
-      <!-- 02 Servers & storage -->
-      <article class="svc-card svc-c2">
-        <span class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg>
-        </span>
-        <div>
-          <div class="svc-head"><h3>Servers &amp; Storage</h3><span class="svc-num" aria-hidden="true">02</span></div>
-          <p class="svc-desc">Windows and Linux server management with health monitoring, user and permission control, storage management and server backup.</p>
-        </div>
-        <ul class="svc-tags">
-          <li>Windows</li><li>Linux</li><li>Monitoring</li><li>Storage</li>
-        </ul>
-        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Servers &amp; Storage"></a>
-      </article>
+    <article class="svc-card svc-c2">
+      <span class="svc-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg>
+      </span>
+      <div>
+        <div class="svc-head"><h3>Servers &amp; Storage</h3><span class="svc-num" aria-hidden="true">02</span></div>
+        <p class="svc-desc">Windows and Linux server management with health monitoring, user and permission control, storage management and server backup.</p>
+      </div>
+      <ul class="svc-tags">
+        <li>Windows</li><li>Linux</li><li>Monitoring</li><li>Storage</li>
+      </ul>
+      <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Servers &amp; Storage"></a>
+    </article>
 
-      <!-- 03 Network & connectivity -->
-      <article class="svc-card svc-c3">
-        <span class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg>
-        </span>
-        <div>
-          <div class="svc-head"><h3>Network &amp; Connectivity</h3><span class="svc-num" aria-hidden="true">03</span></div>
-          <p class="svc-desc">Router, switch and Wi-Fi management across LAN and WAN, with firewall management and round-the-clock internet link monitoring.</p>
-        </div>
-        <ul class="svc-tags">
-          <li>LAN/WAN</li><li>Wi-Fi</li><li>Firewall</li><li>Link Monitoring</li>
-        </ul>
-        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Network &amp; Connectivity"></a>
-      </article>
+    <article class="svc-card svc-c3">
+      <span class="svc-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg>
+      </span>
+      <div>
+        <div class="svc-head"><h3>Network &amp; Connectivity</h3><span class="svc-num" aria-hidden="true">03</span></div>
+        <p class="svc-desc">Router, switch and Wi-Fi management across LAN and WAN, with firewall management and round-the-clock internet link monitoring.</p>
+      </div>
+      <ul class="svc-tags">
+        <li>LAN/WAN</li><li>Wi-Fi</li><li>Firewall</li><li>Link Monitoring</li>
+      </ul>
+      <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Network &amp; Connectivity"></a>
+    </article>
 
-      <!-- 04 Security & access -->
-      <article class="svc-card svc-c4">
-        <span class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-        </span>
-        <div>
-          <div class="svc-head"><h3>Security &amp; Access</h3><span class="svc-num" aria-hidden="true">04</span></div>
-          <p class="svc-desc">Firewall and endpoint security, user access control, password and account policies, plus ongoing security updates and monitoring.</p>
-        </div>
-        <ul class="svc-tags">
-          <li>Firewall</li><li>Endpoint</li><li>Access Control</li><li>Policies</li>
-        </ul>
-        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Security &amp; Access"></a>
-      </article>
+    <article class="svc-card svc-c4">
+      <span class="svc-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      </span>
+      <div>
+        <div class="svc-head"><h3>Security &amp; Access</h3><span class="svc-num" aria-hidden="true">04</span></div>
+        <p class="svc-desc">Firewall and endpoint security, user access control, password and account policies, plus ongoing security updates and monitoring.</p>
+      </div>
+      <ul class="svc-tags">
+        <li>Firewall</li><li>Endpoint</li><li>Access Control</li><li>Policies</li>
+      </ul>
+      <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Security &amp; Access"></a>
+    </article>
 
-      <!-- 05 Backup & data -->
-      <article class="svc-card svc-c5">
-        <span class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></svg>
-        </span>
-        <div>
-          <div class="svc-head"><h3>Backup &amp; Data</h3><span class="svc-num" aria-hidden="true">05</span></div>
-          <p class="svc-desc">Data, server and cloud backup with continuous monitoring, restore support and regular backup health reports.</p>
-        </div>
-        <ul class="svc-tags">
-          <li>Data</li><li>Server</li><li>Cloud</li><li>Restore</li>
-        </ul>
-        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Backup &amp; Data"></a>
-      </article>
+    <article class="svc-card svc-c5">
+      <span class="svc-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0"/></svg>
+      </span>
+      <div>
+        <div class="svc-head"><h3>Backup &amp; Data</h3><span class="svc-num" aria-hidden="true">05</span></div>
+        <p class="svc-desc">Data, server and cloud backup with continuous monitoring, restore support and regular backup health reports.</p>
+      </div>
+      <ul class="svc-tags">
+        <li>Data</li><li>Server</li><li>Cloud</li><li>Restore</li>
+      </ul>
+      <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="svc-link" href="/pages/services.html" aria-label="Learn more about Backup &amp; Data"></a>
+    </article>
 
-      <!-- 06 CCTV & physical IT -->
-      <article class="svc-card svc-c6">
-        <span class="svc-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.94a.5.5 0 0 0-.78-.42L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-        </span>
-        <div>
-          <div class="svc-head"><h3>CCTV &amp; Physical IT</h3><span class="svc-num" aria-hidden="true">06</span></div>
-          <p class="svc-desc">CCTV and NVR health monitoring, CCTV network support, rack management, and UPS and basic power infrastructure coordination.</p>
-        </div>
-        <ul class="svc-tags">
-          <li>CCTV</li><li>NVR</li><li>Racks</li><li>UPS</li>
-        </ul>
-        <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        <a class="svc-link" href="/pages/services.html" aria-label="Learn more about CCTV &amp; Physical IT"></a>
-      </article>
+    <article class="svc-card svc-c6">
+      <span class="svc-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.94a.5.5 0 0 0-.78-.42L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+      </span>
+      <div>
+        <div class="svc-head"><h3>CCTV &amp; Physical IT</h3><span class="svc-num" aria-hidden="true">06</span></div>
+        <p class="svc-desc">CCTV and NVR health monitoring, CCTV network support, rack management, and UPS and basic power infrastructure coordination.</p>
+      </div>
+      <ul class="svc-tags">
+        <li>CCTV</li><li>NVR</li><li>Racks</li><li>UPS</li>
+      </ul>
+      <span class="svc-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="svc-link" href="/pages/services.html" aria-label="Learn more about CCTV &amp; Physical IT"></a>
+    </article>
 
-    </div>
   </div>
-</section>
+</div>
+</section> -->
 
 <!-- ===================== All 8 services (Tailwind only) ===================== -->
     <!-- <section id="services" class="bg-[#f8f8f8] py-24" aria-labelledby="services-title">
