@@ -43,9 +43,9 @@
 
   <!-- Dropdown panel -->
   <div id="servicesDropdown" role="menu" aria-labelledby="servicesTrigger"
-       class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(620px,calc(100vw-3rem))] -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
+       class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(920px,calc(100vw-3rem))] max-h-[70vh] overflow-y-auto -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
 
-    <div class="grid grid-cols-2 gap-1">
+    <div class="grid grid-cols-3 gap-1">
 
       <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cloud-services.html">
         <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">01</span>
@@ -111,6 +111,38 @@
         </span>
       </a>
 
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/lan-wifi-installation.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">09</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">LAN &amp; Wi-Fi Installation</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Structured LAN cabling, rack arrangement, patching, switches, access points, network configuration and testing</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/fiber-ftth-work.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">10</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Fiber / FTTH Work</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Fiber routing, termination support, ODF/FAT/FDB related field work, FTTH deployment assistance, testing and maintenance</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cctv-solutions.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">11</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">CCTV Solutions</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">IP/analog CCTV installation, DVR/NVR setup, camera configuration, cabling, testing and maintenance</span>
+        </span>
+      </a>
+
+      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/manpower-field-technician-support.html">
+        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">12</span>
+        <span class="min-w-0">
+          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Manpower / Field Technician Support</span>
+          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Deployment of technicians for installation, breakdown calls, preventive maintenance, site surveys, rollout projects and multi-site field support</span>
+        </span>
+      </a>
+
     </div>
   </div>
 </div>
@@ -162,6 +194,10 @@
       <a class="nav-mobile__sublink" href="{{base}}pages/services/it-procurement.html">IT Procurement &amp; Hardware Supply</a>
       <a class="nav-mobile__sublink" href="{{base}}pages/services/it-support-amc.html">IT Support &amp; AMC Services</a>
       <a class="nav-mobile__sublink" href="{{base}}pages/services/project-implementation.html">Project Implementation Services</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/lan-wifi-installation.html">LAN &amp; Wi-Fi Installation</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/fiber-ftth-work.html">Fiber / FTTH Work</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/cctv-solutions.html">CCTV Solutions</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/services/manpower-field-technician-support.html">Manpower / Field Technician Support</a>
     </div>
 
     <a class="nav-mobile__link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
