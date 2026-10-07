@@ -17,135 +17,161 @@
       <a class="nav-link" href="{{base}}index.html" data-nav="home">Home</a>
       <a class="nav-link" href="{{base}}pages/about.html" data-nav="about">About Us</a>
 
-<div class="relative inline-flex items-center group" data-dropdown>
+      <!-- SERVICES DROPDOWN (existing, unchanged) -->
+      <div class="relative inline-flex items-center group" data-dropdown>
+        <a
+          href="{{base}}pages/services.html"
+          data-nav="services-all"
+          class="inline-flex items-center rounded-l-md py-2 pl-3 pr-1.5 text-sm font-semibold text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8]">
+          Services
+        </a>
+        <button
+          type="button"
+          id="servicesTrigger"
+          data-dropdown-trigger
+          aria-expanded="false"
+          aria-controls="servicesDropdown"
+          aria-label="Open services menu"
+          class="inline-flex items-center justify-center rounded-r-md py-2 pl-1 pr-2.5 text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087FEA] focus-visible:ring-offset-2">
+          <svg class="h-3 w-3 transition-transform duration-200 group-[.is-open]:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div id="servicesDropdown" role="menu" aria-labelledby="servicesTrigger"
+             class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(920px,calc(100vw-3rem))] max-h-[70vh] overflow-y-auto -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
+          <div class="grid grid-cols-3 gap-1">
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cloud-services.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">01</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Cloud Services</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Backup, storage, cloud server, email and migration</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-infrastructure-management.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">02</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Infrastructure Management</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Monitoring, maintenance, security and support</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/network-solutions.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">03</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Network Solutions</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">LAN/WAN, Wi-Fi, router, switch and firewall</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cyber-security.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">04</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Cyber Security Services</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Endpoint, network, identity and email security</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/internet-management.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">05</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Internet Management &amp; Monitoring</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Leased line, WAN and bandwidth monitoring</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-procurement.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">06</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Procurement &amp; Hardware Supply</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Requirement analysis, BOQ, supply and delivery</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-support-amc.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">07</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Support &amp; AMC Services</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Remote and on-site support with AMC</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/project-implementation.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">08</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Project Implementation Services</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Survey, installation, testing and handover</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/lan-wifi-installation.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">09</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">LAN &amp; Wi-Fi Installation</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Structured LAN cabling, rack arrangement, patching, switches, access points, network configuration and testing</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/fiber-ftth-work.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">10</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Fiber / FTTH Work</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Fiber routing, termination support, ODF/FAT/FDB related field work, FTTH deployment assistance, testing and maintenance</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cctv-solutions.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">11</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">CCTV Solutions</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">IP/analog CCTV installation, DVR/NVR setup, camera configuration, cabling, testing and maintenance</span>
+              </span>
+            </a>
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/manpower-field-technician-support.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">12</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Manpower / Field Technician Support</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Deployment of technicians for installation, breakdown calls, preventive maintenance, site surveys, rollout projects and multi-site field support</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-  <!-- "Services" — navigates to All Services -->
-  <a
-    href="{{base}}pages/services.html"
-    data-nav="services-all"
-    class="inline-flex items-center rounded-l-md py-2 pl-3 pr-1.5 text-sm font-semibold text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8]">
-    Services
-  </a>
-
-  <!-- Caret — toggles the dropdown -->
-  <button
-    type="button"
-    id="servicesTrigger"
-    data-dropdown-trigger
-    aria-expanded="false"
-    aria-controls="servicesDropdown"
-    aria-label="Open services menu"
-    class="inline-flex items-center justify-center rounded-r-md py-2 pl-1 pr-2.5 text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087FEA] focus-visible:ring-offset-2">
-    <svg class="h-3 w-3 transition-transform duration-200 group-[.is-open]:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M6 9l6 6 6-6"/>
-    </svg>
-  </button>
-
-  <!-- Dropdown panel -->
-  <div id="servicesDropdown" role="menu" aria-labelledby="servicesTrigger"
-       class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(920px,calc(100vw-3rem))] max-h-[70vh] overflow-y-auto -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
-
-    <div class="grid grid-cols-3 gap-1">
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cloud-services.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">01</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Cloud Services</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Backup, storage, cloud server, email and migration</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-infrastructure-management.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">02</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Infrastructure Management</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Monitoring, maintenance, security and support</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/network-solutions.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">03</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Network Solutions</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">LAN/WAN, Wi-Fi, router, switch and firewall</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cyber-security.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">04</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Cyber Security Services</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Endpoint, network, identity and email security</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/internet-management.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">05</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Internet Management &amp; Monitoring</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Leased line, WAN and bandwidth monitoring</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-procurement.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">06</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Procurement &amp; Hardware Supply</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Requirement analysis, BOQ, supply and delivery</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/it-support-amc.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">07</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT Support &amp; AMC Services</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Remote and on-site support with AMC</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/project-implementation.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">08</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Project Implementation Services</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Survey, installation, testing and handover</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/lan-wifi-installation.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">09</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">LAN &amp; Wi-Fi Installation</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Structured LAN cabling, rack arrangement, patching, switches, access points, network configuration and testing</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/fiber-ftth-work.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">10</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Fiber / FTTH Work</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Fiber routing, termination support, ODF/FAT/FDB related field work, FTTH deployment assistance, testing and maintenance</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/cctv-solutions.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">11</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">CCTV Solutions</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">IP/analog CCTV installation, DVR/NVR setup, camera configuration, cabling, testing and maintenance</span>
-        </span>
-      </a>
-
-      <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/services/manpower-field-technician-support.html">
-        <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">12</span>
-        <span class="min-w-0">
-          <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Manpower / Field Technician Support</span>
-          <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Deployment of technicians for installation, breakdown calls, preventive maintenance, site surveys, rollout projects and multi-site field support</span>
-        </span>
-      </a>
-
-    </div>
-  </div>
-</div>
+      <!-- ========== NEW: INDUSTRIES DROPDOWN ========== -->
+      <div class="relative inline-flex items-center group" data-dropdown>
+        <a
+          href="{{base}}pages/industries.html"
+          data-nav="industries-all"
+          class="inline-flex items-center rounded-l-md py-2 pl-3 pr-1.5 text-sm font-semibold text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8]">
+          Industries
+        </a>
+        <button
+          type="button"
+          id="industriesTrigger"
+          data-dropdown-trigger
+          aria-expanded="false"
+          aria-controls="industriesDropdown"
+          aria-label="Open industries menu"
+          class="inline-flex items-center justify-center rounded-r-md py-2 pl-1 pr-2.5 text-[#162033] transition-colors group-hover:bg-[#F5F9FD] group-hover:text-[#075FC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#087FEA] focus-visible:ring-offset-2">
+          <svg class="h-3 w-3 transition-transform duration-200 group-[.is-open]:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <div id="industriesDropdown" role="menu" aria-labelledby="industriesTrigger"
+             class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(480px,calc(100vw-3rem))] max-h-[70vh] overflow-y-auto -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
+          <div class="grid grid-cols-2 gap-1">
+            <!-- Healthcare (dummy) -->
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/industries/healthcare.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">01</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Healthcare</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Hospitals, clinics and diagnostic centres</span>
+              </span>
+            </a>
+            <!-- IT (dummy) -->
+            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/industries/it.html">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">02</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT &amp; ITES</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Software parks, data centres and offices</span>
+              </span>
+            </a>
+            <!-- More dummy items can be added later -->
+          </div>
+        </div>
+      </div>
+      <!-- ========== END NEW INDUSTRIES DROPDOWN ========== -->
 
       <!-- <a class="nav-link" href="{{base}}pages/services.html" data-nav="services-all">All Services</a> -->
       <a class="nav-link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
@@ -171,6 +197,7 @@
     <a class="nav-mobile__link" href="{{base}}index.html" data-nav="home">Home</a>
     <a class="nav-mobile__link" href="{{base}}pages/about.html" data-nav="about">About Us</a>
 
+    <!-- Mobile Services toggle (existing) -->
     <button type="button"
             class="nav-mobile__toggle"
             id="mobileServicesToggle"
@@ -199,6 +226,27 @@
       <a class="nav-mobile__sublink" href="{{base}}pages/services/cctv-solutions.html">CCTV Solutions</a>
       <a class="nav-mobile__sublink" href="{{base}}pages/services/manpower-field-technician-support.html">Manpower / Field Technician Support</a>
     </div>
+
+    <!-- ========== NEW: Mobile Industries toggle ========== -->
+    <button type="button"
+            class="nav-mobile__toggle"
+            id="mobileIndustriesToggle"
+            aria-expanded="false"
+            aria-controls="mobileIndustriesPanel">
+      Industries
+      <svg class="nav-caret" width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 9l6 6 6-6"></path>
+      </svg>
+    </button>
+
+    <div class="nav-mobile__panel" id="mobileIndustriesPanel">
+      <a class="nav-mobile__sublink" href="{{base}}pages/industries.html">All Industries</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/industries/healthcare.html">Healthcare</a>
+      <a class="nav-mobile__sublink" href="{{base}}pages/industries/it.html">IT &amp; ITES</a>
+    </div>
+    <!-- ========== END NEW MOBILE INDUSTRIES ========== -->
 
     <a class="nav-mobile__link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
 

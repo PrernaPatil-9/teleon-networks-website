@@ -1,7 +1,7 @@
 /* ==========================================================================
    Teleon Networks — navigation.js
-   Desktop Services dropdown, mobile hamburger menu, mobile Services submenu,
-   outside-click handling and active navigation states.
+   Desktop dropdowns (Services, Industries), mobile hamburger menu, mobile
+   submenus, outside-click handling and active navigation states.
 
    Runs after components.js has injected the header markup.
    Component loading is not duplicated here.
@@ -17,10 +17,6 @@
 
     var toggle = header.querySelector('#navToggle');
     var mobileNav = header.querySelector('#mobileNav');
-    var servicesItem = header.querySelector('[data-dropdown]');
-    var servicesTrigger = header.querySelector('[data-dropdown-trigger]');
-    var mobileServicesToggle = header.querySelector('#mobileServicesToggle');
-    var mobileServicesPanel = header.querySelector('#mobileServicesPanel');
 
     /* ----------------------------------------------------------------
        Mobile menu
@@ -43,7 +39,7 @@
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open navigation menu');
       document.body.classList.remove('nav-locked');
-      closeMobileSubmenu();
+      closeAllMobileSubmenus();
     }
 
     if (toggle && mobileNav) {
@@ -52,89 +48,131 @@
         if (isMenuOpen()) {
           closeMenu();
         } else {
-          closeDropdown();
+          closeAllDropdowns();
           openMenu();
         }
       });
 
-      // Close after any navigation link is tapped.
       mobileNav.addEventListener('click', function (event) {
         if (event.target.closest('a')) closeMenu();
       });
     }
 
     /* ----------------------------------------------------------------
-       Mobile Services submenu
+       Mobile submenus (Services + Industries)
+       Generic: any toggle with aria-controls pointing to a panel.
        ---------------------------------------------------------------- */
-    function openMobileSubmenu() {
-      if (!mobileServicesPanel || !mobileServicesToggle) return;
-      mobileServicesPanel.classList.add('is-open');
-      mobileServicesToggle.setAttribute('aria-expanded', 'true');
-    }
+    var mobileTogglePairs = [
+      ['#mobileServicesToggle',   '#mobileServicesPanel'],
+      ['#mobileIndustriesToggle', '#mobileIndustriesPanel']
+    ];
 
-    function closeMobileSubmenu() {
-      if (!mobileServicesPanel || !mobileServicesToggle) return;
-      mobileServicesPanel.classList.remove('is-open');
-      mobileServicesToggle.setAttribute('aria-expanded', 'false');
-    }
+    var mobileSubmenus = [];
 
-    if (mobileServicesToggle && mobileServicesPanel) {
-      mobileServicesToggle.addEventListener('click', function () {
-        if (mobileServicesPanel.classList.contains('is-open')) {
-          closeMobileSubmenu();
+    mobileTogglePairs.forEach(function (pair) {
+      var btn = header.querySelector(pair[0]);
+      var panel = header.querySelector(pair[1]);
+      if (!btn || !panel) return;
+
+      mobileSubmenus.push({ btn: btn, panel: panel });
+
+      btn.addEventListener('click', function () {
+        if (panel.classList.contains('is-open')) {
+          panel.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
         } else {
-          openMobileSubmenu();
+          // close siblings
+          mobileSubmenus.forEach(function (other) {
+            if (other.panel !== panel) {
+              other.panel.classList.remove('is-open');
+              other.btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+          panel.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
         }
+      });
+    });
+
+    function closeAllMobileSubmenus() {
+      mobileSubmenus.forEach(function (m) {
+        m.panel.classList.remove('is-open');
+        m.btn.setAttribute('aria-expanded', 'false');
       });
     }
 
     /* ----------------------------------------------------------------
-       Desktop Services dropdown
+       Desktop dropdowns — generic over ALL [data-dropdown] elements
        ---------------------------------------------------------------- */
-    var hoverTimer = null;
+    var dropdowns = Array.prototype.slice.call(
+      header.querySelectorAll('[data-dropdown]')
+    );
 
-    function openDropdown() {
-      if (!servicesItem || !servicesTrigger) return;
-      servicesItem.classList.add('is-open');
-      servicesTrigger.setAttribute('aria-expanded', 'true');
-    }
+    // Attach hover/click handlers to every dropdown
+    dropdowns.forEach(function (item) {
+      var trigger = item.querySelector('[data-dropdown-trigger]');
+      if (!trigger) return;
 
-    function closeDropdown() {
-      if (!servicesItem || !servicesTrigger) return;
-      servicesItem.classList.remove('is-open');
-      servicesTrigger.setAttribute('aria-expanded', 'false');
-    }
+      var hoverTimer = null;
 
-    if (servicesItem && servicesTrigger) {
-      servicesTrigger.addEventListener('click', function (event) {
+      function open() {
+        // close others first
+        dropdowns.forEach(function (d) {
+          if (d !== item) {
+            d.classList.remove('is-open');
+            var t = d.querySelector('[data-dropdown-trigger]');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function close() {
+        item.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      trigger.addEventListener('click', function (event) {
         event.stopPropagation();
-        if (servicesItem.classList.contains('is-open')) {
-          closeDropdown();
+        if (item.classList.contains('is-open')) {
+          close();
         } else {
-          openDropdown();
+          open();
         }
       });
 
-      // Hover intent on pointer devices only.
-      servicesItem.addEventListener('mouseenter', function () {
+      // Hover intent on pointer devices only
+      item.addEventListener('mouseenter', function () {
         if (!DESKTOP_QUERY.matches) return;
         window.clearTimeout(hoverTimer);
-        openDropdown();
+        open();
       });
 
-      servicesItem.addEventListener('mouseleave', function () {
+      item.addEventListener('mouseleave', function () {
         if (!DESKTOP_QUERY.matches) return;
-        hoverTimer = window.setTimeout(closeDropdown, 140);
+        hoverTimer = window.setTimeout(close, 140);
       });
 
-      // Close once a service is chosen.
-      servicesItem.addEventListener('click', function (event) {
-        if (event.target.closest('a')) closeDropdown();
+      // Close once a menu item is chosen
+      item.addEventListener('click', function (event) {
+        if (event.target.closest('a')) close();
       });
 
-      // Keyboard: leaving the dropdown closes it.
-      servicesItem.addEventListener('focusout', function (event) {
-        if (!servicesItem.contains(event.relatedTarget)) closeDropdown();
+      // Keyboard: leaving the dropdown closes it
+      item.addEventListener('focusout', function (event) {
+        if (!item.contains(event.relatedTarget)) close();
+      });
+
+      // Stash refs for global close helpers
+      item._closeFn = close;
+    });
+
+    function closeAllDropdowns() {
+      dropdowns.forEach(function (d) {
+        d.classList.remove('is-open');
+        var t = d.querySelector('[data-dropdown-trigger]');
+        if (t) t.setAttribute('aria-expanded', 'false');
       });
     }
 
@@ -142,7 +180,13 @@
        Outside click and Escape
        ---------------------------------------------------------------- */
     document.addEventListener('click', function (event) {
-      if (servicesItem && !servicesItem.contains(event.target)) closeDropdown();
+      dropdowns.forEach(function (d) {
+        if (!d.contains(event.target)) {
+          d.classList.remove('is-open');
+          var t = d.querySelector('[data-dropdown-trigger]');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
+      });
 
       if (isMenuOpen() &&
           !mobileNav.contains(event.target) &&
@@ -153,7 +197,7 @@
 
     document.addEventListener('keydown', function (event) {
       if (event.key !== 'Escape') return;
-      closeDropdown();
+      closeAllDropdowns();
       if (isMenuOpen()) {
         closeMenu();
         if (toggle) toggle.focus();
@@ -162,14 +206,12 @@
 
     /* ----------------------------------------------------------------
        Viewport changes
-       Leaving mobile width while the panel is open would otherwise strand
-       the scroll lock.
        ---------------------------------------------------------------- */
     function handleBreakpoint(event) {
       if (event.matches) {
         closeMenu();
       } else {
-        closeDropdown();
+        closeAllDropdowns();
       }
     }
 
@@ -181,7 +223,6 @@
 
     /* ----------------------------------------------------------------
        Active navigation state
-       Each page sets <body data-page="..."> and links carry data-nav.
        ---------------------------------------------------------------- */
     var page = document.body.getAttribute('data-page');
     if (page) {
