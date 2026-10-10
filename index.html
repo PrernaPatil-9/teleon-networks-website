@@ -2098,6 +2098,575 @@
 </section>
 
 
+<!-- ===================== Vendor & Project Partnerships ===================== -->
+<section class="vp" id="vendor-partnerships" aria-labelledby="vp-title">
+  <style>
+    /* ---------- Vendor & Project Partnerships (scoped to .vp-*) — COMPACT ---------- */
+    .vp {
+      position: relative;
+      overflow: hidden;
+      padding: 36px 0 42px;
+      background:
+        radial-gradient(55% 60% at 100% 0%, rgba(219, 234, 254, .7) 0%, rgba(219, 234, 254, 0) 70%),
+        radial-gradient(50% 55% at 0% 100%, rgba(254, 243, 199, .75) 0%, rgba(254, 243, 199, 0) 70%),
+        #f7fafc;
+    }
+
+    .vp-head { max-width: 720px; margin: 0 auto; text-align: center; }
+    .vp-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin: 0 0 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #0a7cf0;
+    }
+    .vp-eyebrow::before,
+    .vp-eyebrow::after {
+      content: "";
+      width: 22px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #0a7cf0, #f2b632);
+    }
+    .vp-eyebrow::after { transform: scaleX(-1); }
+
+    .vp-title {
+      margin: 0;
+      font-family: 'Manrope', 'Inter', sans-serif;
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      color: #0a1f44;
+    }
+    .vp-title .vp-accent { color: #0a7cf0; }
+
+    .vp-lede {
+      margin: 10px auto 0;
+      max-width: 600px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #475569;
+    }
+
+    /* ---------- Support areas grid ---------- */
+    .vp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    @media (max-width: 1024px) { .vp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 760px)  { .vp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 460px)  { .vp-grid { grid-template-columns: 1fr; } }
+
+    .vp-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 12px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .vp-item:hover {
+      transform: translateY(-2px);
+      border-color: #bfdbfe;
+      box-shadow: 0 10px 20px -12px rgba(10, 124, 240, .25);
+    }
+
+    .vp-ico {
+      flex: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #eff6ff;
+      color: #0a7cf0;
+    }
+    .vp-item:nth-child(2n) .vp-ico { background: #fef3c7; color: #b45309; }
+    .vp-item:nth-child(3n) .vp-ico { background: #e0f2fe; color: #0369a1; }
+
+    .vp-ico svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .vp-item p {
+      margin: 0;
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #1e293b;
+    }
+
+    /* ---------- Partnership note ---------- */
+    .vp-note {
+      max-width: 720px;
+      margin: 22px auto 0;
+      padding: 14px 18px;
+      text-align: center;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 6px 18px -14px rgba(10, 31, 68, .2);
+    }
+    .vp-note p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #475569;
+    }
+    .vp-note strong { color: #0a1f44; }
+
+    .vp-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 18px 0 0;
+    }
+
+    .vp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .vp-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .vp-btn:focus-visible { outline: 3px solid #0a1f44; outline-offset: 4px; }
+
+    .vp-btn--primary {
+      color: #fff;
+      background: linear-gradient(135deg, #0a7cf0 0%, #0a1f44 100%);
+      box-shadow: 0 8px 18px -10px rgba(10, 124, 240, .55);
+    }
+    .vp-btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -12px rgba(10, 124, 240, .7);
+    }
+
+    .vp-btn--ghost {
+      color: #0a7cf0;
+      background: #fff;
+      border-color: #bfdbfe;
+    }
+    .vp-btn--ghost:hover {
+      background: #eff6ff;
+      border-color: #0a7cf0;
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Enquiry form panel ---------- */
+    .vp-panel {
+      display: none;
+      max-width: 780px;
+      margin: 18px auto 0;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      box-shadow: 0 18px 44px -28px rgba(10, 31, 68, .35);
+      animation: vp-fade .3s ease;
+    }
+    .vp-panel.is-open { display: block; }
+
+    @keyframes vp-fade {
+      from { opacity: 0; transform: translateY(-5px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .vp-panel__head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .vp-panel__head h3 {
+      margin: 0 0 3px;
+      font-family: 'Manrope', 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0a1f44;
+    }
+    .vp-panel__head p {
+      margin: 0;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: #64748b;
+    }
+    .vp-close {
+      flex: none;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #475569;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
+    .vp-close:hover { background: #eef2f7; color: #0a1f44; }
+    .vp-close svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .vp-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+    }
+    @media (max-width: 640px) { .vp-form { grid-template-columns: 1fr; } }
+
+    .vp-field { display: flex; flex-direction: column; gap: 4px; }
+    .vp-field--full { grid-column: 1 / -1; }
+
+    .vp-field label {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: #334155;
+    }
+    .vp-field label span { color: #dc2626; }
+
+    .vp-field input,
+    .vp-field select,
+    .vp-field textarea {
+      width: 100%;
+      padding: 8px 11px;
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #0f172a;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .vp-field textarea { resize: vertical; min-height: 72px; }
+
+    .vp-field input:focus,
+    .vp-field select:focus,
+    .vp-field textarea:focus {
+      outline: none;
+      background: #fff;
+      border-color: #0a7cf0;
+      box-shadow: 0 0 0 3px rgba(10, 124, 240, .18);
+    }
+
+    .vp-form__foot {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 2px;
+    }
+    .vp-form__foot p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.45;
+      color: #94a3b8;
+      max-width: 340px;
+    }
+
+    .vp-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #0a7cf0 0%, #0a1f44 100%);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px -10px rgba(10, 124, 240, .55);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .vp-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 22px -12px rgba(10, 124, 240, .7); }
+    .vp-submit svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Success state */
+    .vp-success {
+      display: none;
+      text-align: center;
+      padding: 12px 6px 4px;
+    }
+    .vp-success.is-visible { display: block; }
+    .vp-success__icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 10px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #dcfce7;
+      color: #15803d;
+    }
+    .vp-success__icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .vp-success h4 { margin: 0 0 4px; font-family: 'Manrope','Inter',sans-serif; font-size: 1rem; font-weight: 800; color: #0a1f44; }
+    .vp-success p { margin: 0; font-size: 13px; line-height: 1.5; color: #475569; }
+
+    @media (max-width: 640px) {
+      .vp { padding: 28px 0 34px; }
+      .vp-note { padding: 12px 14px; }
+      .vp-panel { padding: 16px; border-radius: 12px; }
+      .vp-form__foot { flex-direction: column; align-items: stretch; }
+      .vp-submit { justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .vp-item, .vp-btn, .vp-submit, .vp-panel { transition: none; animation: none; }
+      .vp-item:hover, .vp-btn:hover, .vp-submit:hover { transform: none; }
+    }
+  </style>
+
+  <div class="shell">
+    <div class="vp-head">
+      <p class="vp-eyebrow">Vendor &amp; Project Partnerships</p>
+      <h2 class="vp-title" id="vp-title">
+        Partner with <span class="vp-accent">TeleOn Networks</span>
+      </h2>
+      <p class="vp-lede">
+        TeleOn Networks Pvt. Ltd. works with telecom operators, system integrators, IT companies,
+        infrastructure providers and enterprise clients on project-based assignments and technical
+        support requirements.
+      </p>
+    </div>
+
+    <!-- Support areas -->
+    <ul class="vp-grid">
+      <li class="vp-item">
+        <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
+        <p>IT Infrastructure Installation &amp; Maintenance</p>
+      </li>
+      <li class="vp-item">
+        <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.8 16.6M12 11.5l5.2 5.1"/></svg></span>
+        <p>LAN &amp; Network Deployment</p>
+      </li>
+      <li class="vp-item">
+        <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12h20M12 2v20"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <p>Fiber Optic &amp; FTTH Support</p>
+      </li>
+      <li class="vp-item">
+        <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M14 20a5.5 5.5 0 0 1 7.5-5"/></svg></span>
+        <p>Field Technician &amp; Manpower</p>
+      </li>
+      <li class="vp-item">
+        <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21 8-9-5-9 5v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span>
+        <p>Networking Hardware &amp; Material Supply</p>
+      </li>
+      <li class="vp-item">
+        <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.94a.5.5 0 0 0-.78-.42L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+        <p>CCTV &amp; Security System Installation</p>
+      </li>
+      <li class="vp-item">
+        <span class="vp-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2z"/></svg></span>
+        <p>Annual Maintenance &amp; On-site Support</p>
+      </li>
+    </ul>
+
+    <!-- Partnership note -->
+    <div class="vp-note">
+      <p>
+        <strong>We welcome vendor registration, subcontracting assignments and project-based
+        collaborations</strong>, subject to project requirements and eligibility criteria.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="vp-actions">
+      <button type="button" class="vp-btn vp-btn--primary" id="vpOpenForm" aria-expanded="false" aria-controls="vpPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H7l-3 3z"/><path d="M8 9h8M8 12h5"/></svg>
+        Vendor / Project Enquiry
+      </button>
+      <a class="vp-btn vp-btn--ghost" href="pages/contact.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+        Contact our team
+      </a>
+    </div>
+
+    <!-- Enquiry form panel -->
+    <div class="vp-panel" id="vpPanel" role="region" aria-labelledby="vp-form-title">
+      <div class="vp-panel__head">
+        <div>
+          <h3 id="vp-form-title">Vendor / Project Enquiry</h3>
+          <p>Share your requirement and our team will get back to you shortly.</p>
+        </div>
+        <button type="button" class="vp-close" id="vpCloseForm" aria-label="Close enquiry form">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+      <form class="vp-form" id="vpForm" novalidate>
+        <div class="vp-field">
+          <label for="vp-company">Company name <span>*</span></label>
+          <input type="text" id="vp-company" name="company" required autocomplete="organization" placeholder="Your company">
+        </div>
+
+        <div class="vp-field">
+          <label for="vp-contact">Contact person <span>*</span></label>
+          <input type="text" id="vp-contact" name="contact" required autocomplete="name" placeholder="Full name">
+        </div>
+
+        <div class="vp-field">
+          <label for="vp-email">Business email <span>*</span></label>
+          <input type="email" id="vp-email" name="email" required autocomplete="email" placeholder="name@company.com">
+        </div>
+
+        <div class="vp-field">
+          <label for="vp-phone">Phone / WhatsApp</label>
+          <input type="tel" id="vp-phone" name="phone" autocomplete="tel" placeholder="+91 00000 00000">
+        </div>
+
+        <div class="vp-field">
+          <label for="vp-type">Enquiry type <span>*</span></label>
+          <select id="vp-type" name="type" required>
+            <option value="" selected disabled>Select an option</option>
+            <option>Vendor registration</option>
+            <option>Subcontracting assignment</option>
+            <option>Project requirement</option>
+            <option>Technical manpower / field support</option>
+            <option>Networking hardware &amp; material supply</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="vp-field">
+          <label for="vp-location">Project location</label>
+          <input type="text" id="vp-location" name="location" placeholder="City / State">
+        </div>
+
+        <div class="vp-field vp-field--full">
+          <label for="vp-message">Requirement details <span>*</span></label>
+          <textarea id="vp-message" name="message" required placeholder="Briefly describe your requirement, scope, timelines or eligibility details."></textarea>
+        </div>
+
+        <div class="vp-form__foot">
+          <p>By submitting, you agree to be contacted by TeleOn Networks Pvt. Ltd.</p>
+          <button type="submit" class="vp-submit">
+            Submit enquiry
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success message -->
+      <div class="vp-success" id="vpSuccess" role="status" aria-live="polite">
+        <div class="vp-success__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+        </div>
+        <h4>Thank you — your enquiry has been received.</h4>
+        <p>Our team will review your details and get back to you shortly.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      var openBtn  = document.getElementById('vpOpenForm');
+      var closeBtn = document.getElementById('vpCloseForm');
+      var panel    = document.getElementById('vpPanel');
+      var form     = document.getElementById('vpForm');
+      var success  = document.getElementById('vpSuccess');
+      if (!openBtn || !panel || !form) return;
+
+      function openPanel() {
+        panel.classList.add('is-open');
+        openBtn.setAttribute('aria-expanded', 'true');
+        form.style.display = '';
+        success.classList.remove('is-visible');
+        var first = form.querySelector('input, select, textarea');
+        if (first) setTimeout(function () { first.focus(); }, 60);
+      }
+
+      function closePanel() {
+        panel.classList.remove('is-open');
+        openBtn.setAttribute('aria-expanded', 'false');
+        openBtn.focus();
+      }
+
+      openBtn.addEventListener('click', function () {
+        if (panel.classList.contains('is-open')) {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      closeBtn.addEventListener('click', closePanel);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && panel.classList.contains('is-open')) {
+          closePanel();
+        }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        // TODO: replace this block with your real form submission endpoint.
+        form.style.display = 'none';
+        success.classList.add('is-visible');
+      });
+    })();
+  </script>
+</section>
+
   </main>
 
   <div id="site-footer"></div>

@@ -128,7 +128,7 @@
         </div>
       </div>
 
-      <!-- ========== NEW: INDUSTRIES DROPDOWN ========== -->
+      <!-- ========== INDUSTRIES DROPDOWN ========== -->
       <div class="relative inline-flex items-center group" data-dropdown>
         <a
           href="{{base}}pages/industries.html"
@@ -149,31 +149,97 @@
           </svg>
         </button>
         <div id="industriesDropdown" role="menu" aria-labelledby="industriesTrigger"
-             class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(480px,calc(100vw-3rem))] max-h-[70vh] overflow-y-auto -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
+             class="invisible absolute left-1/2 top-full z-50 mt-3 w-[min(720px,calc(100vw-3rem))] max-h-[70vh] overflow-y-auto -translate-x-1/2 translate-y-2 rounded-2xl border border-[#D9E5F2] bg-white p-2.5 opacity-0 shadow-[0_24px_60px_rgba(8,43,102,0.16)] transition-all duration-200 pointer-events-none group-[.is-open]:visible group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 group-[.is-open]:pointer-events-auto">
           <div class="grid grid-cols-2 gap-1">
-            <!-- Healthcare (dummy) -->
-            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/industries/healthcare.html">
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
               <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">01</span>
               <span class="min-w-0">
-                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Healthcare</span>
-                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Hospitals, clinics and diagnostic centres</span>
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Corporate Offices &amp; IT Companies</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Office campuses, software parks and corporate IT setups</span>
               </span>
-            </a>
-            <!-- IT (dummy) -->
-            <a class="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-[#F5F9FD]" role="menuitem" href="{{base}}pages/industries/it.html">
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
               <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">02</span>
               <span class="min-w-0">
-                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">IT &amp; ITES</span>
-                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Software parks, data centres and offices</span>
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Manufacturing &amp; Industrial</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Factories, plants and industrial units</span>
               </span>
-            </a>
-            <!-- More dummy items can be added later -->
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">03</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Healthcare &amp; Hospitals</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Hospitals, clinics and diagnostic centres</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">04</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Education &amp; Institutions</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Schools, colleges and universities</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">05</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Banking &amp; Financial Services</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Banks, NBFCs and financial institutions</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">06</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Retail &amp; Commercial Businesses</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Retail chains, showrooms and commercial outlets</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">07</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Hotels &amp; Hospitality</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Hotels, resorts and hospitality services</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">08</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Real Estate &amp; Construction</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Builders, developers and construction sites</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">09</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Logistics &amp; Warehousing</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Warehouses, distribution centres and logistics hubs</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">10</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Telecom &amp; Internet Service Providers</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Telecom operators and ISPs</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">11</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Government &amp; Public Sector</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Government offices and public sector units</span>
+              </span>
+            </span>
+            <span class="flex items-start gap-3 rounded-xl px-3 py-2.5" role="menuitem">
+              <span class="mt-0.5 shrink-0 rounded-md bg-[rgba(24,169,232,0.12)] px-1.5 py-0.5 font-mono text-[11px] font-bold leading-none text-[#075FC8]">12</span>
+              <span class="min-w-0">
+                <span class="block text-[0.92rem] font-semibold leading-tight text-[#082B66]">Small &amp; Medium Enterprises (SMEs)</span>
+                <span class="mt-0.5 block text-[0.78rem] leading-snug text-[#64748B]">Growing businesses and SME offices</span>
+              </span>
+            </span>
           </div>
         </div>
       </div>
-      <!-- ========== END NEW INDUSTRIES DROPDOWN ========== -->
+      <!-- ========== END INDUSTRIES DROPDOWN ========== -->
 
-      <!-- <a class="nav-link" href="{{base}}pages/services.html" data-nav="services-all">All Services</a> -->
       <a class="nav-link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
     </nav>
 
@@ -197,7 +263,7 @@
     <a class="nav-mobile__link" href="{{base}}index.html" data-nav="home">Home</a>
     <a class="nav-mobile__link" href="{{base}}pages/about.html" data-nav="about">About Us</a>
 
-    <!-- Mobile Services toggle (existing) -->
+    <!-- Mobile Services toggle -->
     <button type="button"
             class="nav-mobile__toggle"
             id="mobileServicesToggle"
@@ -227,7 +293,7 @@
       <a class="nav-mobile__sublink" href="{{base}}pages/services/manpower-field-technician-support.html">Manpower / Field Technician Support</a>
     </div>
 
-    <!-- ========== NEW: Mobile Industries toggle ========== -->
+    <!-- Mobile Industries toggle -->
     <button type="button"
             class="nav-mobile__toggle"
             id="mobileIndustriesToggle"
@@ -242,11 +308,20 @@
     </button>
 
     <div class="nav-mobile__panel" id="mobileIndustriesPanel">
-      <a class="nav-mobile__sublink" href="{{base}}pages/industries.html">All Industries</a>
-      <a class="nav-mobile__sublink" href="{{base}}pages/industries/healthcare.html">Healthcare</a>
-      <a class="nav-mobile__sublink" href="{{base}}pages/industries/it.html">IT &amp; ITES</a>
+      <span class="nav-mobile__sublink">All Industries</span>
+      <span class="nav-mobile__sublink">Corporate Offices &amp; IT Companies</span>
+      <span class="nav-mobile__sublink">Manufacturing &amp; Industrial</span>
+      <span class="nav-mobile__sublink">Healthcare &amp; Hospitals</span>
+      <span class="nav-mobile__sublink">Education &amp; Institutions</span>
+      <span class="nav-mobile__sublink">Banking &amp; Financial Services</span>
+      <span class="nav-mobile__sublink">Retail &amp; Commercial Businesses</span>
+      <span class="nav-mobile__sublink">Hotels &amp; Hospitality</span>
+      <span class="nav-mobile__sublink">Real Estate &amp; Construction</span>
+      <span class="nav-mobile__sublink">Logistics &amp; Warehousing</span>
+      <span class="nav-mobile__sublink">Telecom &amp; Internet Service Providers</span>
+      <span class="nav-mobile__sublink">Government &amp; Public Sector</span>
+      <span class="nav-mobile__sublink">Small &amp; Medium Enterprises (SMEs)</span>
     </div>
-    <!-- ========== END NEW MOBILE INDUSTRIES ========== -->
 
     <a class="nav-mobile__link" href="{{base}}pages/contact.html" data-nav="contact">Contact Us</a>
 
